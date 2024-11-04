@@ -1,0 +1,63 @@
+/* Carousel container styling */
+.carousel-container {
+position: relative;
+max-width: 100%;
+margin: auto;
+overflow: hidden;
+width: 100%; /* Adjust width as needed */
+}
+
+/* Carousel image styling */
+.carousel-slide {
+display: none;
+width: 100%;
+}
+
+/* Show the first image initially */
+.carousel-slide:first-child {
+display: block;
+}
+
+/* Navigation buttons */
+.carousel-button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+font-size: 24px;
+cursor: pointer;
+padding: 12px;
+border-radius: 10%;
+z-index: 10;
+}
+
+/* Dot container styling */
+.dot-container {
+text-align: center;
+padding: 10px 0;
+}
+
+/* Individual dot styling */
+.dot {
+display: inline-block;
+height: 12px;
+width: 12px;
+margin: 0 4px;
+border-radius: 50%;
+background-color: #bbb; /* Gray color for inactive dots */
+cursor: pointer;
+}
+
+.active {
+background-color: #717171; /* Darker color for active dot */
+}
+
+.prev {
+left: 10px;
+}
+
+.next {
+right: 10px;
+}

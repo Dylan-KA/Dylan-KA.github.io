@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </style>
@@ -49,26 +50,35 @@
   </header>
 
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-    <img src="Images\Game Screenshots\Blender\Blender Shot (1).png" style="width:100%">
-    <p>Just me, myself and I, exploring the universe of unknownment.
-        I have a heart of love and an interest of lorem ipsum and mauris neque quam blog.
-        I want to share my world with you. Praesent tincidunt sed tellus ut rutrum.
-        Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
-        Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <div class="w3-container">
+      <div class="carousel-container" id="carousel">
+        <img class="carousel-slide" src="Images\Game Screenshots\Blender\Blender Shot (1).png" alt="Image 1">
+        <img class="carousel-slide" src="Images\Game Screenshots\Blender\Blender Shot (2).png" alt="Image 2">
+        <img class="carousel-slide" src="Images\Game Screenshots\Blender\Blender Shot (3).png" alt="Image 3">
+        <img class="carousel-slide" src="Images\Game Screenshots\Blender\Blender Shot (4).png" alt="Image 4">
+        <!-- Navigation buttons -->
+        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+      <div class="dot-container">
+        <!-- Dots will be dynamically generated -->
+      </div>
+    </div>
+    
+    <h4><b>About the project</b></h4>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
     <h4><b>What I contributed</b></h4>
-    <p>Just me, myself and I, exploring the universe of unknownment.
-        I have a heart of love and an interest of lorem ipsum and mauris neque quam blog.
-        I want to share my world with you. Praesent tincidunt sed tellus ut rutrum.
-        Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
-        Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
     <h4><b>What I learned</b></h4>
-    <p>Just me, myself and I, exploring the universe of unknownment.
-        I have a heart of love and an interest of lorem ipsum and mauris neque quam blog.
-        I want to share my world with you. Praesent tincidunt sed tellus ut rutrum.
-        Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
-        Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
     <hr>
-  </div>
+  
   
   <!-- Contact Section -->
   <div class="w3-container w3-padding-large w3-grey">
@@ -97,18 +107,8 @@
 <!-- End page content -->
 </div>
 
-<script>
-// Script to open and close sidebar
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-</script>
+<script src="Scripts\Sidebar.js"></script>
+<script src="Scripts\ImageCarousel.js"></script>
 
 </body>
 </html>
