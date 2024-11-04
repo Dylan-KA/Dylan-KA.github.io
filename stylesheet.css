@@ -61,3 +61,15 @@ left: 10px;
 .next {
 right: 10px;
 }
+
+/* Custom button styles */
+.w3-button.custom-blue {
+background-color: #0092d6 !important;
+color: white !important;
+border: none;
+}
+
+.w3-button.custom-blue:hover {
+background-color: #0173a7 !important;
+color: white !important;
+}
