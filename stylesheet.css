@@ -107,4 +107,9 @@ padding-top: 16px;
 .project-card a:last-of-type {
 margin-top: auto; /* Push the "Learn More" link to the bottom */
 }
-  
+
+.video-container {
+display: flex;
+justify-content: center;
+padding: 20px;
+}
