@@ -48,12 +48,12 @@ height: 12px;
 width: 12px;
 margin: 0 4px;
 border-radius: 50%;
-background-color: #bbb; /* Gray color for inactive dots */
+background-color: #bbb;
 cursor: pointer;
 }
 
 .active {
-background-color: #717171; /* Darker color for active dot */
+background-color: #717171;
 }
 
 .prev {
@@ -75,3 +75,36 @@ border: none;
 background-color: #0173a7 !important;
 color: white !important;
 }
+
+.project-card {
+height: 260px;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+overflow: hidden;
+padding: 16px;
+}
+
+.project-card p {
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 5;
+line-clamp: 5;
+-webkit-box-orient: vertical;
+}
+
+.project-card h4 {
+margin: 0;
+padding-top: 8px;
+}
+
+.project-card p {
+margin: 0;
+padding-top: 16px;
+}
+
+.project-card a:last-of-type {
+margin-top: auto; /* Push the "Learn More" link to the bottom */
+}
+  
