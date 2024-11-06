@@ -113,3 +113,44 @@ display: flex;
 justify-content: center;
 padding: 20px;
 }
+
+/* Footer Styling */
+footer {
+background-color: #333; /* Dark grey background */
+color: #fff;            /* White text color */
+padding: 32px 0;
+text-align: center;
+font-size: 0.9em;
+}
+
+footer .w3-center {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+footer .social-icon-white {
+display: inline-block;
+margin: 0 6px;
+transition: transform 0.3s ease, filter 0.3s ease; /* Smooth animation for hover */
+}
+
+footer .social-icon-white img {
+width: 20px;
+height: 20px;
+filter: brightness(0) invert(1); /* Makes image white */
+transition: filter 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+footer .social-icon-white:hover img {
+filter: brightness(0.8) sepia(1) hue-rotate(150deg); /* Subtle color change on hover */
+transform: scale(1.1); /* Slight zoom effect */
+}
+
+@media (max-width: 600px) {
+    footer .social-icon-white img {
+    width: 20px; /* Smaller icons on mobile */
+    height: 20px;
+    }
+}
+
