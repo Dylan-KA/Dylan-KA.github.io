@@ -78,3 +78,53 @@ class ContactMe extends HTMLElement {
     }
 }
 customElements.define("t-contact", ContactMe);
+
+class ProjectCard extends HTMLElement {
+    connectedCallback() {
+      const link = this.getAttribute("link");
+      const img = this.getAttribute("img");
+      const title = this.getAttribute("title");
+
+      const logo1 = this.getAttribute("logo1");
+      const logo2 = this.getAttribute("logo2");
+      const logo3 = this.getAttribute("logo3");
+
+      const description = this.innerHTML.trim();
+
+      // Generate logo HTML
+      let logos = '';
+      if (logo3) {
+        logos = `
+          <img src="${logo3}" style="width:30px; float:right; margin-left: 5px; margin-top: 2px; border-radius: 10px;">
+          <img src="${logo2}" style="width:30px; float:right; margin-left: 5px;">
+          <img src="${logo1}" style="width:30px; float:right;">
+        `;
+      } else if (logo2) {
+        logos = `
+          <img src="${logo2}" style="width:30px; float:right; margin-left: 5px;">
+          <img src="${logo1}" style="width:30px; float:right;">
+        `;
+      } else if (logo1) {
+        logos = `
+          <img src="${logo1}" style="width:30px; float:right;">
+        `;
+      }
+
+      this.innerHTML = `
+        <div class="w3-third w3-container w3-margin-bottom">
+          <a href="${link}">
+            <img src="${img}" style="width:100%">
+          </a>
+          <div class="w3-container w3-white project-card">
+            <h4>
+              <a href="${link}"><b>${title}</b></a>
+              ${logos}
+            </h4>
+            <p>${description}</p>
+            <a href="${link}"><b>Learn More</b></a>
+          </div>
+        </div>
+      `;
+    }
+}
+customElements.define("project-card", ProjectCard);
