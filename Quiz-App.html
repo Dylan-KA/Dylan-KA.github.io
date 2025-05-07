@@ -1,3 +1,7 @@
+---
+permalink: "{{ page.fileSlug }}.html"
+---
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,7 +22,7 @@
 <script src="/Scripts/components.js" defer></script>
 
 <!-- Sidebar/menu -->
-<t-sidebar></t-sidebar>
+{% Sidebar %}
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
@@ -72,10 +76,10 @@
   </div>
   
  <!-- Contact Section -->
- <t-contact></t-contact>
+ {% Contact %}
 
   <!-- Footer -->
-  <t-footer></t-footer>
+  {% Footer %}
   
 <!-- End page content -->
 </div>

@@ -19,7 +19,7 @@
 <script src="/Scripts/components.js" defer></script>
 
 <!-- Sidebar/menu -->
-<t-sidebar></t-sidebar>
+{% Sidebar %}
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
@@ -100,123 +100,30 @@
   <!-- Projects First Row -->
   <div class="w3-container w3-row-padding" id="projects">
     <h3 style="padding: 8px;"><b>Game Projects</b></h3>
-    <!-- Dual Wield -->
-    <project-card
-      class="w3-third w3-container w3-margin-bottom"
-      link="DualWield.html"
-      img="Images/Project Screenshots/Dual Wield/Dual Wield Title Screen.png"
-      title="Dual Wield"
-      logo1="Images/Logos/Unity-Logo.png"
-      logo2="Images/Logos/CSharp.png"
-    >
-      Dual Wield is a first-person shooter developed over three months using the <b>Unity Game Engine</b> as part of a university group project.
-      Players wield two firearms simultaneously, allowing up to 10 unique weapon combinations to tackle the enemies they encounter.
-    </project-card>
-
-    <!-- Caved In -->
-    <project-card
-      class="w3-third w3-container w3-margin-bottom"
-      link="Caved-In.html"
-      img="Images/Project Screenshots/Caved In/Caved In Menu.png"
-      title="Caved In"
-      logo1="Images/Logos/UE5-Logo.png"
-      logo2="Images/Logos/C++.png"
-    >
-      Caved In is a cooperative first-person survival extraction game, developed over three months in <b>Unreal Engine</b> as part of a university group project.
-      Players must work together to collect samples and escape the cave, all while avoiding infection.
-    </project-card>
-
-    <!-- PacStudent -->
-    <project-card
-      class="w3-third w3-container w3-margin-bottom"
-      link="PacStudent.html"
-      img="Images/Project Screenshots/PacStudent/PacStudent1.png"
-      title="PacStudent"
-      logo1="Images/Logos/Unity-Logo.png"
-      logo2="Images/Logos/CSharp.png"
-    >
-      PacStudent is a recreation of the classic 1980 game Pac-Man, developed as part of an introductory game development subject.
-      This project served as a case study while I learned to navigate and utilise the <b>Unity Game Engine</b> for the first time.
-    </project-card>
+    {% ProjectCard "DualWield.html", "Images/Project Screenshots/Dual Wield/Dual Wield Title Screen.png", "Dual Wield", "Images/Logos/Unity-Logo.png", "Images/Logos/CSharp.png", "", "Dual Wield is a first-person shooter developed over three months using the Unity Game Engine as part of a university group project. Players wield two firearms simultaneously, allowing up to 10 unique weapon combinations to tackle the enemies they encounter." %}
+    {% ProjectCard "Caved-In.html","Images/Project Screenshots/Caved In/Caved In Menu.png","Caved In","Images/Logos/UE5-Logo.png", "", "Images/Logos/C++.png","Caved In is a cooperative first-person survival extraction game, developed over three months in Unreal Engine as part of a university group project. Players must work together to collect samples and escape the cave, all while avoiding infection." %}
+    {% ProjectCard "PacStudent.html","Images/Project Screenshots/PacStudent/PacStudent1.png","PacStudent","Images/Logos/Unity-Logo.png","Images/Logos/CSharp.png", "", "PacStudent is a recreation of the classic 1980 game Pac-Man, developed as part of an introductory game development subject. This project served as a case study while I learned to navigate and utilise the Unity Game Engine for the first time." %}
   </div>
 
   <!-- Projects Second Row -->
   <div class="w3-container w3-row-padding">
     <h3 style="padding: 8px;"><b>Other Projects</b></h3>
-
-    <!-- Blender -->
-    <project-card
-      class="w3-third w3-container w3-margin-bottom"
-      link="Blender.html"
-      img="Images/Project Screenshots/Blender/Blender Shot (1).png"
-      title="3D Modelling Project"
-      logo1="Images/Logos/Blender-Logo.png"
-    >
-      This personal project involved creating a detailed 3D model of a house using <b>Blender</b> to develop my modelling, UV unwrapping, texturing, lighting and rendering skills.
-      I focused on achieving realistic textures and materials by using my own photographs and free textures sourced online.
-    </project-card>
-
-    <!-- Quiz App -->
-    <project-card
-      class="w3-third w3-container w3-margin-bottom"
-      link="Quiz-App.html"
-      img="Images/Project Screenshots/Quiz App/Quiz App.png"
-      title="Quiz App"
-      logo1="Images/Logos/swift.svg"
-      logo2="Images/Logos/iOS-Logo.png"
-    >
-      Quiz App is an iOS application developed over a few weeks as part of a group project using the <b>SwiftUI</b> framework.
-      The app fetches quizzes on various topics via an API, providing users with a range of quiz options.
-    </project-card>
-
-    <!-- 3D Animation -->
-    <project-card
-      class="w3-third w3-container w3-margin-bottom"
-      link="3DAnim.html"
-      img="Images/Project Screenshots/Why are we here.webp"
-      title="Unity 3D Animation"
-      logo1="Images/Logos/Unity-Logo.png"
-    >
-      "Why are we here?" is a 3D animation satire on first-person shooters, heavily inspired by <i>Halo</i> and <i>Red vs. Blue</i>.
-      It was developed over a few weeks in <b>Unity</b> using the HDRP rendering pipeline for a group project, where we used existing 3D models.
-    </project-card>
+    {% ProjectCard "Blender.html","Images/Project Screenshots/Blender/Blender Shot (1).png","3D Modelling Project","Images/Logos/Blender-Logo.png","","", "This personal project involved creating a detailed 3D model of a house using Blender to develop my modelling, UV unwrapping, texturing, lighting and rendering skills. I focused on achieving realistic textures and materials by using my own photographs and free textures sourced online." %}
+    {% ProjectCard "Quiz-App.html","Images/Project Screenshots/Quiz App/Quiz App.png","Quiz App","Images/Logos/swift.svg","Images/Logos/iOS-Logo.png","", "Quiz App is an iOS application developed over a few weeks as part of a group project using the SwiftUI framework. The app fetches quizzes on various topics via an API, providing users with a range of quiz options." %}  
+    {% ProjectCard "3DAnim.html","Images/Project Screenshots/Why are we here.webp","Unity 3D Animation","Images/Logos/Unity-Logo.png","","", "\"Why are we here?\" is a 3D animation satire on first-person shooters, heavily inspired by Halo and Red vs. Blue. It was developed over a few weeks in Unity using the HDRP rendering pipeline for a group project, where we used existing 3D models." %}
   </div>
 
   <!-- Projects Third Row -->
   <div class="w3-container w3-row-padding">
-
-    <!-- Clash of Commands -->
-    <project-card
-      class="w3-third w3-container w3-margin-bottom"
-      link="ClashOfCommands.html"
-      img="Images/Project Screenshots/Clash of Commands/ClashOfCommands1.png"
-      title="Clash of Commands"
-      logo1="Images/Logos/Unity-Logo.png"
-    >
-      Clash of Commands is an <b>educational game</b> that helps IT students learn <b>UNIX terminal commands</b> through gamification.
-      I gained hands-on experience in serious game design, user-centered development, and iterative improvements based on feedback.
-    </project-card>
-
-    <!-- Grocery Store -->
-    <project-card
-      class="w3-third w3-container w3-margin-bottom"
-      link="GroceryStore.html"
-      img="Images/Project Screenshots/Grocery Store/Grocery Store (4).png"
-      title="Grocery Store Website"
-      logo1="Images/Logos/HTML.png"
-      logo2="Images/Logos/CSS.png"
-      logo3="Images/Logos/AWS.png"
-    >
-      I developed a fully functional grocery store website as a solo project, utilising <b>HTML, CSS, JavaScript, PHP, and SQL</b>.
-      The website features a user-friendly interface that allows customers to browse products, add items to their cart, and complete purchases seamlessly.
-    </project-card>
+    {% ProjectCard "ClashOfCommands.html","Images/Project Screenshots/Clash of Commands/ClashOfCommands1.png","Clash of Commands","Images/Logos/Unity-Logo.png","","", "Clash of Commands is an educational game that helps IT students learn UNIX terminal commands through gamification. I gained hands-on experience in serious game design, user-centered development, and iterative improvements based on feedback." %}
+    {% ProjectCard "GroceryStore.html","Images/Project Screenshots/Grocery Store/Grocery Store (4).png","Grocery Store Website","Images/Logos/HTML.png","Images/Logos/CSS.png","Images/Logos/AWS.png", "I developed a fully functional grocery store website as a solo project, utilising HTML, CSS, JavaScript, PHP, and SQL. The website features a user-friendly interface that allows customers to browse products, add items to their cart, and complete purchases seamlessly." %}
   </div>
   
   <!-- Contact Section -->
-  <t-contact></t-contact>
+  {% Contact %}
 
   <!-- Footer -->
-  <t-footer></t-footer>
+  {% Footer %}
   
 <!-- End page content -->
 </div>
