@@ -111,7 +111,7 @@ class ProjectCard extends HTMLElement {
       }
 
       this.innerHTML = `
-        <div class="w3-third w3-container w3-margin-bottom">
+        <div>
           <a href="${link}">
             <img src="${img}" style="width:100%">
           </a>
@@ -125,6 +125,7 @@ class ProjectCard extends HTMLElement {
           </div>
         </div>
       `;
+      
     }
 }
 customElements.define("project-card", ProjectCard);
