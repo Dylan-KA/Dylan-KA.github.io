@@ -3,8 +3,6 @@ const slides = document.querySelectorAll('.carousel-slide');
 const totalSlides = slides.length;
 const dotContainer = document.querySelector('.dot-container');
 
-let player; // Global player instance for YouTube
-
 // Create dots for each slide
 for (let i = 0; i < totalSlides; i++) {
     const dot = document.createElement('span');
@@ -35,7 +33,6 @@ function showNextSlide() {
 
 function moveSlide(n) {
     clearInterval(slideInterval); // Stop automatic cycling when manually navigating
-    pauseVideoIfPlaying(); // Pause the YouTube video if playing
     currentSlide = (currentSlide + n + totalSlides) % totalSlides;
     showSlide(currentSlide);
     slideInterval = setInterval(showNextSlide, 7000); // Restart automatic cycling
@@ -43,7 +40,6 @@ function moveSlide(n) {
 
 function moveToSlide(index) {
     clearInterval(slideInterval); // Stop automatic cycling when navigating with dots
-    pauseVideoIfPlaying(); // Pause the YouTube video if playing
     showSlide(index);
     slideInterval = setInterval(showNextSlide, 7000); // Restart automatic cycling
 }
@@ -54,13 +50,6 @@ function updateDots() {
     dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
     });
-}
-
-// Pause the YouTube video if it is playing
-function pauseVideoIfPlaying() {
-    if (player && player.getPlayerState() === YT.PlayerState.PLAYING) {
-        player.pauseVideo();
-    }
 }
 
 // Initialize the first slide
@@ -74,18 +63,3 @@ document.addEventListener('keydown', (event) => {
         moveSlide(1); // Navigate to the next slide
     }
 });
-
-// YouTube API Integration
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('youtube-player', {
-        events: {
-            onStateChange: onPlayerStateChange
-        }
-    });
-}
-
-function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.PLAYING) {
-        clearInterval(slideInterval); // Pause slideshow while video plays
-    }
-}
