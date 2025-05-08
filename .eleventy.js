@@ -75,7 +75,8 @@ module.exports = function(eleventyConfig) {
                         <a href="Quiz-App.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-apple fa-fw w3-margin-right w3-margin-left"></i>Quiz App</a>
                         <a href="3DAnim.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-film fa-fw w3-margin-right w3-margin-left"></i>Unity 3D Animation</a>
                         <a href="ClashOfCommands.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-keyboard-o fa-fw w3-margin-right w3-margin-left"></i>Clash of Commands</a>
-                        <a href="GroceryStore.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-globe fa-fw w3-margin-right w3-margin-left"></i>Grocery Store Website</a>
+                        <a href="GroceryStore.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-globe fa-fw w3-margin-right w3-margin-left"></i>Online Grocery Store</a>
+                        <a href="CarRentalSystem.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-globe fa-fw w3-margin-right w3-margin-left"></i>Online Car Rental</a>
                         <a href="#contact" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>Contact</a>
                     </div>
                 </nav>`;
