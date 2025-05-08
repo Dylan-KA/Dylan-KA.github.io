@@ -28,13 +28,6 @@ aspect-ratio: 16 / 9;
 object-fit: cover;
 }
 
-/* Ensure iframe fits the container without distortion */
-.carousel-slide iframe {
-width: 100%;
-aspect-ratio: 16 / 9;
-border: none;
-}  
-
 /* Show the first image initially */
 .carousel-slide:first-child {
 display: block;
@@ -174,3 +167,36 @@ transform: scale(1.1); /* Slight zoom effect */
     }
 }
 
+/* Project Page */
+.project-page-container {
+display: flex;
+flex-direction: row;
+gap: 30px;
+padding: 20px;
+}
+
+@media (max-width: 768px) {
+.project-page-container {
+    flex-direction: column;
+}
+}
+
+.text-column {
+flex: 1;
+}
+
+.image-column {
+flex: 1;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.image-column img,
+.image-column iframe{
+width: 100%;
+aspect-ratio: 16 / 9;
+height: auto;
+border: 1px solid #ccc;
+border-radius: 6px;
+}
