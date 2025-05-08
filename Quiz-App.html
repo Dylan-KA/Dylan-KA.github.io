@@ -42,9 +42,28 @@ permalink: "{{ page.fileSlug }}.html"
     </div>
   </header>
 
-  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-  
-    <div class="w3-container">
+  <div class="project-page-container">
+    <div class="text-column">
+      <h4><b>About the project</b></h4>
+      <p>
+        Quiz App is an iOS application developed over a few weeks as part of a group project using the SwiftUI framework.
+        The app fetches quizzes on various topics via an API, providing users with a range of quiz options.
+      </p>
+      <h4><b>What I contributed</b></h4>
+      <p>
+        I integrated the API to retrieve new questions and answers each time a user begins a quiz.
+        This involved using JSON parsing to display the data effectively within the app.
+        Additionally, I developed the UI that allows users to select the quiz difficulty, number of questions, and category.
+      </p>
+      <hr>
+      <!-- Buttons -->
+      <a href="https://github.com/Dylan-KA/QuizApp" target="_blank" class="w3-button custom-blue">
+        <i class="fa fa-link w3-margin-right"></i>
+        <b>GitHub Repository</b>
+      </a>
+    </div>
+
+    <div class="image-column">
       <div class="carousel-container" id="carousel">
         <img class="carousel-slide" src="Images/Project Screenshots/Quiz App/Quiz App Welcome.png" alt="Image 1">
         <img class="carousel-slide" src="Images/Project Screenshots/Quiz App/Quiz App Settings.png" alt="Image 2">
@@ -60,19 +79,6 @@ permalink: "{{ page.fileSlug }}.html"
         <!-- Dots will be dynamically generated -->
       </div>
     </div>
-
-    <h4><b>About the project</b></h4>
-    <p>
-      Quiz App is an iOS application developed over a few weeks as part of a group project using the SwiftUI framework.
-      The app fetches quizzes on various topics via an API, providing users with a range of quiz options.
-    </p>
-    <h4><b>What I contributed</b></h4>
-    <p>
-      I integrated the API to retrieve new questions and answers each time a user begins a quiz.
-      This involved using JSON parsing to display the data effectively within the app.
-      Additionally, I developed the UI that allows users to select the quiz difficulty, number of questions, and category.
-    </p>
-    <hr>
   </div>
   
  <!-- Contact Section -->

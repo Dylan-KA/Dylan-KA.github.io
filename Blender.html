@@ -42,8 +42,30 @@ permalink: "{{ page.fileSlug }}.html"
     </div>
   </header>
 
-  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-    <div class="w3-container">
+  <div class="project-page-container">
+    <div class="text-column">
+      <h4><b>About the project</b></h4>
+      <p>
+        This personal project involved creating a detailed 3D model of a house using Blender to develop my modelling, UV unwrapping, texturing, lighting and rendering skills.
+        I focused on achieving realistic textures and materials by using my own photographs and free textures sourced online. 
+      </p>
+      <h4><b>What I learned</b></h4>
+      <p>
+        In the course of this project, I learned how to UV unwrap models, which allowed me to apply textures accurately and realistically across different surfaces.
+        Working on lighting setups and camera positioning taught me how to enhance the final render, bringing out the model's textures and structure.
+        This project helped me understand the end-to-end process of creating a 3D environment, from modelling and texturing to lighting and rendering.
+      </p>
+    </div>
+
+    <div class="image-column">
+      <iframe
+        src="https://www.youtube.com/embed/C7IPKDiFcdE?si=O8jaeAHZp-WfHzxe&mute=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
       <div class="carousel-container" id="carousel">
         <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (1).png" alt="Image 1">
         <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (2).png" alt="Image 2">
@@ -57,31 +79,7 @@ permalink: "{{ page.fileSlug }}.html"
         <!-- Dots will be dynamically generated -->
       </div>
     </div>
-    
-    <h4><b>About the project</b></h4>
-    <p>
-      This personal project involved creating a detailed 3D model of a house using Blender to develop my modelling, UV unwrapping, texturing, lighting and rendering skills.
-      I focused on achieving realistic textures and materials by using my own photographs and free textures sourced online. 
-    </p>
-    <h4><b>What I learned</b></h4>
-    <p>
-      In the course of this project, I learned how to UV unwrap models, which allowed me to apply textures accurately and realistically across different surfaces.
-      Working on lighting setups and camera positioning taught me how to enhance the final render, bringing out the model's textures and structure.
-      This project helped me understand the end-to-end process of creating a 3D environment, from modelling and texturing to lighting and rendering.
-    </p>
   </div>
-
-  <div class="video-container">
-    <iframe
-        width="560" height="315"
-        src="https://www.youtube.com/embed/C7IPKDiFcdE?si=O8jaeAHZp-WfHzxe&mute=1"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-    </iframe>
-  </div>  
 
   <!-- Contact Section -->
   {% Contact %}
