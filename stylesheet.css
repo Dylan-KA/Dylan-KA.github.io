@@ -200,3 +200,10 @@ height: auto;
 border: 1px solid #ccc;
 border-radius: 6px;
 }
+
+.nested-link {
+padding-top: 4px !important;
+padding-bottom: 4px !important;
+padding-left: 50px !important;
+padding-top: 0px !important;
+}

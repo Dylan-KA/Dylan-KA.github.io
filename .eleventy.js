@@ -66,18 +66,36 @@ module.exports = function(eleventyConfig) {
                         <h4><b>Portfolio</b></h4>
                     </div>
                     <div class="w3-bar-block">
-                        <a href="index.html#about" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>About Me</a> 
-                        <a href="index.html#projects" class="w3-bar-item w3-button w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>Projects</a> 
-                        <a href="DualWield.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-rocket fa-fw w3-margin-right w3-margin-left"></i>Dual Wield</a>
-                        <a href="Caved-In.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-trophy fa-fw w3-margin-right w3-margin-left"></i>Caved In</a>
-                        <a href="PacStudent.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-gamepad fa-fw w3-margin-right w3-margin-left"></i>PacStudent</a>
-                        <a href="Blender.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cube fa-fw w3-margin-right w3-margin-left"></i>3D Modelling Project</a>
-                        <a href="Quiz-App.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-apple fa-fw w3-margin-right w3-margin-left"></i>Quiz App</a>
-                        <a href="3DAnim.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-film fa-fw w3-margin-right w3-margin-left"></i>Unity 3D Animation</a>
-                        <a href="ClashOfCommands.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-keyboard-o fa-fw w3-margin-right w3-margin-left"></i>Clash of Commands</a>
-                        <a href="GroceryStore.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-globe fa-fw w3-margin-right w3-margin-left"></i>Online Grocery Store</a>
-                        <a href="CarRentalSystem.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-globe fa-fw w3-margin-right w3-margin-left"></i>Online Car Rental</a>
-                        <a href="#contact" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>Contact</a>
+                        <a href="index.html#about" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i><b>About Me</b></a> 
+                        <a href="index.html#game-projects" class="w3-bar-item w3-button w3-padding">
+                            <i class="fa fa-gamepad fa-fw w3-margin-right"></i><b>Game Projects</b>
+                        </a> 
+                        <a href="DualWield.html" class="w3-bar-item w3-button nested-link">Dual Wield</a>
+                        <a href="Caved-In.html" class="w3-bar-item w3-button nested-link">Caved In</a>
+                        <a href="PacStudent.html" class="w3-bar-item w3-button nested-link">PacStudent</a>
+
+                        <a href="index.html#web-projects" class="w3-bar-item w3-button w3-padding">
+                            <i class="fa fa-globe fa-fw w3-margin-right"></i><b>Web Projects</b>
+                        </a>
+                        <a href="GroceryStore.html" class="w3-bar-item w3-button nested-link">Online Grocery Store</a>
+                        <a href="CarRentalSystem.html" class="w3-bar-item w3-button nested-link">Online Car Rental</a>
+
+                        <a href="index.html#mobile-projects" class="w3-bar-item w3-button w3-padding">
+                            <i class="fa fa-apple fa-fw w3-margin-right"></i><b>Mobile Projects</b>
+                        </a>
+                        <a href="Quiz-App.html" class="w3-bar-item w3-button nested-link">Quiz App</a>
+
+                        <a href="index.html#3d-projects" class="w3-bar-item w3-button w3-padding">
+                            <i class="fa fa-cube fa-fw w3-margin-right"></i><b>3D Creative</b>
+                        </a>
+                        <a href="Blender.html" class="w3-bar-item w3-button nested-link">3D Modelling Project</a>
+                        <a href="3DAnim.html" class="w3-bar-item w3-button nested-link">Unity 3D Animation</a>
+
+                        <a href="index.html#other-projects" class="w3-bar-item w3-button w3-padding">
+                            <i class="fa fa-wrench fa-fw w3-margin-right"></i><b>Other Projects</b>
+                        </a>
+                        <a href="ClashOfCommands.html" class="w3-bar-item w3-button nested-link">Clash of Commands</a>
+                        <a href="#contact" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i><b>Contact</b></a>
                     </div>
                 </nav>`;
     });
