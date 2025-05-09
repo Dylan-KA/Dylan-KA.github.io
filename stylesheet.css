@@ -193,7 +193,8 @@ gap: 10px;
 }
 
 .image-column img,
-.image-column iframe{
+.image-column iframe,
+.image-column video{
 width: 100%;
 aspect-ratio: 16 / 9;
 height: auto;
