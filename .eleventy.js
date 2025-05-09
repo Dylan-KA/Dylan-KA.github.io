@@ -84,6 +84,7 @@ module.exports = function(eleventyConfig) {
                             <i class="fa fa-apple fa-fw w3-margin-right"></i><b>Mobile Projects</b>
                         </a>
                         <a href="Quiz-App.html" class="w3-bar-item w3-button nested-link">Quiz App</a>
+                        <a href="OnTaskPro.html" class="w3-bar-item w3-button nested-link">Task Tracker App</a>
 
                         <a href="index.html#3d-projects" class="w3-bar-item w3-button w3-padding">
                             <i class="fa fa-cube fa-fw w3-margin-right"></i><b>3D Creative</b>
