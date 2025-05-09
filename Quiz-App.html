@@ -64,18 +64,15 @@ permalink: "{{ page.fileSlug }}.html"
     </div>
 
     <div class="image-column">
-      <iframe
-        id="youtube-player"
-        src="https://www.youtube.com/embed/KDvLi6gb_Z8?si=yJipePDIL4yNAGpv"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+      <video autoplay muted loop>
+        <source src="Images/Project Screenshots/Quiz App/QuizAppWalkthrough.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>      
     </div>
   </div>
   
- <!-- Contact Section -->
- {% Contact %}
+  <!-- Contact Section -->
+  {% Contact %}
 
   <!-- Footer -->
   {% Footer %}
