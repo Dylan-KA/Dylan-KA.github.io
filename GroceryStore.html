@@ -62,13 +62,14 @@ permalink: "{{ page.fileSlug }}.html"
 
     <div class="image-column">
       <div class="carousel-container" id="carousel">
-        <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (1).png" alt="Image 1">
-        <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (2).png" alt="Image 2">
-        <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (3).png" alt="Image 3">
-        <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (4).png" alt="Image 4">
+        <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (1).png" alt="Image 1" onclick="FullView()">
+        <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (2).png" alt="Image 2" onclick="FullView()">
+        <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (3).png" alt="Image 3" onclick="FullView()">
+        <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (4).png" alt="Image 4" onclick="FullView()">
         <!-- Navigation buttons -->
         <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+        <button id="FullScreenButton" onclick="FullView()">⛶</button>
       </div>
       <div class="dot-container">
         <!-- Dots will be dynamically generated -->
@@ -76,8 +77,17 @@ permalink: "{{ page.fileSlug }}.html"
     </div>
   </div>
   
- <!-- Contact Section -->
- {% Contact %}
+  <!-- Full Screen Image-->
+  <div id="FullImageView">
+    <img id="FullImage" onclick="CloseFullView()"/>
+    <!-- Navigation buttons -->
+    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+    <span id="CloseButton" onclick="CloseFullView()">&times</span>
+  </div>
+
+  <!-- Contact Section -->
+  {% Contact %}
 
   <!-- Footer -->
   {% Footer %}

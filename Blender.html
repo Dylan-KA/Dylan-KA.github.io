@@ -56,7 +56,7 @@ permalink: "{{ page.fileSlug }}.html"
         This project helped me understand the end-to-end process of creating a 3D environment, from modelling and texturing to lighting and rendering.
       </p>
     </div>
-
+    
     <div class="image-column">
       <iframe
         src="https://www.youtube.com/embed/C7IPKDiFcdE?si=O8jaeAHZp-WfHzxe&mute=1"
@@ -67,18 +67,28 @@ permalink: "{{ page.fileSlug }}.html"
         allowfullscreen>
       </iframe>
       <div class="carousel-container" id="carousel">
-        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (1).png" alt="Image 1">
-        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (2).png" alt="Image 2">
-        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (3).png" alt="Image 3">
-        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (4).png" alt="Image 4">
+        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (1).png" alt="Image 1" onclick="FullView()">
+        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (2).png" alt="Image 2" onclick="FullView()">
+        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (3).png" alt="Image 3" onclick="FullView()">
+        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (4).png" alt="Image 4" onclick="FullView()">
         <!-- Navigation buttons -->
         <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+        <button id="FullScreenButton" onclick="FullView()">⛶</button>
       </div>
       <div class="dot-container">
         <!-- Dots will be dynamically generated -->
       </div>
     </div>
+  </div>
+
+  <!-- Full Screen Image-->
+  <div id="FullImageView">
+    <img id="FullImage" onclick="CloseFullView()"/>
+    <!-- Navigation buttons -->
+    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+    <span id="CloseButton" onclick="CloseFullView()">&times</span>
   </div>
 
   <!-- Contact Section -->

@@ -68,8 +68,17 @@ permalink: "{{ page.fileSlug }}.html"
     </div>
   </div>
   
- <!-- Contact Section -->
- {% Contact %}
+  <!-- Full Screen Image-->
+  <div id="FullImageView">
+    <img id="FullImage" onclick="CloseFullView()"/>
+    <!-- Navigation buttons -->
+    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+    <span id="CloseButton" onclick="CloseFullView()">&times</span>
+  </div>
+
+  <!-- Contact Section -->
+  {% Contact %}
 
   <!-- Footer -->
   {% Footer %}
