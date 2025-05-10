@@ -106,8 +106,17 @@
     </div>
   </div>
   
- <!-- Contact Section -->
- <hr>
+  <!-- Full Screen Image-->
+  <div id="FullImageView">
+    <img id="FullImage" onclick="CloseFullView()"/>
+    <!-- Navigation buttons -->
+    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+    <span id="CloseButton" onclick="CloseFullView()">&times</span>
+  </div>
+
+  <!-- Contact Section -->
+  <hr>
                 <div class="w3-container w3-padding-large w3-grey">
                     <h4 id="contact"><b>Contact Me</b></h4>
                     <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
