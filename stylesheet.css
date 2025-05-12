@@ -3,11 +3,11 @@
 .skills-container {
 display: flex;
 flex-wrap: wrap;
-gap: 20px; /* Adjust spacing between columns */
+gap: 20px;
 }
 .skill-column {
 flex: 1;
-min-width: 200px; /* Adjust to ensure good spacing */
+min-width: 200px;
 }
 
 /* Ensure the carousel container maintains a 16:9 aspect ratio */
