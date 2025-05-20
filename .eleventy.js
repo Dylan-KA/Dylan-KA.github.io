@@ -73,6 +73,7 @@ module.exports = function(eleventyConfig) {
                         <a href="DualWield.html" class="w3-bar-item w3-button nested-link">Dual Wield</a>
                         <a href="Caved-In.html" class="w3-bar-item w3-button nested-link">Caved In</a>
                         <a href="PacStudent.html" class="w3-bar-item w3-button nested-link">PacStudent</a>
+                        <a href="Wormy.html" class="w3-bar-item w3-button nested-link">Wormy</a>
 
                         <a href="index.html#web-projects" class="w3-bar-item w3-button w3-padding">
                             <i class="fa fa-globe fa-fw w3-margin-right"></i><b>Web Projects</b>
