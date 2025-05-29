@@ -97,7 +97,7 @@ module.exports = function(eleventyConfig) {
                             <i class="fa fa-wrench fa-fw w3-margin-right"></i><b>Other Projects</b>
                         </a>
                         <a href="ClashOfCommands.html" class="w3-bar-item w3-button nested-link">Clash of Commands</a>
-                        <a href="#contact" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i><b>Contact</b></a>
+                        <a href="Contact.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i><b>Contact</b></a>
                     </div>
                 </nav>`;
     });
@@ -117,7 +117,7 @@ module.exports = function(eleventyConfig) {
                     </div>
                     <div class="w3-third w3-dark-grey">
                         <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
-                        <p><span class="numbers">+61 468 432 861</span></p>
+                        <p><span class="numbers">(+61) 468 432 861</span></p>
                     </div>
                     </div>
                     <hr class="w3-opacity">
