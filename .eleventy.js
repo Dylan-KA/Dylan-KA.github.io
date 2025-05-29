@@ -38,10 +38,11 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addShortcode("Footer", function() {
+        const year = new Date().getFullYear();
         return `<footer class="w3-container w3-padding-32 w3-dark-grey">
                     <div class="w3-center w3-margin-top">
                     <p>
-                        © 2025 Dylan Archer.
+                        © ${year} Dylan Archer.
                     </p>
                     <a href="https://github.com/dylan-ka" target="_blank" class="social-icon-white">
                         <img width="30px" class="footer-href" src="Images/Logos/GitHubLogo.png">
