@@ -227,10 +227,10 @@ transform: scale(1.1); /* Slight zoom effect */
 }
 
 @media (max-width: 600px) {
-    footer .social-icon-white img {
-    width: 20px; /* Smaller icons on mobile */
-    height: 20px;
-    }
+footer .social-icon-white img {
+width: 20px; /* Smaller icons on mobile */
+height: 20px;
+}
 }
 
 /* Project Page */
@@ -274,7 +274,14 @@ border-radius: 10px;
 width: 100%;
 }
 
-.contact-left-column {  
+.contact-page-item p,
+.contact-page-item a {
+margin-top: 13px;
+margin-bottom: 13px;
+display: inline-block;
+}
+
+.contact-left-column {
 flex: 0 1 calc(10% - 20px);
 display: flex;
 flex-direction: column;
