@@ -63,7 +63,7 @@ module.exports = function(eleventyConfig) {
                         <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
                         <i class="fa fa-remove"></i>
                         </a>
-                        <img src="Images/SelfPortrait.png" style="width:100%;" class="w3-round-large"><br><br>
+                        <img src="Images/ProfilePicture.jpeg" style="width:100%;" class="w3-round-large"><br><br>
                         <h4><b>Portfolio</b></h4>
                     </div>
                     <div class="w3-bar-block">
