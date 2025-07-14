@@ -22,11 +22,11 @@ module.exports = function(eleventyConfig) {
             `;
         }
 
-        return `<div class="w3-third w3-container w3-margin-bottom">
+        return `<div class="container">
                     <a href="${link}">
                         <img src="${img}" style="width:100%">
                     </a>
-                    <div class="w3-container w3-white project-card">
+                    <div class="container project-card">
                         <h4>
                         <a href="${link}"><b>${title}</b></a>
                         ${logos}
@@ -39,8 +39,8 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addShortcode("Footer", function() {
         const year = new Date().getFullYear();
-        return `<footer class="w3-container w3-padding-32 w3-dark-grey">
-                    <div class="w3-center w3-margin-top">
+        return `<footer class="container ">
+                    <div>
                     <p>
                         © ${year} Dylan Archer.
                     </p>
@@ -58,70 +58,70 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addShortcode("Sidebar", function() {
-        return `<nav class="w3-sidebar w3-collapse w3-white" style="z-index:3;width:300px;" id="mySidebar"><br>
-                    <div class="w3-container">
-                        <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-                        <i class="fa fa-remove"></i>
+        return `<nav style="z-index:3;width:300px;" id="mySidebar"><br>
+                    <div class="container">
+                        <a href="#" onclick="" title="close menu">
+                        </i>
                         </a>
-                        <img src="Images/ProfilePicture.jpeg" style="width:100%;" class="w3-round-large"><br><br>
-                        <h4><b>Portfolio</b></h4>
+                        <img src="Images/ProfilePicture.jpeg" style="width:100%;" ><br><br>
+                        <h4>Portfolio</h4>
                     </div>
-                    <div class="w3-bar-block">
-                        <a href="index.html#about" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i><b>About Me</b></a> 
-                        <a href="index.html#game-projects" class="w3-bar-item w3-button w3-padding">
-                            <i class="fa fa-gamepad fa-fw w3-margin-right"></i><b>Game Projects</b>
+                    <div>
+                        <a href="index.html#about" class="button"></i><b>About Me</b></a> 
+                        <a href="index.html#game-projects" class="button">
+                            </i><b>Game Projects</b>
                         </a> 
-                        <a href="DualWield.html" class="w3-bar-item w3-button nested-link">Dual Wield</a>
-                        <a href="Caved-In.html" class="w3-bar-item w3-button nested-link">Caved In</a>
-                        <a href="PacStudent.html" class="w3-bar-item w3-button nested-link">PacStudent</a>
-                        <a href="Wormy.html" class="w3-bar-item w3-button nested-link">Wormy</a>
+                        <a href="DualWield.html" class="button nested-link">Dual Wield</a>
+                        <a href="Caved-In.html" class="button nested-link">Caved In</a>
+                        <a href="PacStudent.html" class="button nested-link">PacStudent</a>
+                        <a href="Wormy.html" class="button nested-link">Wormy</a>
 
-                        <a href="index.html#web-projects" class="w3-bar-item w3-button w3-padding">
-                            <i class="fa fa-globe fa-fw w3-margin-right"></i><b>Web Projects</b>
+                        <a href="index.html#web-projects" class="button">
+                            </i><b>Web Projects</b>
                         </a>
-                        <a href="GroceryStore.html" class="w3-bar-item w3-button nested-link">Online Grocery Store</a>
-                        <a href="CarRentalSystem.html" class="w3-bar-item w3-button nested-link">Online Car Rental</a>
+                        <a href="GroceryStore.html" class="button nested-link">Online Grocery Store</a>
+                        <a href="CarRentalSystem.html" class="button nested-link">Online Car Rental</a>
 
-                        <a href="index.html#mobile-projects" class="w3-bar-item w3-button w3-padding">
-                            <i class="fa fa-apple fa-fw w3-margin-right"></i><b>Mobile Projects</b>
+                        <a href="index.html#mobile-projects" class="button">
+                            </i><b>Mobile Projects</b>
                         </a>
-                        <a href="Quiz-App.html" class="w3-bar-item w3-button nested-link">Quiz App</a>
-                        <a href="OnTaskPro.html" class="w3-bar-item w3-button nested-link">Task Tracker App</a>
+                        <a href="Quiz-App.html" class="button nested-link">Quiz App</a>
+                        <a href="OnTaskPro.html" class="button nested-link">Task Tracker App</a>
 
-                        <a href="index.html#3d-projects" class="w3-bar-item w3-button w3-padding">
-                            <i class="fa fa-cube fa-fw w3-margin-right"></i><b>3D Creative</b>
+                        <a href="index.html#3d-projects" class="button">
+                            </i><b>3D Creative</b>
                         </a>
-                        <a href="Blender.html" class="w3-bar-item w3-button nested-link">3D Modelling Project</a>
-                        <a href="3DAnim.html" class="w3-bar-item w3-button nested-link">Unity 3D Animation</a>
+                        <a href="Blender.html" class="button nested-link">3D Modelling Project</a>
+                        <a href="3DAnim.html" class="button nested-link">Unity 3D Animation</a>
 
-                        <a href="index.html#other-projects" class="w3-bar-item w3-button w3-padding">
-                            <i class="fa fa-wrench fa-fw w3-margin-right"></i><b>Other Projects</b>
+                        <a href="index.html#other-projects" class="button">
+                            </i><b>Other Projects</b>
                         </a>
-                        <a href="ClashOfCommands.html" class="w3-bar-item w3-button nested-link">Clash of Commands</a>
-                        <a href="Contact.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i><b>Contact</b></a>
+                        <a href="ClashOfCommands.html" class="button nested-link">Clash of Commands</a>
+                        <a href="Contact.html" class="button"></i><b>Contact</b></a>
                     </div>
                 </nav>`;
     });
     
     eleventyConfig.addShortcode("Contact", function() {
         return `<hr>
-                <div class="w3-container w3-padding-large w3-grey">
-                    <h4 id="contact"><b>Contact Me</b></h4>
-                    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-                    <div class="w3-third w3-dark-grey">
-                        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+                <div class="container">
+                    <h4 id="contact"><b>Contact Me</h4>
+                    <div  style="margin:0 -16px">
+                    <div>
+                        <p></i></p>
                         <p><span>dylanka3@gmail.com</span></p>
                     </div>
-                    <div class="w3-third w3-cyan">
-                        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+                    <div>
+                        <p></i></p>
                         <p>Sydney, Australia</p>
                     </div>
-                    <div class="w3-third w3-dark-grey">
-                        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+                    <div>
+                        <p></i></p>
                         <p><span>(+61) 468 432 861</span></p>
                     </div>
                     </div>
-                    <hr class="w3-opacity">
+                    <hr >
                 </div>`;
     });
 

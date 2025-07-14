@@ -9,52 +9,44 @@ permalink: "{{ page.fileSlug }}.html"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="Images/ProfilePicture.jpeg" type="image/icon type">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheet.css">
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
     </style>
   </head>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
-
-
-
-<!-- Sidebar/menu -->
-{% Sidebar %}
-
+<body style="max-width:1600px">
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
+<div style="margin-left:300px">
 
   <!-- Header -->
   <header id="portfolio">
-    <div class="w3-container">
+    <div class="container">
       <h1>
         <b>Quiz App</b>
         
       </h1>
-      <div class="w3-section w3-bottombar w3-padding-16">
-        <a href="index.html#game-projects" class="w3-button w3-white"><i class="fa fa-th-large w3-margin-right"></i>Projects</a>
-        <a href="index.html#about" class="w3-button w3-white w3-hide-small"><i class="fa fa-user w3-margin-right"></i>About Me</a>
-        <a href="Contact.html" class="w3-button w3-white"><i class="fa fa-envelope w3-margin-right"></i>Contact</a>
+      <div class="section">
+        <a href="index.html#game-projects" class="button"></i>Projects</a>
+        <a href="index.html#about" class="button"></i>About Me</a>
+        <a href="Contact.html" class="button"></i>Contact</a>
       </div>
     </div>
   </header>
 
   <div class="project-page-container">
     <div class="left-column">
-      <h4><b>About the project</b></h4>
+      <h4>About the project</h4>
       <p>
         Quiz App is an iOS application developed over a few weeks as part of a group project using the SwiftUI framework.
         The app fetches quizzes on various topics via an API, providing users with a range of quiz options.
       </p>
-      <h4><b>What I contributed</b></h4>
+      <h4>What I contributed</h4>
       <p>
         I integrated the API to retrieve new questions and answers each time a user begins a quiz.
         This involved using JSON parsing to display the data effectively within the app.
         Additionally, I developed the UI that allows users to select the quiz difficulty, number of questions, and category.
       </p>
-      <h4><b>What I learned</b></h4>
+      <h4>What I learned</h4>
       <p>
         This was one of my early projects while I was learning iOS development for the first time. 
         As a result, the UI design wasn't fully refined, and some interface issues emerged, particularly with dynamic content, which occasionally caused the layout to appear inconsistent. 
@@ -62,8 +54,8 @@ permalink: "{{ page.fileSlug }}.html"
       </p>
       <hr>
       <!-- Buttons -->
-      <a href="https://github.com/Dylan-KA/QuizApp" target="_blank" class="w3-button custom-blue">
-        <i class="fa fa-link w3-margin-right"></i>
+      <a href="https://github.com/Dylan-KA/QuizApp" target="_blank" class="button custom-blue">
+        </i>
         <b>GitHub Repository</b>
       </a>
     </div>
@@ -75,11 +67,7 @@ permalink: "{{ page.fileSlug }}.html"
       </video>      
     </div>
   </div>
-  
-  <!-- Contact Section -->
-  {% Contact %}
-
-  <!-- Footer -->
+<!-- Footer -->
   {% Footer %}
   
 <!-- End page content -->
