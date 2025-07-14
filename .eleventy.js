@@ -110,7 +110,7 @@ module.exports = function(eleventyConfig) {
                     <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
                     <div class="w3-third w3-dark-grey">
                         <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-                        <p><span class="numbers">dylanka3@gmail.com</span></p>
+                        <p><span>dylanka3@gmail.com</span></p>
                     </div>
                     <div class="w3-third w3-cyan">
                         <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
@@ -118,7 +118,7 @@ module.exports = function(eleventyConfig) {
                     </div>
                     <div class="w3-third w3-dark-grey">
                         <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
-                        <p><span class="numbers">(+61) 468 432 861</span></p>
+                        <p><span>(+61) 468 432 861</span></p>
                     </div>
                     </div>
                     <hr class="w3-opacity">
