@@ -22,17 +22,17 @@ module.exports = function(eleventyConfig) {
             `;
         }
 
-        return `<div class="container">
+        return `<div class="project-item-outer">
                     <a href="${link}">
                         <img src="${img}" style="width:100%">
                     </a>
-                    <div class="container project-card">
-                        <h4>
-                        <a href="${link}"><b>${title}</b></a>
+                    <div class="project-item-inner">
+                        <h3 class="project-title">
+                        <a href="${link}">${title}</a>
                         ${logos}
-                        </h4>
+                        </h3>
                         <p>${description}</p>
-                        <a href="${link}"><b>Learn More</b></a>
+                        <a href="${link}">Learn More</a>
                     </div>
                 </div>`;
     });
@@ -67,8 +67,8 @@ module.exports = function(eleventyConfig) {
                         <h4>Portfolio</h4>
                     </div>
                     <div>
-                        <a href="index.html#about" class="button"></i><b>About Me</b></a> 
-                        <a href="index.html#game-projects" class="button">
+                        <a href="index.html#about"></i><b>About Me</b></a> 
+                        <a href="index.html#game-projects">
                             </i><b>Game Projects</b>
                         </a> 
                         <a href="DualWield.html" class="button nested-link">Dual Wield</a>
@@ -76,29 +76,29 @@ module.exports = function(eleventyConfig) {
                         <a href="PacStudent.html" class="button nested-link">PacStudent</a>
                         <a href="Wormy.html" class="button nested-link">Wormy</a>
 
-                        <a href="index.html#web-projects" class="button">
+                        <a href="index.html#web-projects">
                             </i><b>Web Projects</b>
                         </a>
                         <a href="GroceryStore.html" class="button nested-link">Online Grocery Store</a>
                         <a href="CarRentalSystem.html" class="button nested-link">Online Car Rental</a>
 
-                        <a href="index.html#mobile-projects" class="button">
+                        <a href="index.html#mobile-projects">
                             </i><b>Mobile Projects</b>
                         </a>
                         <a href="Quiz-App.html" class="button nested-link">Quiz App</a>
                         <a href="OnTaskPro.html" class="button nested-link">Task Tracker App</a>
 
-                        <a href="index.html#3d-projects" class="button">
+                        <a href="index.html#3d-projects">
                             </i><b>3D Creative</b>
                         </a>
                         <a href="Blender.html" class="button nested-link">3D Modelling Project</a>
                         <a href="3DAnim.html" class="button nested-link">Unity 3D Animation</a>
 
-                        <a href="index.html#other-projects" class="button">
+                        <a href="index.html#other-projects">
                             </i><b>Other Projects</b>
                         </a>
                         <a href="ClashOfCommands.html" class="button nested-link">Clash of Commands</a>
-                        <a href="Contact.html" class="button"></i><b>Contact</b></a>
+                        <a href="Contact.html"></i><b>Contact</b></a>
                     </div>
                 </nav>`;
     });
