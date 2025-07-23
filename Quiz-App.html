@@ -14,66 +14,52 @@ permalink: "{{ page.fileSlug }}.html"
     body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
     </style>
   </head>
-<body>
-<div>
+  
+  <body>
+    <div>
+      <!-- Header -->
+      <header>
+        <div>
+          <h1>Quiz App</h1>
+          <div>
+            <button onclick="window.location.href='index.html'" class="medium">About Me</button>
+            <button onclick="window.location.href='index.html#projects'" class="medium">Projects</button>
+            <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
+          </div>
+        </div>
+      </header>
 
-  <!-- Header -->
-  <header id="portfolio">
-    <div class="container">
-      <h1>
-        <b>Quiz App</b>
-        
-      </h1>
-      <div>
-        <a href="index.html#game-projects"></i>Projects</a>
-        <a href="index.html#about"></i>About Me</a>
-        <a href="Contact.html"></i>Contact</a>
+      <div class="project-page-container">
+        <div class="left-column">
+          <h2 style="margin-top: 0px;">About the project</h2>
+          <p>
+            Quiz App is an iOS application developed over a few weeks as part of a group project using the SwiftUI framework.
+            The app fetches quizzes on various topics via an API, providing users with a range of quiz options.
+          </p>
+          <h2 style="margin-top: 0px;">What I contributed</h2>
+          <p>
+            I integrated the API to retrieve new questions and answers each time a user begins a quiz.
+            This involved using JSON parsing to display the data effectively within the app.
+            Additionally, I developed the UI that allows users to select the quiz difficulty, number of questions, and category.
+          </p>
+          <h2 style="margin-top: 0px;">What I learned</h2>
+          <p>
+            This was one of my early projects while I was learning iOS development for the first time. 
+            As a result, the UI design wasn't fully refined, and some interface issues emerged, particularly with dynamic content, which occasionally caused the layout to appear inconsistent. 
+            Despite these challenges, the project helped me build a solid foundation in SwiftUI and working with APIs.
+          </p>
+          <button onclick="window.open('https://github.com/Dylan-KA/QuizApp', '_blank')" class="small">GitHub Repository 🔗</button>
+        </div>
+
+        <div class="right-column">
+          <video autoplay muted loop>
+            <source src="Images/Project Screenshots/Quiz App/QuizAppWalkthrough.mp4" type="video/mp4">
+            Your browser does not support video.
+          </video>      
+        </div>
       </div>
     </div>
-  </header>
 
-  <div class="project-page-container">
-    <div class="left-column">
-      <h4>About the project</h4>
-      <p>
-        Quiz App is an iOS application developed over a few weeks as part of a group project using the SwiftUI framework.
-        The app fetches quizzes on various topics via an API, providing users with a range of quiz options.
-      </p>
-      <h4>What I contributed</h4>
-      <p>
-        I integrated the API to retrieve new questions and answers each time a user begins a quiz.
-        This involved using JSON parsing to display the data effectively within the app.
-        Additionally, I developed the UI that allows users to select the quiz difficulty, number of questions, and category.
-      </p>
-      <h4>What I learned</h4>
-      <p>
-        This was one of my early projects while I was learning iOS development for the first time. 
-        As a result, the UI design wasn't fully refined, and some interface issues emerged, particularly with dynamic content, which occasionally caused the layout to appear inconsistent. 
-        Despite these challenges, the project helped me build a solid foundation in SwiftUI and working with APIs.
-      </p>
-      <hr>
-      <!-- Buttons -->
-      <a href="https://github.com/Dylan-KA/QuizApp" target="_blank"></a>
-        </i>
-        <b>GitHub Repository</b>
-      </a>
-    </div>
-
-    <div class="right-column">
-      <video autoplay muted loop>
-        <source src="Images/Project Screenshots/Quiz App/QuizAppWalkthrough.mp4" type="video/mp4">
-        Your browser does not support video.
-      </video>      
-    </div>
-  </div>
-<!-- Footer -->
-  
-  
-<!-- End page content -->
-</div>
-
-
-<script src="Scripts/ImageCarousel.js"></script>
-
-</body>
+    <script src="Scripts/ImageCarousel.js"></script>
+  </body>
 </html>

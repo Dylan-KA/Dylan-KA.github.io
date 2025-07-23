@@ -14,72 +14,62 @@ permalink: "{{ page.fileSlug }}.html"
     body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
     </style>
   </head>
-<body>
-<div>
 
-  <!-- Header -->
-  <header id="portfolio">
-    <div class="container">
-      <h1>
-        <b>PacStudent</b>
-        
-      </h1>
-      <div>
-        <a href="index.html#game-projects"></i>Projects</a>
-        <a href="index.html#about"></i>About Me</a>
-        <a href="Contact.html"></i>Contact</a>
+  <body>
+    <div>
+      <!-- Header -->
+      <header>
+        <div>
+          <h1>PacStudent</h1>
+          <div>
+            <button onclick="window.location.href='index.html'" class="medium">About Me</button>
+            <button onclick="window.location.href='index.html#projects'" class="medium">Projects</button>
+            <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="project-page-container">
+        <div class="left-column">
+          <h2 style="margin-top: 0px;">About the project</h2>
+          <p>
+            PacStudent is a recreation of the classic 1980 game Pac-Man, developed as part of an introductory game development subject.
+            This project served as a case study while I learned to navigate and utilise the Unity Game Engine for the first time.
+            Through this process, I gained hands-on experience with Unity's interface, applied vector and matrix mathematics for object transformations, and developed core programming skills using the engine's API.
+            The project challenged me to solve intermediate development problems, identify my own knowledge gaps, and design minor gameplay variations, helping me build both technical and creative skills in game development.
+          </p>
+          <button onclick="window.open('https://dylanka.itch.io/pacstudent', '_blank')" class="small">Play the game on itch.io 🔗</button>
+          </div>
+
+        <div class="right-column">
+          <div class="carousel-container" id="carousel">
+            <img class="carousel-slide" src="Images/Project Screenshots/PacStudent/PacStudent2.png" alt="Image 1" onclick="FullView()">
+            <img class="carousel-slide" src="Images/Project Screenshots/PacStudent/PacStudent1.png" alt="Image 2" onclick="FullView()">
+            <div class="dot-container">
+            <!-- Dots will be dynamically generated -->
+            </div>
+            <!-- Navigation buttons -->
+            <div class="centred-horizontally">
+              <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+              <button id="FullScreenButton" onclick="FullView()">⛶</button>
+            </div>
+          </div>       
+        </div>
       </div>
-    </div>
-  </header>
 
-  <div class="project-page-container">
-    <div class="left-column">
-      <h4>About the project</h4>
-      <p>
-        PacStudent is a recreation of the classic 1980 game Pac-Man, developed as part of an introductory game development subject.
-        This project served as a case study while I learned to navigate and utilise the Unity Game Engine for the first time.
-        Through this process, I gained hands-on experience with Unity's interface, applied vector and matrix mathematics for object transformations, and developed core programming skills using the engine's API.
-        The project challenged me to solve intermediate development problems, identify my own knowledge gaps, and design minor gameplay variations, helping me build both technical and creative skills in game development.
-      </p>
-      <hr>
-      <!-- Buttons -->
-      <a href="https://dylanka.itch.io/pacstudent" target="_blank"></a>
-        </i>
-        <b>Play the game on itch.io</b>
-      </a>
-      </div>
-
-    <div class="right-column">
-      <div class="carousel-container" id="carousel">
-        <img class="carousel-slide" src="Images/Project Screenshots/PacStudent/PacStudent2.png" alt="Image 1" onclick="FullView()">
-        <img class="carousel-slide" src="Images/Project Screenshots/PacStudent/PacStudent1.png" alt="Image 2" onclick="FullView()">
+      <!-- Full Screen Image-->
+      <div id="FullImageView">
+        <img id="FullImage" onclick="CloseFullView()"/>
         <!-- Navigation buttons -->
-        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-        <button id="FullScreenButton" onclick="FullView()">⛶</button>
-      </div>
-      <div class="dot-container">
-        <!-- Dots will be dynamically generated -->
+        <div>
+          <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+          <button class="carousel-button red" onclick="CloseFullView()">&times</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Full Screen Image-->
-  <div id="FullImageView">
-    <img id="FullImage" onclick="CloseFullView()"/>
-    <!-- Navigation buttons -->
-    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-    <span id="CloseButton" onclick="CloseFullView()">&times</span>
-  </div>
-<!-- Footer -->
-  
-  
-<!-- End page content -->
-</div>
-
-
-<script src="Scripts/ImageCarousel.js"></script>
-
-</body>
+    <script src="Scripts/ImageCarousel.js"></script>
+  </body>
 </html>

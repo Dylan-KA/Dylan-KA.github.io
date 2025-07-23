@@ -9,102 +9,90 @@ permalink: "{{ page.fileSlug }}.html"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="Images/ProfilePicture.jpeg" type="image/icon type">
-<link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
     </style>
   </head>
-<body>
-<div>
 
-  <!-- Header -->
-  <header id="portfolio">
-    <div class="container">
-      <h1>
-        <b>Wormy</b>
-        
-      </h1>
-      <div>
-        <a href="index.html#game-projects"></i>Projects</a>
-        <a href="index.html#about"></i>About Me</a>
-        <a href="Contact.html"></i>Contact</a>
+  <body>
+    <div>
+      <!-- Header -->
+      <header>
+        <div>
+          <h1>Wormy</h1>
+          <div>
+            <button onclick="window.location.href='index.html'" class="medium">About Me</button>
+            <button onclick="window.location.href='index.html#projects'" class="medium">Projects</button>
+            <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="project-page-container">
+        <div class="left-column">
+          <h2 style="margin-top: 0px;">About the project</h2>
+          <p>
+            Wormy is a 2D puzzle game developed in Unity as part of a group assessment task. 
+            It was our first opportunity to design a game based entirely on our own ideas. 
+            The goal was to create a small digital game that met specific design constraints and thematic requirements. 
+            In Wormy, you play as a worm navigating a maze of underground tunnels to fertilize and grow a seed.
+          </p>
+          <h2 style="margin-top: 0px;">What I contributed</h2>
+          <p>
+            While the game was designed collaboratively, each team member was responsible for creating their own level, with each level introducing a unique gameplay mechanic. 
+            I designed the first level following the tutorial, which introduced the portal mechanic.
+          </p>
+          <h2 style="margin-top: 0px;">What I learned</h2>
+          <p>
+            This project taught me how challenging it can be to maintain a cohesive game experience when multiple people contribute different design styles. 
+            Each of our levels felt very distinct, which sometimes disrupted the flow of the game. I also learned the value of “finding the fun” during development. 
+            Based on early playtester feedback, we significantly changed the player movement system from a traditional 2D platformer to something that better suited our game's concept.
+          </p>
+          <button onclick="window.open('https://showcase.gamesstudio.org/autumn-2023/', '_blank')" class="small">Nominated for UTS Student Games Showcase 2023 🔗</button>
+          <button onclick="window.open('https://dylanka.itch.io/wormy', '_blank')" class="small">Play the game on itch.io 🔗</button>
+        </div>
+
+        <div class="right-column">
+          <div>
+            <iframe
+              id="youtube-player"
+              src="https://www.youtube.com/embed/PC1lzF1RcVo?si=8Bv-EMFNscyIQe9a"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="carousel-container" id="carousel">
+            <img class="carousel-slide" src="Images/Project Screenshots/Wormy/Wormy (1).png" alt="Image 1" onclick="FullView()">
+            <img class="carousel-slide" src="Images/Project Screenshots/Wormy/Wormy (2).png" alt="Image 2" onclick="FullView()">
+            <img class="carousel-slide" src="Images/Project Screenshots/Wormy/Wormy (3).png" alt="Image 3" onclick="FullView()">
+            <div class="dot-container">
+            <!-- Dots will be dynamically generated -->
+            </div>
+            <!-- Navigation buttons -->
+            <div class="centred-horizontally">
+              <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+              <button id="FullScreenButton" onclick="FullView()">⛶</button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </header>
-
-  <div class="project-page-container">
-    <div class="left-column">
-      <h4>About the project</h4>
-      <p>
-        Wormy is a 2D puzzle game developed in Unity as part of a group assessment task. 
-        It was our first opportunity to design a game based entirely on our own ideas. 
-        The goal was to create a small digital game that met specific design constraints and thematic requirements. 
-        In Wormy, you play as a worm navigating a maze of underground tunnels to fertilize and grow a seed.
-      </p>
-      <h4>What I contributed</h4>
-      <p>
-        While the game was designed collaboratively, each team member was responsible for creating their own level, with each level introducing a unique gameplay mechanic. 
-        I designed the first level following the tutorial, which introduced the portal mechanic.
-      </p>
-      <h4>What I learned</h4>
-      <p>
-        This project taught me how challenging it can be to maintain a cohesive game experience when multiple people contribute different design styles. 
-        Each of our levels felt very distinct, which sometimes disrupted the flow of the game. I also learned the value of “finding the fun” during development. 
-        Based on early playtester feedback, we significantly changed the player movement system from a traditional 2D platformer to something that better suited our game's concept.
-      </p>
-      <hr>
-      <!-- Buttons -->
-      <a href="https://showcase.gamesstudio.org/autumn-2023/" target="_blank"></a>
-        </i>
-        <b>Nominated for UTS Student Games Showcase 2023</b>
-      </a>
-      <br><br>
-      <a href="https://dylanka.itch.io/wormy" target="_blank"></a>
-        </i>
-        <b>Play the game on itch.io</b>
-      </a>
-    </div>
-
-    <div class="right-column">
-      <div>
-        <iframe
-          id="youtube-player"
-          src="https://www.youtube.com/embed/PC1lzF1RcVo?si=8Bv-EMFNscyIQe9a"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="carousel-container" id="carousel">
-        <img class="carousel-slide" src="Images/Project Screenshots/Wormy/Wormy (1).png" alt="Image 1" onclick="FullView()">
-        <img class="carousel-slide" src="Images/Project Screenshots/Wormy/Wormy (2).png" alt="Image 2" onclick="FullView()">
-        <img class="carousel-slide" src="Images/Project Screenshots/Wormy/Wormy (3).png" alt="Image 3" onclick="FullView()">
+      
+      <!-- Full Screen Image-->
+      <div id="FullImageView">
+        <img id="FullImage" onclick="CloseFullView()"/>
         <!-- Navigation buttons -->
-        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-        <button id="FullScreenButton" onclick="FullView()">⛶</button>
-      </div>
-      <div class="dot-container">
-        <!-- Dots will be dynamically generated -->
+        <div>
+          <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+          <button class="carousel-button red" onclick="CloseFullView()">&times</button>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <!-- Full Screen Image-->
-  <div id="FullImageView">
-    <img id="FullImage" onclick="CloseFullView()"/>
-    <!-- Navigation buttons -->
-    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-    <span id="CloseButton" onclick="CloseFullView()">&times</span>
-  </div>
-<!-- Footer -->
-  
-  
-<!-- End page content -->
-</div>
 
-<script src="Scripts/ImageCarousel.js"></script>
-<script src="https://www.youtube.com/iframe_api"></script>
-</body>
+    <script src="Scripts/ImageCarousel.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
 </html>
