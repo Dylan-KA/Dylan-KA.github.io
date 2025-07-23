@@ -14,66 +14,49 @@ permalink: "{{ page.fileSlug }}.html"
     body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
     </style>
   </head>
-<body>
-<div>
 
-  <!-- Header -->
-  <header id="portfolio">
-    <div class="container">
-      <h1>
-        <b>Unity 3D Animation</b>
-      </h1>
-      <div>
-        <a href="index.html#game-projects"></i>Projects</a>
-        <a href="index.html#about"></i>About Me</a>
-        <a href="Contact.html"></i>Contact</a>
-      </div>
+  <body>
+    <div>
+      <!-- Header -->
+      <header>
+        <div>
+          <h1>Unity 3D Animation</h1>
+          <div>
+            <button onclick="window.location.href='index.html'" class="medium">About Me</button>
+            <button onclick="window.location.href='index.html#projects'" class="medium">Projects</button>
+            <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="project-page-container">
+        <div class="left-column">
+          <h2 style="margin-top: 0px;">About the project</h2>
+          <p>
+            "Why are we here?" is a 3D animation satire on first-person shooters, heavily inspired by <i>Halo</i> and <i>Red vs. Blue</i>.
+            It was developed over a few weeks in Unity using the HDRP rendering pipeline for a group project, where we used existing 3D models.
+            Throughout the process, I gained hands-on experience with the complete 3D animation production pipeline, 
+              from storyboarding and pre-production planning to animation, lighting, rendering, and VFX.
+            This project helped me develop a stronger understanding of motion analysis, character animation, and scene composition, 
+              while also giving me the opportunity to collaborate on production management and post-production tasks to deliver a polished final piece.
+          </p>
+        </div>
+
+        <div class="right-column">
+          <iframe
+          width="100%"
+          height="720"
+          src="https://www.youtube.com/embed/xaNLWn2_d74?si=mq0znyWFs5K2R6X9"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+          </iframe>
+        </div>
+      </div>   
     </div>
-  </header>
 
-  <div class="project-page-container">
-    <div class="left-column">
-      <h4>About the project</h4>
-      <p>
-        "Why are we here?" is a 3D animation satire on first-person shooters, heavily inspired by <i>Halo</i> and <i>Red vs. Blue</i>.
-        It was developed over a few weeks in Unity using the HDRP rendering pipeline for a group project, where we used existing 3D models.
-        Throughout the process, I gained hands-on experience with the complete 3D animation production pipeline, 
-          from storyboarding and pre-production planning to animation, lighting, rendering, and VFX.
-        This project helped me develop a stronger understanding of motion analysis, character animation, and scene composition, 
-          while also giving me the opportunity to collaborate on production management and post-production tasks to deliver a polished final piece.
-      </p>
-    </div>
-
-    <div class="right-column">
-      <iframe
-      width="100%"
-      height="720"
-      src="https://www.youtube.com/embed/xaNLWn2_d74?si=mq0znyWFs5K2R6X9"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  
-  <!-- Full Screen Image-->
-  <div id="FullImageView">
-    <img id="FullImage" onclick="CloseFullView()"/>
-    <!-- Navigation buttons -->
-    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-    <span id="CloseButton" onclick="CloseFullView()">&times</span>
-  </div>
-<!-- Footer -->
-  
-  
-<!-- End page content -->
-</div>
-
-
-<script src="Scripts/ImageCarousel.js"></script>
-
-</body>
+    <script src="Scripts/ImageCarousel.js"></script>
+  </body>
 </html>

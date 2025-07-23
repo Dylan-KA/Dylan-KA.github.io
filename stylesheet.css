@@ -65,6 +65,22 @@ button:hover {
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
+.medium {
+  padding: 15px 30px 15px 30px;
+  margin: 5px;
+}
+
+.small {
+  font-size: 0.9rem;
+  padding: 12px 24px 12px 24px;
+  margin: 5px;
+}
+
+.centred-horizontally {
+  display: flex;
+  justify-content: center;
+}
+
 /* Home Page Header */
 .header-content {
   display: flex;
@@ -253,8 +269,8 @@ button:hover {
 .project-page-container {
   display: flex;
   flex-direction: row;
-  gap: 60px;
-  padding-top: 50px;
+  gap: 40px;
+  padding-top: 30px;
 }
 
 @media (max-width: 768px) {
@@ -285,13 +301,12 @@ button:hover {
   margin: 10px;
 }
 
-/* Dot container styling */
-  .dot-container {
+/* Dot styling */
+.dot-container {
   text-align: center;
   padding: 10px 0;
 }
 
-/* Individual dot styling */
 .dot {
   display: inline-block;
   height: 12px;
@@ -314,9 +329,21 @@ button:hover {
   right: 10px;
 }
 
-.nested-link {
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
-  padding-left: 50px !important;
-  padding-top: 0px !important;
+/* Fullscreen Image */
+#FullImageView {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+#FullImage {
+  margin-top: 100px;
+  max-width: 70%;
+  text-align: center;
 }

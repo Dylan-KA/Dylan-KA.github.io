@@ -22,9 +22,9 @@ permalink: "{{ page.fileSlug }}.html"
         <div>
           <h1>Dual Wield</h1>
           <div>
-            <button onclick="window.location.href='index.html'" class="btn">About Me</button>
-            <button onclick="window.location.href='index.html#projects'" class="btn">Projects</button>
-            <button onclick="window.location.href='Contact.html'" class="btn">Contact</button>
+            <button onclick="window.location.href='index.html'" class="medium">About Me</button>
+            <button onclick="window.location.href='index.html#projects'" class="medium">Projects</button>
+            <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
           </div>
         </div>
       </header>
@@ -50,8 +50,8 @@ permalink: "{{ page.fileSlug }}.html"
             We also received feedback from playtests, which guided our development and strengthened our project.
           </p>
           <!-- Buttons -->
-          <button onclick="window.location.href='https://showcase.gamesstudio.org/autumn-2024/#portfolioModalgds1:~:text=own%20game%20mechanics-,Dual%20Wield,-by%20Dylan%20Archer'" class="btn">Nominated for UTS Student Games Showcase 2024</button>
-          <button onclick="window.location.href='https://dylanka.itch.io/dual-wield'" class="btn">Play the game on itch.io</button>
+          <button onclick="window.open('https://showcase.gamesstudio.org/autumn-2024/#portfolioModalgds1:~:text=own%20game%20mechanics-,Dual%20Wield,-by%20Dylan%20Archer', '_blank')" class="small">Nominated for UTS Student Games Showcase 2024 🔗</button>
+          <button onclick="window.open('https://dylanka.itch.io/dual-wield', '_blank')" class="small">Play the game on itch.io 🔗</button>
         </div>
 
         <div class="right-column">
@@ -69,12 +69,30 @@ permalink: "{{ page.fileSlug }}.html"
             <img class="carousel-slide" src="Images/Project Screenshots/Dual Wield/Dual Wield Flame.png" alt="Image 2" onclick="FullView()">
             <img class="carousel-slide" src="Images/Project Screenshots/Dual Wield/Dual Wield Laser Rocket.png" alt="Image 3" onclick="FullView()">
             <img class="carousel-slide" src="Images/Project Screenshots/Dual Wield/Dual Wield UTS.png" alt="Image 4" onclick="FullView()">
-          </div>
-          <div class="dot-container">
+            <div class="dot-container">
             <!-- Dots will be dynamically generated -->
-          </div>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="centred-horizontally">
+              <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+              <button id="FullScreenButton" onclick="FullView()">⛶</button>
+            </div>
+          </div>       
         </div>
       </div>
+
+      <!-- Full Screen Image-->
+      <div id="FullImageView">
+        <img id="FullImage" onclick="CloseFullView()"/>
+        <!-- Navigation buttons -->
+        <div>
+          <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+          <button class="carousel-button red" onclick="CloseFullView()">&times</button>
+        </div>
+      </div>
+    </div>
       
     </div>
     <script src="Scripts/ImageCarousel.js"></script>
