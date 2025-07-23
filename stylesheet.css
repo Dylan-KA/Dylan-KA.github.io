@@ -146,6 +146,10 @@ button:hover {
   transform: scale(1.03);
 }
 
+.project-item-outer:hover .project-item-inner {
+  background-color: #bec4dc;
+}
+
 @media (max-width: 900px) {
   .project-item-outer {
     flex: 1 1 calc(50% - 1rem); /* 2 columns on medium screens */
