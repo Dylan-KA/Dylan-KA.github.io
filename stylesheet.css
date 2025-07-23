@@ -1,7 +1,7 @@
 /* HTML5 Elements */
 *          { box-sizing: border-box; }
 
-html       { background: #eff0f5; }
+html       { background: #ffffff; }
 
 body {
   margin: 0;
@@ -27,6 +27,7 @@ h1 {
 h2 {
   font-size: 1.7rem;
   font-weight: 700;
+  margin-top: 60px;
 }
 
 h3 {
@@ -40,6 +41,12 @@ ol         { padding-left: 1.5rem; }
 ul         { padding-left: 1.5rem; }
 li         { margin-bottom: 0.5rem; }
 
+hr {
+  height: 2px;
+  border-width: 0;
+  background-color: #1e5c84;
+}
+
 button {
   background-color: #2e2e2e;
   color: white;
@@ -49,6 +56,7 @@ button {
   padding: 15px 90px 15px 90px;
   margin: 10px;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 
 button:hover {
@@ -64,6 +72,7 @@ button:hover {
   flex-wrap: wrap;
   margin: 0 auto;
   align-items: flex-start;
+  background-color: #eff0f5;
 }
 
 .profile, .about {
@@ -89,8 +98,14 @@ button:hover {
   cursor: pointer;
 } 
 
+.social-links img {
+  transition: transform 0.3s ease-in-out;
+}
+
 .social-links img:hover {
-  filter: invert(100%) grayscale(100%) brightness(40%);
+  filter: invert(100%) grayscale(100%) brightness(30%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  transform: scale(1.2);
 }
 
 .about p {
@@ -117,12 +132,18 @@ button:hover {
 .project-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.3rem;
 }
 
 .project-item-outer {
   flex: 1 1 calc(33.333% - 1rem); /* 3 columns */
   box-sizing: border-box;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+}
+
+.project-item-outer:hover {
+  transform: scale(1.03);
 }
 
 @media (max-width: 900px) {
@@ -135,6 +156,16 @@ button:hover {
   .project-item-outer {
     flex: 1 1 100%; /* 1 column on small screens */
   }
+}
+
+.project-item-outer a {
+  vertical-align: top;
+}
+
+.project-item-outer a img{
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .project-item-inner {
@@ -163,7 +194,7 @@ button:hover {
   margin: 0;
 }
 
-.project-item-inner a:last-of-type {
+.project-learn-more {
   margin-top: auto; /* Push the "Learn More" link to the bottom */
   font-weight: 700;
 }

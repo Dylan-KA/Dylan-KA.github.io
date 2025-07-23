@@ -23,8 +23,8 @@ module.exports = function(eleventyConfig) {
         }
 
         return `<div class="project-item-outer">
-                    <a href="${link}">
-                        <img src="${img}" style="width:100%">
+                    <a href="${link}" style="display: inline-block;">
+                        <img src="${img}">
                     </a>
                     <div class="project-item-inner">
                         <h3 class="project-title">
@@ -32,7 +32,7 @@ module.exports = function(eleventyConfig) {
                         ${logos}
                         </h3>
                         <p>${description}</p>
-                        <a href="${link}">Learn More</a>
+                        <a href="${link}" class="project-learn-more">Learn More</a>
                     </div>
                 </div>`;
     });
