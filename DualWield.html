@@ -74,8 +74,8 @@ permalink: "{{ page.fileSlug }}.html"
             </div>
             <!-- Navigation buttons -->
             <div class="centred-horizontally">
-              <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-              <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+              <button class="carousel-button" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="carousel-button" onclick="moveSlide(1)">&#10095;</button>
               <button id="FullScreenButton" onclick="FullView()">⛶</button>
             </div>
           </div>       
@@ -87,9 +87,9 @@ permalink: "{{ page.fileSlug }}.html"
         <img id="FullImage" onclick="CloseFullView()"/>
         <!-- Navigation buttons -->
         <div>
-          <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-          <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-          <button class="carousel-button red" onclick="CloseFullView()">&times</button>
+          <button class="carousel-button light" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-button light" onclick="moveSlide(1)">&#10095;</button>
+          <button class="carousel-button red medium" onclick="CloseFullView()">&times</button>
         </div>
       </div>
     </div>

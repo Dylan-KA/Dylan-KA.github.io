@@ -36,7 +36,7 @@ permalink: "{{ page.fileSlug }}.html"
             OnTaskPro is an iOS app I developed as part of an individual assessment, where I was tasked with brainstorming, designing, and building an app to address a real-world problem for a specific target audience.
             I chose to focus on individuals struggling with productivity and motivation. 
             The goal of OnTaskPro is to help users stay on track by reducing distractions and boosting their drive to complete tasks. 
-            The app allows users to log their tasks, receive intelligent suggestions on what to work on next, and stay focused through a simplified, goal-oriented interface.
+            The app allows users to log their tasks, receive intelligent suggestions on what to work on, and stay focused through a simplified, goal-oriented interface.
           </p>
           <h2 style="margin-top: 0px;">Technical Details</h2>
           <p>
@@ -64,8 +64,8 @@ permalink: "{{ page.fileSlug }}.html"
             </div>
             <!-- Navigation buttons -->
             <div class="centred-horizontally">
-              <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-              <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+              <button class="carousel-button" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="carousel-button" onclick="moveSlide(1)">&#10095;</button>
               <button id="FullScreenButton" onclick="FullView()">⛶</button>
             </div>
         </div>
@@ -76,9 +76,9 @@ permalink: "{{ page.fileSlug }}.html"
         <img id="FullImage" onclick="CloseFullView()"/>
         <!-- Navigation buttons -->
         <div>
-          <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-          <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-          <button class="carousel-button red" onclick="CloseFullView()">&times</button>
+          <button class="carousel-button light" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-button light" onclick="moveSlide(1)">&#10095;</button>
+          <button class="carousel-button red medium" onclick="CloseFullView()">&times</button>
         </div>
       </div>
     </div>

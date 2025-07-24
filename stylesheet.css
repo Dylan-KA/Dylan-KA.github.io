@@ -65,6 +65,21 @@ button:hover {
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
+.light {
+  background-color: white;
+  color: #2e2e2e;
+}
+
+.red {
+  background-color: rgb(206, 73, 73);
+  color: #2e2e2e;
+  font-weight: 900;
+}
+
+.red:hover {
+  background-color: rgb(219, 0, 0);
+}
+
 .medium {
   padding: 15px 30px 15px 30px;
   margin: 5px;
@@ -163,7 +178,7 @@ button:hover {
 }
 
 .project-item-outer:hover .project-item-inner {
-  background-color: #bec4dc;
+  background-color: #d6defa;
 }
 
 @media (max-width: 900px) {
@@ -319,14 +334,6 @@ button:hover {
 
 .active {
   background-color: #717171;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
 }
 
 /* Fullscreen Image */
