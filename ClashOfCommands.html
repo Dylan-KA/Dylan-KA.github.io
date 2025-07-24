@@ -23,7 +23,7 @@ permalink: "{{ page.fileSlug }}.html"
           <h1>Clash of Commands</h1>
           <div>
             <button onclick="window.location.href='index.html'" class="medium">About Me</button>
-            <button onclick="window.location.href='index.html#projects'" class="medium">Projects</button>
+            <button onclick="window.location.href='index.html#other-projects'" class="medium">Projects</button>
             <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
           </div>
         </div>
@@ -57,14 +57,15 @@ permalink: "{{ page.fileSlug }}.html"
             <img class="carousel-slide" src="Images/Project Screenshots/Clash of Commands/ClashOfCommands1.png" alt="Image 1" onclick="FullView()">
             <img class="carousel-slide" src="Images/Project Screenshots/Clash of Commands/ClashOfCommands2.png" alt="Image 2" onclick="FullView()">
             <img class="carousel-slide" src="Images/Project Screenshots/Clash of Commands/ClashOfCommands3.png" alt="Image 3" onclick="FullView()">
-            <!-- Navigation buttons -->
-            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-            <button id="FullScreenButton" onclick="FullView()">⛶</button>
-          </div>
-          <div class="dot-container">
+            <div class="dot-container">
             <!-- Dots will be dynamically generated -->
-          </div>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="centred-horizontally">
+              <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+              <button id="FullScreenButton" onclick="FullView()">⛶</button>
+            </div>
         </div>
       </div>
       
