@@ -6,177 +6,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="Images/ProfilePicture.jpeg" type="image/icon type">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheet.css">
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
     </style>
   </head>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
-
-
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white" style="z-index:3;width:300px;" id="mySidebar"><br>
-                    <div class="w3-container">
-                        <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-                        <i class="fa fa-remove"></i>
-                        </a>
-                        <img src="Images/ProfilePicture.jpeg" style="width:100%;" class="w3-round-large"><br><br>
-                        <h4><b>Portfolio</b></h4>
+  
+  <body>
+    <div>
+      <!-- Header -->
+      <header>
+        <div>
+          <h1>Car Rental System</h1>
+          <div>
+                    <button onclick="window.location.href='index.html'" class="medium">About Me</button>
+                    <div class="dropdown">
+                    <button onclick="window.location.href='index.html#projects'" class="dropbtn medium">Projects</button>
+                    <div class="dropdown-content">
+                        <a href="index.html#game-projects">Game Development</a>
+                        <a href="index.html#web-projects">Web Development</a>
+                        <a href="index.html#mobile-projects">Mobile Development</a>
+                        <a href="index.html#3d-projects">Modelling & Animation</a>
+                        <a href="index.html#other-projects">Other Projects</a>
                     </div>
-                    <div class="w3-bar-block">
-                        <a href="index.html#about" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i><b>About Me</b></a> 
-                        <a href="index.html#game-projects" class="w3-bar-item w3-button w3-padding">
-                            <i class="fa fa-gamepad fa-fw w3-margin-right"></i><b>Game Projects</b>
-                        </a> 
-                        <a href="DualWield.html" class="w3-bar-item w3-button nested-link">Dual Wield</a>
-                        <a href="Caved-In.html" class="w3-bar-item w3-button nested-link">Caved In</a>
-                        <a href="PacStudent.html" class="w3-bar-item w3-button nested-link">PacStudent</a>
-                        <a href="Wormy.html" class="w3-bar-item w3-button nested-link">Wormy</a>
-
-                        <a href="index.html#web-projects" class="w3-bar-item w3-button w3-padding">
-                            <i class="fa fa-globe fa-fw w3-margin-right"></i><b>Web Projects</b>
-                        </a>
-                        <a href="GroceryStore.html" class="w3-bar-item w3-button nested-link">Online Grocery Store</a>
-                        <a href="CarRentalSystem.html" class="w3-bar-item w3-button nested-link">Online Car Rental</a>
-
-                        <a href="index.html#mobile-projects" class="w3-bar-item w3-button w3-padding">
-                            <i class="fa fa-apple fa-fw w3-margin-right"></i><b>Mobile Projects</b>
-                        </a>
-                        <a href="Quiz-App.html" class="w3-bar-item w3-button nested-link">Quiz App</a>
-                        <a href="OnTaskPro.html" class="w3-bar-item w3-button nested-link">Task Tracker App</a>
-
-                        <a href="index.html#3d-projects" class="w3-bar-item w3-button w3-padding">
-                            <i class="fa fa-cube fa-fw w3-margin-right"></i><b>3D Creative</b>
-                        </a>
-                        <a href="Blender.html" class="w3-bar-item w3-button nested-link">3D Modelling Project</a>
-                        <a href="3DAnim.html" class="w3-bar-item w3-button nested-link">Unity 3D Animation</a>
-
-                        <a href="index.html#other-projects" class="w3-bar-item w3-button w3-padding">
-                            <i class="fa fa-wrench fa-fw w3-margin-right"></i><b>Other Projects</b>
-                        </a>
-                        <a href="ClashOfCommands.html" class="w3-bar-item w3-button nested-link">Clash of Commands</a>
-                        <a href="Contact.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i><b>Contact</b></a>
                     </div>
-                </nav>
+                    <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
+                </div>
+        </div>
+      </header>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
+      <div class="project-page-container">
+        <div class="left-column">
+          <h2 style="margin-top: 0px;">About the project</h2>
+          <p>
+            I developed an interactive online car rental system as a solo project, using HTML, CSS, JavaScript, PHP, AJAX, and JSON. 
+            The platform allows users to browse and search cars by type or brand, check availability, and make or cancel rental reservations. 
+            I implemented dynamic features such as asynchronous data loading via AJAX, session-based reservation persistence, and real-time availability updates using JSON and MySQL. 
+            User input validation and exception handling were built in to ensure a seamless user experience. 
+            For data management, I designed a structured JSON file to store car details and integrated a MySQL database to handle rental orders. 
+            The site was deployed on AWS Elastic Beanstalk, showcasing my ability to build and deploy full-stack web applications with rich interactivity and robust backend integration.
+          </p>
+          <button onclick="window.open('https://github.com/Dylan-KA/Car-Rental-System', '_blank')" class="small">GitHub Repository 🔗</button>
+        </div>
 
-  <!-- Header -->
-  <header id="portfolio">
-    <div class="w3-container">
-      <h1>
-        <b>Car Rental System</b>
-        
-      </h1>
-      <div class="w3-section w3-bottombar w3-padding-16">
-        <a href="index.html#game-projects" class="w3-button w3-white"><i class="fa fa-th-large w3-margin-right"></i>Projects</a>
-        <a href="index.html#about" class="w3-button w3-white w3-hide-small"><i class="fa fa-user w3-margin-right"></i>About Me</a>
-        <a href="Contact.html" class="w3-button w3-white"><i class="fa fa-envelope w3-margin-right"></i>Contact</a>
+        <div class="right-column">
+            <div class="carousel-container" id="carousel">
+                <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/HomePage.png" alt="Image 1" onclick="FullView()">
+                <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/Filters.png" alt="Image 2" onclick="FullView()">
+                <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/SearchResults.png" alt="Image 3" onclick="FullView()">
+                <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/PlaceOrder.png" alt="Image 4" onclick="FullView()">
+                <!-- Navigation buttons -->
+                <button class="carousel-button" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-button" onclick="moveSlide(1)">&#10095;</button>
+                <button id="FullScreenButton" onclick="FullView()">⛶</button>
+            </div>
+            <div class="dot-container">
+            <!-- Dots will be dynamically generated -->
+            </div>
+            <iframe
+            id="youtube-player"
+            src="https://www.youtube.com/embed/KFFUtDctUtk?si=i6qU7OBd-BKp--Rz"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+            </iframe>
+        </div>
+      </div>
+      
+      <!-- Full Screen Image-->
+      <div id="FullImageView">
+        <img id="FullImage" onclick="CloseFullView()"/>
+        <!-- Navigation buttons -->
+        <div>
+          <button class="carousel-button light" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-button light" onclick="moveSlide(1)">&#10095;</button>
+          <button class="carousel-button red medium" onclick="CloseFullView()">&times</button>
+        </div>
       </div>
     </div>
-  </header>
 
-  <div class="project-page-container">
-    <div class="left-column">
-      <h4><b>About the project</b></h4>
-      <p>
-        I developed an interactive online car rental system as a solo project, using HTML, CSS, JavaScript, PHP, AJAX, and JSON. 
-        The platform allows users to browse and search cars by type or brand, check availability, and make or cancel rental reservations. 
-        I implemented dynamic features such as asynchronous data loading via AJAX, session-based reservation persistence, and real-time availability updates using JSON and MySQL. 
-        User input validation and exception handling were built in to ensure a seamless user experience. 
-        For data management, I designed a structured JSON file to store car details and integrated a MySQL database to handle rental orders. 
-        The site was deployed on AWS Elastic Beanstalk, showcasing my ability to build and deploy full-stack web applications with rich interactivity and robust backend integration.
-      </p>
-      <hr>
-      <!-- Buttons -->
-      <a href="https://github.com/Dylan-KA/Car-Rental-System" target="_blank" class="w3-button custom-blue">
-        <i class="fa fa-link w3-margin-right"></i>
-        <b>GitHub Repository</b>
-      </a>
-    </div>
-
-    <div class="right-column">
-        <div class="carousel-container" id="carousel">
-            <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/HomePage.png" alt="Image 1" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/Filters.png" alt="Image 2" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/SearchResults.png" alt="Image 3" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/PlaceOrder.png" alt="Image 4" onclick="FullView()">
-            <!-- Navigation buttons -->
-            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-            <button id="FullScreenButton" onclick="FullView()">⛶</button>
-        </div>
-        <div class="dot-container">
-        <!-- Dots will be dynamically generated -->
-        </div>
-        <h3 style="text-align: center;">Video walkthrough</h3>
-        <iframe
-        id="youtube-player"
-        src="https://www.youtube.com/embed/KFFUtDctUtk?si=i6qU7OBd-BKp--Rz"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-        </iframe>
-    </div>
-  </div>
-  
-  <!-- Full Screen Image-->
-  <div id="FullImageView">
-    <img id="FullImage" onclick="CloseFullView()"/>
-    <!-- Navigation buttons -->
-    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-    <span id="CloseButton" onclick="CloseFullView()">&times</span>
-  </div>
-
-    <!-- Contact Section -->
-    <hr>
-                <div class="w3-container w3-padding-large w3-grey">
-                    <h4 id="contact"><b>Contact Me</b></h4>
-                    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-                    <div class="w3-third w3-dark-grey">
-                        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-                        <p><span>dylanka3@gmail.com</span></p>
-                    </div>
-                    <div class="w3-third w3-cyan">
-                        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
-                        <p>Sydney, Australia</p>
-                    </div>
-                    <div class="w3-third w3-dark-grey">
-                        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
-                        <p><span>(+61) 468 432 861</span></p>
-                    </div>
-                    </div>
-                    <hr class="w3-opacity">
-                </div>
-
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-32 w3-dark-grey">
-                    <div class="w3-center w3-margin-top">
-                    <p>
-                        © 2025 Dylan Archer.
-                    </p>
-                    <a href="https://github.com/dylan-ka" target="_blank" class="social-icon-white">
-                        <img width="30px" class="footer-href" src="Images/Logos/GitHubLogo.png">
-                    </a>
-                    <a href="https://dylanka.itch.io/" target="_blank" class="social-icon-white">
-                        <img width="30px" class="footer-href" src="Images/Logos/ItchLogo.webp">
-                    </a>
-                    <a href="https://www.linkedin.com/in/dylan-archer-44a783338/" target="_blank" class="social-icon-white">
-                        <img width="30px" class="footer-href" src="Images/Logos/LinkedInLogo.webp">
-                    </a>
-                    </div>
-                </footer>
-  
-<!-- End page content -->
-</div>
-
-<script src="Scripts/ImageCarousel.js"></script>
-<script src="https://www.youtube.com/iframe_api"></script>
-
-</body>
+    <script src="Scripts/ImageCarousel.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
 </html>
