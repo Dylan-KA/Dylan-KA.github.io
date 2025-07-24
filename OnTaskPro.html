@@ -9,102 +9,76 @@ permalink: "{{ page.fileSlug }}.html"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="Images/ProfilePicture.jpeg" type="image/icon type">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheet.css">
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
     </style>
   </head>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
 
-<!-- Sidebar/menu -->
-{% Sidebar %}
+  <body>
+    <div>
+      <!-- Header -->
+      <header>
+        <div>
+          <h1>Task Tracker App</h1>
+          {% NavigationButtons %}
+        </div>
+      </header>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
+      <div class="project-page-container">
+        <div class="left-column">
+          <h2 style="margin-top: 0px;">About the project</h2>
+          <p>
+            OnTaskPro is an iOS app I developed as part of an individual assessment, where I was tasked with brainstorming, designing, and building an app to address a real-world problem for a specific target audience.
+            I chose to focus on individuals struggling with productivity and motivation. 
+            The goal of OnTaskPro is to help users stay on track by reducing distractions and boosting their drive to complete tasks. 
+            The app allows users to log their tasks, receive intelligent suggestions on what to work on, and stay focused through a simplified, goal-oriented interface.
+          </p>
+          <h2 style="margin-top: 0px;">Technical Details</h2>
+          <p>
+            OnTaskPro was built using Swift and SwiftUI, and follows the Model-View-ViewModel (MVVM) architecture to ensure a clean and maintainable codebase.
+          </p>
+          <h2 style="margin-top: 0px;">Brainstorm & Design</h2>
+          <p>
+            Attached are images showcasing my initial brainstorming and design process, which helped shape the app's features and user experience before development began.
+          </p>
+          <button onclick="window.open('https://github.com/Dylan-KA/OnTaskPro', '_blank')" class="small">GitHub Repository 🔗</button>
+        </div>
 
-  <!-- Header -->
-  <header id="portfolio">
-    <div class="w3-container">
-      <h1>
-        <b>Task Tracker App</b>
-        
-      </h1>
-      <div class="w3-section w3-bottombar w3-padding-16">
-        <a href="index.html#game-projects" class="w3-button w3-white"><i class="fa fa-th-large w3-margin-right"></i>Projects</a>
-        <a href="index.html#about" class="w3-button w3-white w3-hide-small"><i class="fa fa-user w3-margin-right"></i>About Me</a>
-        <a href="Contact.html" class="w3-button w3-white"><i class="fa fa-envelope w3-margin-right"></i>Contact</a>
+        <div class="right-column">
+          <video autoplay muted loop>
+            <source src="Images/Project Screenshots/OnTaskPro/OnTaskProWalkthrough.mp4" type="video/mp4">
+            Your browser does not support video.
+          </video>
+          <div class="carousel-container" id="carousel">
+            <img class="carousel-slide" src="Images/Project Screenshots/OnTaskPro/QuestionMindmap.jpg" alt="Image 1" onclick="FullView()">
+            <img class="carousel-slide" src="Images/Project Screenshots/OnTaskPro/Personae.jpg" alt="Image 2" onclick="FullView()">
+            <img class="carousel-slide" src="Images/Project Screenshots/OnTaskPro/SolutionMindmap.jpg" alt="Image 3" onclick="FullView()">
+            <img class="carousel-slide" src="Images/Project Screenshots/OnTaskPro/Prototype.jpg" alt="Image 4" onclick="FullView()">
+            <div class="dot-container">
+            <!-- Dots will be dynamically generated -->
+            </div>
+            <!-- Navigation buttons -->
+            <div class="centred-horizontally">
+              <button class="carousel-button" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="carousel-button" onclick="moveSlide(1)">&#10095;</button>
+              <button id="FullScreenButton" onclick="FullView()">⛶</button>
+            </div>
+        </div>
       </div>
-    </div>
-  </header>
-
-  <div class="project-page-container">
-    <div class="left-column">
-      <h4><b>About the project</b></h4>
-      <p>
-        OnTaskPro is an iOS app I developed as part of an individual assessment, where I was tasked with brainstorming, designing, and building an app to address a real-world problem for a specific target audience.
-        I chose to focus on individuals struggling with productivity and motivation. 
-        The goal of OnTaskPro is to help users stay on track by reducing distractions and boosting their drive to complete tasks. 
-        The app allows users to log their tasks, receive intelligent suggestions on what to work on next, and stay focused through a simplified, goal-oriented interface.
-      </p>
-      <h4><b>Technical Details</b></h4>
-      <p>
-        OnTaskPro was built using Swift and SwiftUI, and follows the Model-View-ViewModel (MVVM) architecture to ensure a clean and maintainable codebase.
-      </p>
-      <h4><b>Brainstorm & Design</b></h4>
-      <p>
-        Attached are images showcasing my initial brainstorming and design process, which helped shape the app's features and user experience before development began.
-      </p>
-      <hr>
-      <!-- Buttons -->
-      <a href="https://github.com/Dylan-KA/OnTaskPro" target="_blank" class="w3-button custom-blue">
-        <i class="fa fa-link w3-margin-right"></i>
-        <b>GitHub Repository</b>
-      </a>
-    </div>
-
-    <div class="right-column">
-      <video autoplay muted loop>
-        <source src="Images/Project Screenshots/OnTaskPro/OnTaskProWalkthrough.mp4" type="video/mp4">
-        Your browser does not support video.
-      </video>
-      <div class="carousel-container" id="carousel">
-        <img class="carousel-slide" src="Images/Project Screenshots/OnTaskPro/QuestionMindmap.jpg" alt="Image 1" onclick="FullView()">
-        <img class="carousel-slide" src="Images/Project Screenshots/OnTaskPro/Personae.jpg" alt="Image 2" onclick="FullView()">
-        <img class="carousel-slide" src="Images/Project Screenshots/OnTaskPro/SolutionMindmap.jpg" alt="Image 3" onclick="FullView()">
-        <img class="carousel-slide" src="Images/Project Screenshots/OnTaskPro/Prototype.jpg" alt="Image 4" onclick="FullView()">
+      
+      <!-- Full Screen Image-->
+      <div id="FullImageView">
+        <img id="FullImage" onclick="CloseFullView()"/>
         <!-- Navigation buttons -->
-        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-        <button id="FullScreenButton" onclick="FullView()">⛶</button>
-      </div>
-      <div class="dot-container">
-        <!-- Dots will be dynamically generated -->
+        <div>
+          <button class="carousel-button light" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-button light" onclick="moveSlide(1)">&#10095;</button>
+          <button class="carousel-button red medium" onclick="CloseFullView()">&times</button>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <!-- Full Screen Image-->
-  <div id="FullImageView">
-    <img id="FullImage" onclick="CloseFullView()"/>
-    <!-- Navigation buttons -->
-    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-    <span id="CloseButton" onclick="CloseFullView()">&times</span>
-  </div>
 
-  <!-- Contact Section -->
-  {% Contact %}
-
-  <!-- Footer -->
-  {% Footer %}
-  
-<!-- End page content -->
-</div>
-
-
-<script src="Scripts/ImageCarousel.js"></script>
-
-</body>
+    <script src="Scripts/ImageCarousel.js"></script>
+  </body>
 </html>

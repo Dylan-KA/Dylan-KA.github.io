@@ -64,9 +64,9 @@ showSlide(currentSlide);
 // Add keyboard navigation
 document.addEventListener('keydown', (event) => {
     if (event.key === "ArrowLeft") {
-        moveSlide(-1); // Navigate to the previous slide
+        moveSlide(-1); // Navigate to theious slide
     } else if (event.key === "ArrowRight") {
-        moveSlide(1); // Navigate to the next slide
+        moveSlide(1); // Navigate to the slide
     } else if(event.key === "Escape") {
         CloseFullView();
     }

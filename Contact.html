@@ -9,82 +9,65 @@ permalink: "{{ page.fileSlug }}.html"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="Images/ProfilePicture.jpeg" type="image/icon type">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
     <link rel="stylesheet" href="stylesheet.css">
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </style>
   </head>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
 
-<!-- Sidebar/menu -->
-{% Sidebar %}
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-
-  <!-- Header -->
-  <header>
-    <div class="w3-container">
-      <h1>
-        <b>Dylan Archer</b>
-      </h1>
-      <h3>Software Developer (Games, Web, Mobile)</h3>
-      <div class="w3-section w3-bottombar w3-padding-16">
-        <a href="index.html#game-projects" class="w3-button w3-white"><i class="fa fa-th-large w3-margin-right"></i>Projects</a>
-        <a href="index.html#about" class="w3-button w3-white w3-hide-small"><i class="fa fa-user w3-margin-right"></i>About Me</a>
-        <a href="Contact.html" class="w3-button w3-white"><i class="fa fa-envelope w3-margin-right"></i>Contact</a>
+  <body>
+    <div>
+      <!-- Header -->
+      <header>
+        <div>
+          <h1>Dylan Archer</h1>
+          <h2 style="font-size: 1.5rem; font-weight: 100; margin-top: 0px;">Software Developer (Games, Web, Mobile)</h2>
+          {% NavigationButtons %}
+        </div>
+      </header>
+      
+      <div class="container">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out if you'd like to connect or collaborate, and check out my games on Itch.io or explore more of my work on GitHub.</p>
       </div>
-    </div>
-  </header>
-  
-  <div class="w3-container">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out if you'd like to connect or collaborate, and check out my games on Itch.io or explore more of my work on GitHub.</p>
-  </div>
 
-  <div class="contact-page-container">
-    <div class="contact-left-column">
-        <div class="contact-page-item">
-            <img src="Images/Logos/IconMail.png" style="width: 50px;">
+      <div class="contact-page-container">
+        <div class="contact-left-column">
+            <div class="contact-page-item">
+                <img src="Images/Logos/IconMail.png" style="width: 50px;">
+            </div>
+            <div class="contact-page-item">
+                <img src="Images/Logos/IconPhone.png" style="width: 50px;">
+            </div>
+            <div class="contact-page-item">
+                <img src="Images/Logos/LinkedInLogo.webp" style="width: 50px;">
+            </div>
+            <div class="contact-page-item">
+                <img src="Images/Logos/GitHubLogo.png" style="width: 50px;">
+            </div>
+            <div class="contact-page-item">
+                <img src="Images/Logos/ItchLogo.webp" style="width: 50px;">
+            </div>
         </div>
-        <div class="contact-page-item">
-            <img src="Images/Logos/IconPhone.png" style="width: 50px;">
+        <div class="contact-right-column">
+            <div class="contact-page-item">
+                <p style="font-family: Arial, Helvetica, sans-serif;">dylanka3@gmail.com</p>
+            </div>
+            <div class="contact-page-item">
+                <p style="font-family: Arial, Helvetica, sans-serif;">(+61) 468 432 861</p>
+            </div>
+            <div class="contact-page-item"> 
+                <a style="font-family: Arial, Helvetica, sans-serif;" href="https://www.linkedin.com/in/dylan-archer-44a783338/" target="_blank">Connect with me on LinkedIn</a>
+            </div>
+            <div class="contact-page-item">
+                <a style="font-family: Arial, Helvetica, sans-serif;" href="https://github.com/Dylan-KA?tab=repositories" target="_blank">View my GitHub repositories</a>
+            </div>
+            <div class="contact-page-item">
+                <a style="font-family: Arial, Helvetica, sans-serif;" href="https://dylanka.itch.io/" target="_blank">Play my games on Itch.io</a>
+            </div>
         </div>
-        <div class="contact-page-item">
-            <img src="Images/Logos/LinkedInLogo.webp" style="width: 50px;">
-        </div>
-        <div class="contact-page-item">
-            <img src="Images/Logos/GitHubLogo.png" style="width: 50px;">
-        </div>
-        <div class="contact-page-item">
-            <img src="Images/Logos/ItchLogo.webp" style="width: 50px;">
-        </div>
+      </div>
+      
     </div>
-    <div class="contact-right-column">
-        <div class="contact-page-item">
-            <p style="font-family: Arial, Helvetica, sans-serif;">dylanka3@gmail.com</p>
-        </div>
-        <div class="contact-page-item">
-            <p style="font-family: Arial, Helvetica, sans-serif;">(+61) 468 432 861</p>
-        </div>
-        <div class="contact-page-item"> 
-            <a style="font-family: Arial, Helvetica, sans-serif;" href="https://www.linkedin.com/in/dylan-archer-44a783338/" target="_blank">Connect with me on LinkedIn</a>
-        </div>
-        <div class="contact-page-item">
-            <a style="font-family: Arial, Helvetica, sans-serif;" href="https://github.com/Dylan-KA?tab=repositories" target="_blank">View my GitHub repositories</a>
-        </div>
-        <div class="contact-page-item">
-            <a style="font-family: Arial, Helvetica, sans-serif;" href="https://dylanka.itch.io/" target="_blank">Play my games on Itch.io</a>
-        </div>
-    </div>
-  </div>
-    
-</div>
-
-</div>
-</body>
+  </body>
 </html>

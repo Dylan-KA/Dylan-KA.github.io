@@ -9,98 +9,76 @@ permalink: "{{ page.fileSlug }}.html"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="Images/ProfilePicture.jpeg" type="image/icon type">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheet.css">
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
     </style>
   </head>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
 
+  <body>
+    <div>
+      <!-- Header -->
+      <header>
+        <div>
+          <h1>3D Modelling Project</h1>
+          {% NavigationButtons %}
+        </div>
+      </header>
 
-
-<!-- Sidebar/menu -->
-{% Sidebar %}
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-
-  <!-- Header -->
-  <header id="portfolio">
-    <div class="w3-container">
-      <h1>
-        <b>3D Modelling Project</b>
+      <div class="project-page-container">
+        <div class="left-column">
+          <h2 style="margin-top: 0px;">About the project</h2>
+          <p>
+            This personal project involved creating a detailed 3D model of a house using Blender to develop my modelling, UV unwrapping, texturing, lighting and rendering skills.
+            I focused on achieving realistic textures and materials by using my own photographs and free textures sourced online. 
+          </p>
+          <h2 style="margin-top: 0px;">What I learned</h2>
+          <p>
+            In the course of this project, I learned how to UV unwrap models, which allowed me to apply textures accurately and realistically across different surfaces.
+            Working on lighting setups and camera positioning taught me how to enhance the final render, bringing out the model's textures and structure.
+            This project helped me understand the end-to-end process of creating a 3D environment, from modelling and texturing to lighting and rendering.
+          </p>
+        </div>
         
-      </h1>
-      <div class="w3-section w3-bottombar w3-padding-16">
-        <a href="index.html#game-projects" class="w3-button w3-white"><i class="fa fa-th-large w3-margin-right"></i>Projects</a>
-        <a href="index.html#about" class="w3-button w3-white w3-hide-small"><i class="fa fa-user w3-margin-right"></i>About Me</a>
-        <a href="Contact.html" class="w3-button w3-white"><i class="fa fa-envelope w3-margin-right"></i>Contact</a>
+        <div class="right-column">
+          <iframe
+            src="https://www.youtube.com/embed/C7IPKDiFcdE?si=O8jaeAHZp-WfHzxe&mute=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+          <div class="carousel-container" id="carousel">
+            <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (1).png" alt="Image 1" onclick="FullView()">
+            <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (2).png" alt="Image 2" onclick="FullView()">
+            <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (3).png" alt="Image 3" onclick="FullView()">
+            <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (4).png" alt="Image 4" onclick="FullView()">
+            <div class="dot-container">
+            <!-- Dots will be dynamically generated -->
+            </div>
+            <!-- Navigation buttons -->
+            <div class="centred-horizontally">
+              <button class="carousel-button" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="carousel-button" onclick="moveSlide(1)">&#10095;</button>
+              <button id="FullScreenButton" onclick="FullView()">⛶</button>
+            </div>            
+          </div>          
+        </div>
       </div>
-    </div>
-  </header>
-
-  <div class="project-page-container">
-    <div class="left-column">
-      <h4><b>About the project</b></h4>
-      <p>
-        This personal project involved creating a detailed 3D model of a house using Blender to develop my modelling, UV unwrapping, texturing, lighting and rendering skills.
-        I focused on achieving realistic textures and materials by using my own photographs and free textures sourced online. 
-      </p>
-      <h4><b>What I learned</b></h4>
-      <p>
-        In the course of this project, I learned how to UV unwrap models, which allowed me to apply textures accurately and realistically across different surfaces.
-        Working on lighting setups and camera positioning taught me how to enhance the final render, bringing out the model's textures and structure.
-        This project helped me understand the end-to-end process of creating a 3D environment, from modelling and texturing to lighting and rendering.
-      </p>
-    </div>
-    
-    <div class="right-column">
-      <iframe
-        src="https://www.youtube.com/embed/C7IPKDiFcdE?si=O8jaeAHZp-WfHzxe&mute=1"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-      <div class="carousel-container" id="carousel">
-        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (1).png" alt="Image 1" onclick="FullView()">
-        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (2).png" alt="Image 2" onclick="FullView()">
-        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (3).png" alt="Image 3" onclick="FullView()">
-        <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (4).png" alt="Image 4" onclick="FullView()">
+      
+      <!-- Full Screen Image-->
+      <div id="FullImageView">
+        <img id="FullImage" onclick="CloseFullView()"/>
         <!-- Navigation buttons -->
-        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-        <button id="FullScreenButton" onclick="FullView()">⛶</button>
-      </div>
-      <div class="dot-container">
-        <!-- Dots will be dynamically generated -->
+        <div>
+          <button class="carousel-button light" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-button light" onclick="moveSlide(1)">&#10095;</button>
+          <button class="carousel-button red medium" onclick="CloseFullView()">&times</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Full Screen Image-->
-  <div id="FullImageView">
-    <img id="FullImage" onclick="CloseFullView()"/>
-    <!-- Navigation buttons -->
-    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-    <span id="CloseButton" onclick="CloseFullView()">&times</span>
-  </div>
-
-  <!-- Contact Section -->
-  {% Contact %}
-
-  <!-- Footer -->
-  {% Footer %}
-  
-<!-- End page content -->
-</div>
-
-
-<script src="Scripts/ImageCarousel.js"></script>
-
-</body>
+    <script src="Scripts/ImageCarousel.js"></script>
+  </body>
 </html>
