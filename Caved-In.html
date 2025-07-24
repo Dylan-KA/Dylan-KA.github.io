@@ -21,11 +21,7 @@ permalink: "{{ page.fileSlug }}.html"
       <header>
         <div>
           <h1>Caved In</h1>
-          <div>
-            <button onclick="window.location.href='index.html'" class="medium">About Me</button>
-            <button onclick="window.location.href='index.html#projects'" class="medium">Projects</button>
-            <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
-          </div>
+          {% NavigationButtons %}
         </div>
       </header>
 

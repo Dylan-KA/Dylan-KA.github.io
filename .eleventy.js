@@ -38,6 +38,23 @@ module.exports = function(eleventyConfig) {
                 </div>`;
     });
 
+    eleventyConfig.addShortcode("NavigationButtons", function() {
+        return `<div>
+                    <button onclick="window.location.href='index.html'" class="medium">About Me</button>
+                    <div class="dropdown">
+                    <button onclick="window.location.href='index.html#projects'" class="dropbtn medium">Projects</button>
+                    <div class="dropdown-content">
+                        <a href="index.html#game-projects">Game Development</a>
+                        <a href="index.html#web-projects">Web Development</a>
+                        <a href="index.html#mobile-projects">Mobile Development</a>
+                        <a href="index.html#3d-projects">Modelling & Animation</a>
+                        <a href="index.html#other-projects">Other Projects</a>
+                    </div>
+                    </div>
+                    <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
+                </div>`;
+    });
+
     eleventyConfig.addShortcode("Footer", function() {
         const year = new Date().getFullYear();
         return `<footer class="container ">
