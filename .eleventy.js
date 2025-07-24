@@ -2,6 +2,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("Images");
     eleventyConfig.addPassthroughCopy("Scripts");
     eleventyConfig.addPassthroughCopy("stylesheet.css");
+    eleventyConfig.addPassthroughCopy("Resume.pdf");
 
     eleventyConfig.addShortcode("ProjectCard", function(link, img, title, logo1, logo2, logo3, description) {
         let logos = '';
