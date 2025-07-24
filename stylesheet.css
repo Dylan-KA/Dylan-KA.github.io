@@ -27,7 +27,6 @@ h1 {
 h2 {
   font-size: 1.7rem;
   font-weight: 700;
-  margin-top: 60px;
 }
 
 h3 {
@@ -110,6 +109,7 @@ button:hover {
   flex: 1;
   margin: auto;
   padding: 50px;
+  padding-bottom: 0px;
 }
 
 .profile {
@@ -139,8 +139,12 @@ button:hover {
   transform: scale(1.2);
 }
 
+.about {
+  padding-top: 0px;
+}
+
 .about p {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .about div {
@@ -148,6 +152,12 @@ button:hover {
 }
 
 /* Skills */
+.skills {
+  align-items: flex-start;
+  background-color: #eff0f5;
+  padding: 50px;
+}
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
