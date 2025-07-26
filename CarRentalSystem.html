@@ -55,14 +55,16 @@
                 <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/Filters.png" alt="Image 2" onclick="FullView()">
                 <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/SearchResults.png" alt="Image 3" onclick="FullView()">
                 <img class="carousel-slide" src="Images/Project Screenshots/Car Rental System/PlaceOrder.png" alt="Image 4" onclick="FullView()">
+                <div class="dot-container">
+                <!-- Dots will be dynamically generated -->
+                </div>
                 <!-- Navigation buttons -->
-                <button class="carousel-button" onclick="moveSlide(-1)">&#10094;</button>
-                <button class="carousel-button" onclick="moveSlide(1)">&#10095;</button>
-                <button id="FullScreenButton" onclick="FullView()">⛶</button>
-            </div>
-            <div class="dot-container">
-            <!-- Dots will be dynamically generated -->
-            </div>
+                <div class="centred-horizontally">
+                  <button class="small" onclick="moveSlide(-1)">&#10094;</button>
+                  <button class="small" onclick="moveSlide(1)">&#10095;</button>
+                  <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
+                </div>
+              </div>
             <iframe
             id="youtube-player"
             src="https://www.youtube.com/embed/KFFUtDctUtk?si=i6qU7OBd-BKp--Rz"
@@ -78,9 +80,9 @@
         <img id="FullImage" onclick="CloseFullView()"/>
         <!-- Navigation buttons -->
         <div>
-          <button class="carousel-button light" onclick="moveSlide(-1)">&#10094;</button>
-          <button class="carousel-button light" onclick="moveSlide(1)">&#10095;</button>
-          <button class="carousel-button red medium" onclick="CloseFullView()">&times</button>
+          <button class="light" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="light" onclick="moveSlide(1)">&#10095;</button>
+          <button class="red medium" onclick="CloseFullView()">&times</button>
         </div>
       </div>
     </div>
