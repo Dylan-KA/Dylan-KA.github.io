@@ -1,0 +1,141 @@
+<h1>Building and Deploying this Eleventy Site</h1>
+<p>This document explains how to build the site locally with Eleventy (11ty), how to ensure files and folders are copied into the generated site using <code>.eleventy.js</code>, and how the GitHub Actions workflow (<code>.github/workflows/deploy.yml</code>) automates the build-and-deploy process.</p>
+<hr>
+<h2>Quick local commands (PowerShell)</h2>
+<p>Install dependencies (first time or when <code>package-lock.json</code> changed):</p>
+<pre><code class="language-powershell">npm ci
+</code></pre>
+<p>Build the site once with Eleventy (no npm script present by default):</p>
+<pre><code class="language-powershell">npx @11ty/eleventy
+</code></pre>
+<p>Start Eleventy's local dev server with auto-reload:</p>
+<pre><code class="language-powershell">npx @11ty/eleventy --serve
+</code></pre>
+<p>Recommended: add a <code>build</code> script to <code>package.json</code> so you can run <code>npm run build</code>:</p>
+<pre><code class="language-json">// package.json (scripts)
+{
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;eleventy&quot;
+  }
+}
+</code></pre>
+<p>Then run:</p>
+<pre><code class="language-powershell">npm run build
+</code></pre>
+<p>Notes:</p>
+<ul>
+<li>The project currently includes <code>@11ty/eleventy</code> as a dependency (see <code>package.json</code>). When you run <code>npm run build</code>, npm will find the local <code>eleventy</code> binary in <code>node_modules/.bin</code>.</li>
+<li>The default Eleventy output directory for this project is <code>_site</code> (configured in <code>.eleventy.js</code>). After building, check <code>_site/</code> for the generated files.</li>
+</ul>
+<hr>
+<h2>Ensuring files are included in the build (passthroughs in <code>.eleventy.js</code>)</h2>
+<p>Eleventy processes templates and copies files you tell it to copy. In this project, passthrough copies are configured in <code>.eleventy.js</code> using <code>eleventyConfig.addPassthroughCopy()</code>.</p>
+<p>Example from this project (already in <code>.eleventy.js</code>):</p>
+<pre><code class="language-js">// .eleventy.js
+eleventyConfig.addPassthroughCopy(&quot;Images&quot;);
+eleventyConfig.addPassthroughCopy(&quot;Scripts&quot;);
+eleventyConfig.addPassthroughCopy(&quot;stylesheet.css&quot;);
+eventyConfig.addPassthroughCopy(&quot;Resume.pdf&quot;);
+eventyConfig.addPassthroughCopy(&quot;css&quot;);
+</code></pre>
+<p>How to add files or folders:</p>
+<ul>
+<li>To copy an entire folder (preserve its path):
+<ul>
+<li><code>eleventyConfig.addPassthroughCopy(&quot;Images&quot;);</code></li>
+</ul>
+</li>
+<li>To copy a single file in the project root:
+<ul>
+<li><code>eleventyConfig.addPassthroughCopy(&quot;stylesheet.css&quot;);</code></li>
+</ul>
+</li>
+<li>To map source -&gt; destination (custom path in <code>_site</code>):
+<ul>
+<li><code>eleventyConfig.addPassthroughCopy({ &quot;src/somefile.png&quot;: &quot;assets/img/somefile.png&quot; });</code></li>
+</ul>
+</li>
+</ul>
+<p>Important notes:</p>
+<ul>
+<li>Paths are relative to Eleventy's <code>input</code> directory (this project sets <code>input: &quot;.&quot;</code> in <code>.eleventy.js</code>, so use repository-relative paths).</li>
+<li>Files added with <code>addPassthroughCopy</code> are copied unchanged into the output directory (<code>_site</code>), not processed by Eleventy templates.</li>
+<li>After updating <code>.eleventy.js</code>, re-run the build (or the dev server) so changes take effect.</li>
+</ul>
+<hr>
+<h2>How the GitHub Actions workflow automates build and deploy (<code>.github/workflows/deploy.yml</code>)</h2>
+<p>The repository includes a GitHub Actions workflow that builds the site and publishes it to GitHub Pages whenever changes are pushed to <code>main</code>.</p>
+<p>Key steps performed by the workflow:</p>
+<ol>
+<li>Trigger: runs on <code>push</code> to the <code>main</code> branch.</li>
+<li>Checkout: checks out your repository code on an Ubuntu runner.</li>
+<li>Node setup: installs Node.js (the workflow sets <code>node-version: 18</code>).</li>
+<li>Install dependencies: runs <code>npm ci</code> to install dependencies from <code>package-lock.json</code>.</li>
+<li>Build: runs <code>npx @11ty/eleventy</code> to generate the static site into <code>_site</code>.</li>
+<li>Deploy: uses <code>peaceiris/actions-gh-pages@v3</code> to publish the contents of <code>./_site</code> to GitHub Pages and (in this project) writes a CNAME to configure a custom domain (<code>dylan-archer-dev.com</code>). The action uses <code>$</code> for authentication.</li>
+</ol>
+<p>Why this is helpful:</p>
+<ul>
+<li>Every push to <code>main</code> automatically rebuilds the site on GitHub's servers and publishes the latest <code>_site</code> output to GitHub Pages.</li>
+<li>You don't need to build locally and push generated files—source is committed, build+deploy is handled by the workflow.</li>
+</ul>
+<p>What to check if deployment fails:</p>
+<ul>
+<li>Ensure the workflow file is in <code>.github/workflows/deploy.yml</code> and committed to <code>main</code>.</li>
+<li>Confirm <code>node-version</code> matches any project requirements or adjust as needed.</li>
+<li>Ensure <code>npm ci</code> succeeds (valid <code>package-lock.json</code> and packages). If <code>npm ci</code> fails, try <code>npm install</code> locally to debug.</li>
+<li>Verify <code>.eleventy.js</code> <code>output</code> directory matches the workflow <code>publish_dir</code> (<code>_site</code> by default).</li>
+<li>For the <code>peaceiris/actions-gh-pages</code> step: by default it publishes to the <code>gh-pages</code> branch. If you need a different target, configure the action inputs.</li>
+<li>If using a custom domain: the workflow's <code>cname</code> input will create a <code>CNAME</code> record in the published branch. Double-check the domain DNS settings.</li>
+</ul>
+<hr>
+<h2>Recommended local workflow</h2>
+<ol>
+<li>Pull latest code:</li>
+</ol>
+<pre><code class="language-powershell">git pull origin main
+</code></pre>
+<ol start="2">
+<li>Install deps:</li>
+</ol>
+<pre><code class="language-powershell">npm ci
+</code></pre>
+<ol start="3">
+<li>Build or run dev server:</li>
+</ol>
+<pre><code class="language-powershell"># one-time build
+npx @11ty/eleventy
+# dev server with live reload
+npx @11ty/eleventy --serve
+# or (if you added a package.json script)
+npm run build
+</code></pre>
+<ol start="4">
+<li>Commit changes to source files and to <code>.eleventy.js</code> passthroughs, then push to <code>main</code> to trigger GitHub Actions:</li>
+</ol>
+<pre><code class="language-powershell">git add .
+git commit -m &quot;Update site content or passthroughs&quot;
+git push origin main
+</code></pre>
+<hr>
+<h2>Short checklist when adding assets you want published</h2>
+<ul>
+<li>Add the asset files to the repository under a path Eleventy can read (project root or subfolder).</li>
+<li>Add a matching <code>eleventyConfig.addPassthroughCopy(&quot;path/to/asset-or-folder&quot;)</code> line to <code>.eleventy.js</code>.</li>
+<li>Run <code>npx @11ty/eleventy</code> (or <code>npm run build</code>) locally to verify the asset appears in <code>_site</code>.</li>
+<li>Commit the changes and push to <code>main</code>—the GitHub Actions workflow will rebuild and deploy.</li>
+</ul>
+<hr>
+<h2>Where this project configures the above</h2>
+<ul>
+<li>Eleventy config file: <code>.eleventy.js</code> (contains <code>addPassthroughCopy</code> calls and <code>dir.input</code>/<code>dir.output</code> settings).</li>
+<li>GitHub Actions workflow: <code>.github/workflows/deploy.yml</code> (build and deploy automation).</li>
+<li>Local dependency: <code>package.json</code> (contains <code>@11ty/eleventy</code> dependency).</li>
+</ul>
+<hr>
+<p>If you'd like, I can also:</p>
+<ul>
+<li>Add a <code>build</code> script to <code>package.json</code> and commit it so <code>npm run build</code> works out-of-the-box.</li>
+<li>Add a small <code>npm run serve</code> script for the dev server.</li>
+</ul>
+<p>(Next step: I'll mark the documentation task as completed and verify the file was created.)</p>
