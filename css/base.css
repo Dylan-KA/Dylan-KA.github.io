@@ -1,0 +1,33 @@
+/* HTML5 Elements & Base styles */
+* { box-sizing: border-box; }
+
+html { background: #ffffff; }
+
+body {
+  margin: 0;
+  padding: 0px 50px 50px 50px;
+  max-width: 1500px;
+  margin: auto;
+  font-family: sans-serif;
+  background: #ffffff;
+}
+
+footer { background: #ffffff; }
+
+h1, h2, h3, h4, h5, h6 { color: #000000; }
+
+h1 { font-size: 3rem; font-weight: 600; color: #1e5c84; }
+h2 { font-size: 1.7rem; font-weight: 700; margin-top: 60px; }
+h3 { font-size: 1rem; font-weight: 600; }
+
+p { line-height: 1.5; margin-bottom: 1rem; }
+a { color: #000000; text-decoration: underline; }
+ol { padding-left: 1.5rem; }
+ul { padding-left: 1.5rem; }
+li { margin-bottom: 0.5rem; }
+
+hr {
+  height: 2px;
+  border-width: 0;
+  background-color: #1e5c84;
+}
