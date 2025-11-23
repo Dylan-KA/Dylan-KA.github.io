@@ -1,104 +1,98 @@
 ---
+layout: layout.njk
+title: Caved In
 permalink: "{{ page.fileSlug }}.html"
 ---
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Dylan Archer Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="Images/ProfilePicture.jpeg" type="image/icon type">
-    <link rel="stylesheet" href="stylesheet.css">
-    <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
-    </style>
-  </head>
+<!-- Header -->
+<header>
+  <div>
+    <h1>Caved In</h1>
+    {% include "components/navigation.njk" %}
+  </div>
+</header>
 
-  <body>
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the project</h2>
+    <p>
+      Caved In is a cooperative first-person survival extraction game, developed over three months in Unreal Engine as
+      part of a university group project.
+      Set within a cave system, 4-8 players must collect plant samples and transport them back to the exit to open the
+      elevator door and escape.
+      However, while exploring the mine, players risk infection—forcing them to hide their condition from others.
+      Infected players can secretly sabotage the team by laying traps to spread the infection further.
+      We had the chance to collaborate with a sound design student, which helped us achieve our vision of an immersive
+      survival horror experience.
+    </p>
+    <h2 style="margin-top: 0px;">What I contributed</h2>
+    <p>
+      I developed the player inventory and character selection systems, along with their user interfaces.
+      I also implemented nearly all the player items in the game, including both their functionality and animations.
+      Additionally, I created the user interface for the lobby's host/join screen.
+    </p>
+    <h2 style="margin-top: 0px;">Difficulties in development</h2>
+    <p>
+      The ambitious scope of implementing networked multiplayer presented significant challenges for us.
+      This complexity extended the development time of each feature, as we had to address numerous edge cases in
+      client-server interactions.
+      As a result, our final submission wasn't as polished as we had hoped.
+    </p>
+    <iframe frameborder="0"
+      src="https://itch.io/embed/2960935?bg_color=2e2e2e&amp;fg_color=eeeeee&amp;link_color=1e5c84&amp;border_color=000000"
+      width="552" height="167" style="margin-top:30px">
+      <a href="https://speedy139.itch.io/caved-in">Caved In by speedy139, dadysherwin1, SneduLEkko, DylanKA</a></iframe>
+  </div>
+
+  <div class="right-column">
     <div>
-      <!-- Header -->
-      <header>
-        <div>
-          <h1>Caved In</h1>
-          {% NavigationButtons %}
-        </div>
-      </header>
-
-      <div class="project-page-container">
-        <div class="left-column">
-          <h2 style="margin-top: 0px;">About the project</h2>
-          <p>
-            Caved In is a cooperative first-person survival extraction game, developed over three months in Unreal Engine as part of a university group project.
-            Set within a cave system, 4-8 players must collect plant samples and transport them back to the exit to open the elevator door and escape.
-            However, while exploring the mine, players risk infection—forcing them to hide their condition from others.
-            Infected players can secretly sabotage the team by laying traps to spread the infection further.
-            We had the chance to collaborate with a sound design student, which helped us achieve our vision of an immersive survival horror experience.
-          </p>
-          <h2 style="margin-top: 0px;">What I contributed</h2>
-          <p>
-            I developed the player inventory and character selection systems, along with their user interfaces.
-            I also implemented nearly all the player items in the game, including both their functionality and animations.
-            Additionally, I created the user interface for the lobby's host/join screen.
-          </p>
-          <h2 style="margin-top: 0px;">Difficulties in development</h2>
-          <p>
-            The ambitious scope of implementing networked multiplayer presented significant challenges for us.
-            This complexity extended the development time of each feature, as we had to address numerous edge cases in client-server interactions.
-            As a result, our final submission wasn't as polished as we had hoped.
-          </p>
-          <iframe frameborder="0" src="https://itch.io/embed/2960935?bg_color=2e2e2e&amp;fg_color=eeeeee&amp;link_color=1e5c84&amp;border_color=000000"
-                  width="552" 
-                  height="167"
-                  style="margin-top:30px"
-                  >
-            <a href="https://speedy139.itch.io/caved-in">Caved In by speedy139, dadysherwin1, SneduLEkko, DylanKA</a></iframe>
-        </div>
-
-        <div class="right-column">
-          <div>
-            <iframe
-              id="youtube-player"
-              src="https://www.youtube.com/embed/cTclCnru9gY?si=jKUOD3IzPIExCpGH"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="carousel-container" id="carousel">
-            <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Bridge.png" alt="Image 1" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Compass.png" alt="Image 2" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Elevator.png" alt="Image 3" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Heat Vision.png" alt="Image 4" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Infected Tunnel.png" alt="Image 5" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Mining.png" alt="Image 6" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Tunnel.png" alt="Image 7" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Lobby.png" alt="Image 8" onclick="FullView()">
-            <div class="dot-container">
-            <!-- Dots will be dynamically generated -->
-            </div>
-            <!-- Navigation buttons -->
-            <div class="centred-horizontally">
-              <button class="small" onclick="moveSlide(-1)">&#10094;</button>
-              <button class="small" onclick="moveSlide(1)">&#10095;</button>
-              <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
-            </div>
-          </div>
-        </div>
+      <iframe id="youtube-player" src="https://www.youtube.com/embed/cTclCnru9gY?si=jKUOD3IzPIExCpGH"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="carousel-container" id="carousel">
+      <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Bridge.png" alt="Image 1"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Compass.png" alt="Image 2"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Elevator.png" alt="Image 3"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Heat Vision.png" alt="Image 4"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Infected Tunnel.png" alt="Image 5"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Mining.png" alt="Image 6"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Tunnel.png" alt="Image 7"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Caved In/Caved In Lobby.png" alt="Image 8"
+        onclick="FullView()">
+      <div class="dot-container">
+        <!-- Dots will be dynamically generated -->
       </div>
-      
-      <!-- Full Screen Image-->
-      <div id="FullImageView">
-        <img id="FullImage" onclick="CloseFullView()"/>
-        <!-- Navigation buttons -->
-        <div>
-          <button class="light" onclick="moveSlide(-1)">&#10094;</button>
-          <button class="light" onclick="moveSlide(1)">&#10095;</button>
-          <button class="red medium" onclick="CloseFullView()">&times</button>
-        </div>
+      <!-- Navigation buttons -->
+      <div class="centred-horizontally">
+        <button class="small" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="small" onclick="moveSlide(1)">&#10095;</button>
+        <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
       </div>
     </div>
+  </div>
+</div>
 
-  <script src="Scripts/ImageCarousel.js"></script>
-  </body>
-</html>
+<!-- Full Screen Image-->
+<div id="FullImageView">
+  <img id="FullImage" onclick="CloseFullView()" />
+  <!-- Navigation buttons -->
+  <div>
+    <button class="light" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="light" onclick="moveSlide(1)">&#10095;</button>
+    <button class="red medium" onclick="CloseFullView()">&times</button>
+  </div>
+</div>
+
+{% block scripts %}
+<script src="Scripts/ImageCarousel.js"></script>
+{% endblock %}

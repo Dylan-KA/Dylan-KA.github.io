@@ -1,82 +1,80 @@
 ---
+layout: layout.njk
+title: Clash of Commands
 permalink: "{{ page.fileSlug }}.html"
 ---
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Dylan Archer Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="Images/ProfilePicture.jpeg" type="image/icon type">
-    <link rel="stylesheet" href="stylesheet.css">
-    <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
-    </style>
-  </head>
+<!-- Header -->
+<header>
+  <div>
+    <h1>Clash of Commands</h1>
+    {% include "components/navigation.njk" %}
+  </div>
+</header>
 
-  <body>
-    <div>
-      <!-- Header -->
-      <header>
-        <div>
-          <h1>Clash of Commands</h1>
-          {% NavigationButtons %}
-        </div>
-      </header>
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the Project</h2>
+    <p>
+      Clash of Commands is a web-based educational game designed to help IT students at UTS master
+      UNIX terminal commands through gamification. The Web Systems 31268 course is known for its difficulty, and this
+      game makes
+      learning more interactive and engaging. Inspired by Kahoot!, it includes points, leaderboards, and increasing
+      difficulty levels to
+      boost motivation. The game simulates a UNIX terminal, offering realistic command-line challenges that align with
+      course content. Originally
+      planned as a multiplayer experience, it was adapted into a single-player format with a high-score system. Future
+      updates could introduce
+      advanced topics like scripting, text processing, and command chaining. Designed for both classroom and independent
+      learning, this tool
+      enhances engagement, progress tracking, and knowledge retention.
+    </p>
+    <h2 style="margin-top: 0px;">What I Learned</h2>
+    <p>
+      Developing Clash of Commands gave me hands-on experience in serious game design and gamification for education.
+      I learned how to create targeted game mechanics to support students struggling with UNIX commands, ensuring the
+      game was
+      both fun and effective. The project strengthened my understanding of iterative design, as playtesting and feedback
+      drove improvements. I also gained insight into ethical and user-centered design, focusing on accessibility and
+      engagement.
+      This experience has sharpened my ability to build purpose-driven interactive experiences that solve real-world
+      learning challenges.
+    </p>
+    <button onclick="window.open('https://dadysherwin1.itch.io/clash-of-commands', '_blank')" class="small">Play the
+      game on itch.io 🔗</button>
+  </div>
 
-      <div class="project-page-container">
-        <div class="left-column">
-          <h2 style="margin-top: 0px;">About the Project</h2>
-          <p>
-            Clash of Commands is a web-based educational game designed to help IT students at UTS master 
-            UNIX terminal commands through gamification. The Web Systems 31268 course is known for its difficulty, and this game makes 
-            learning more interactive and engaging. Inspired by Kahoot!, it includes points, leaderboards, and increasing difficulty levels to 
-            boost motivation. The game simulates a UNIX terminal, offering realistic command-line challenges that align with course content. Originally 
-            planned as a multiplayer experience, it was adapted into a single-player format with a high-score system. Future updates could introduce 
-            advanced topics like scripting, text processing, and command chaining. Designed for both classroom and independent learning, this tool 
-            enhances engagement, progress tracking, and knowledge retention.
-          </p>
-          <h2 style="margin-top: 0px;">What I Learned</h2>
-          <p>
-            Developing Clash of Commands gave me hands-on experience in serious game design and gamification for education. 
-            I learned how to create targeted game mechanics to support students struggling with UNIX commands, ensuring the game was 
-            both fun and effective. The project strengthened my understanding of iterative design, as playtesting and feedback 
-            drove improvements. I also gained insight into ethical and user-centered design, focusing on accessibility and engagement. 
-            This experience has sharpened my ability to build purpose-driven interactive experiences that solve real-world learning challenges.
-          </p>
-          <button onclick="window.open('https://dadysherwin1.itch.io/clash-of-commands', '_blank')" class="small">Play the game on itch.io 🔗</button>
-        </div>
-
-        <div class="right-column">
-          <div class="carousel-container" id="carousel">
-            <img class="carousel-slide" src="Images/Project Screenshots/Clash of Commands/ClashOfCommands1.png" alt="Image 1" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Clash of Commands/ClashOfCommands2.png" alt="Image 2" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Clash of Commands/ClashOfCommands3.png" alt="Image 3" onclick="FullView()">
-            <div class="dot-container">
-            <!-- Dots will be dynamically generated -->
-            </div>
-            <!-- Navigation buttons -->
-            <div class="centred-horizontally">
-              <button class="small" onclick="moveSlide(-1)">&#10094;</button>
-              <button class="small" onclick="moveSlide(1)">&#10095;</button>
-              <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
-            </div>
-        </div>
+  <div class="right-column">
+    <div class="carousel-container" id="carousel">
+      <img class="carousel-slide" src="Images/Project Screenshots/Clash of Commands/ClashOfCommands1.png" alt="Image 1"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Clash of Commands/ClashOfCommands2.png" alt="Image 2"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Clash of Commands/ClashOfCommands3.png" alt="Image 3"
+        onclick="FullView()">
+      <div class="dot-container">
+        <!-- Dots will be dynamically generated -->
       </div>
-      
-      <!-- Full Screen Image-->
-      <div id="FullImageView">
-        <img id="FullImage" onclick="CloseFullView()"/>
-        <!-- Navigation buttons -->
-        <div>
-          <button class="light" onclick="moveSlide(-1)">&#10094;</button>
-          <button class="light" onclick="moveSlide(1)">&#10095;</button>
-          <button class="red medium" onclick="CloseFullView()">&times</button>
-        </div>
+      <!-- Navigation buttons -->
+      <div class="centred-horizontally">
+        <button class="small" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="small" onclick="moveSlide(1)">&#10095;</button>
+        <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
       </div>
     </div>
+  </div>
 
-    <script src="Scripts/ImageCarousel.js"></script>
-  </body>
-</html>
+  <!-- Full Screen Image-->
+  <div id="FullImageView">
+    <img id="FullImage" onclick="CloseFullView()" />
+    <!-- Navigation buttons -->
+    <div>
+      <button class="light" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="light" onclick="moveSlide(1)">&#10095;</button>
+      <button class="red medium" onclick="CloseFullView()">&times</button>
+    </div>
+  </div>
+
+  {% block scripts %}
+  <script src="Scripts/ImageCarousel.js"></script>
+  {% endblock %}

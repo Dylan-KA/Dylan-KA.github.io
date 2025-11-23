@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title | default("Dylan Archer Portfolio") }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/Images/ProfilePicture.jpeg" type="image/icon type">
+    <link rel="stylesheet" href="/stylesheet.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
+    </style>
+    {% block head %}{% endblock %}
+  </head>
+
+  <body>
+    <div>
+      {{ content | safe }}
+    </div>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

@@ -1,58 +1,43 @@
 ---
+layout: layout.njk
+title: Unity 3D Animation
 permalink: "{{ page.fileSlug }}.html"
 ---
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Dylan Archer Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="Images/ProfilePicture.jpeg" type="image/icon type">
-    <link rel="stylesheet" href="stylesheet.css">
-    <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
-    </style>
-  </head>
+<!-- Header -->
+<header>
+  <div>
+    <h1>Unity 3D Animation</h1>
+    {% include "components/navigation.njk" %}
+  </div>
+</header>
 
-  <body>
-    <div>
-      <!-- Header -->
-      <header>
-        <div>
-          <h1>Unity 3D Animation</h1>
-          {% NavigationButtons %}
-        </div>
-      </header>
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the project</h2>
+    <p>
+      "Why are we here?" is a 3D animation satire on first-person shooters, heavily inspired by <i>Halo</i> and <i>Red
+        vs. Blue</i>.
+      It was developed over a few weeks in Unity using the HDRP rendering pipeline for a group project, where we used
+      existing 3D models.
+      Throughout the process, I gained hands-on experience with the complete 3D animation production pipeline,
+      from storyboarding and pre-production planning to animation, lighting, rendering, and VFX.
+      This project helped me develop a stronger understanding of motion analysis, character animation, and scene
+      composition,
+      while also giving me the opportunity to collaborate on production management and post-production tasks to deliver
+      a polished final piece.
+    </p>
+  </div>
 
-      <div class="project-page-container">
-        <div class="left-column">
-          <h2 style="margin-top: 0px;">About the project</h2>
-          <p>
-            "Why are we here?" is a 3D animation satire on first-person shooters, heavily inspired by <i>Halo</i> and <i>Red vs. Blue</i>.
-            It was developed over a few weeks in Unity using the HDRP rendering pipeline for a group project, where we used existing 3D models.
-            Throughout the process, I gained hands-on experience with the complete 3D animation production pipeline, 
-              from storyboarding and pre-production planning to animation, lighting, rendering, and VFX.
-            This project helped me develop a stronger understanding of motion analysis, character animation, and scene composition, 
-              while also giving me the opportunity to collaborate on production management and post-production tasks to deliver a polished final piece.
-          </p>
-        </div>
+  <div class="right-column">
+    <iframe width="100%" height="720" src="https://www.youtube.com/embed/xaNLWn2_d74?si=mq0znyWFs5K2R6X9"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+</div>
 
-        <div class="right-column">
-          <iframe
-          width="100%"
-          height="720"
-          src="https://www.youtube.com/embed/xaNLWn2_d74?si=mq0znyWFs5K2R6X9"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-          </iframe>
-        </div>
-      </div>   
-    </div>
-
-    <script src="Scripts/ImageCarousel.js"></script>
-  </body>
-</html>
+{% block scripts %}
+<script src="Scripts/ImageCarousel.js"></script>
+{% endblock %}

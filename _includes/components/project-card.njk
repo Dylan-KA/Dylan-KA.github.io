@@ -1,0 +1,24 @@
+{% macro projectCard(link, img, title, logo1, logo2, logo3, description) %}
+<div class="project-item-outer">
+    <a href="{{ link }}" style="display: inline-block;">
+        <img src="{{ img }}">
+    </a>
+    <div class="project-item-inner">
+        <h3 class="project-title">
+        <a href="{{ link }}">{{ title }}</a>
+        {% if logo3 %}
+            <img src="{{ logo3 }}" style="width:30px; float:right; margin-left: 5px; margin-top: 2px; border-radius: 10px;">
+            <img src="{{ logo2 }}" style="width:30px; float:right; margin-left: 5px;">
+            <img src="{{ logo1 }}" style="width:30px; float:right;">
+        {% elseif logo2 %}
+            <img src="{{ logo2 }}" style="width:30px; float:right; margin-left: 5px;">
+            <img src="{{ logo1 }}" style="width:30px; float:right;">
+        {% elseif logo1 %}
+            <img src="{{ logo1 }}" style="width:30px; float:right;">
+        {% endif %}
+        </h3>
+        <p>{{ description }}</p>
+        <a href="{{ link }}" class="project-learn-more">Learn More</a>
+    </div>
+</div>
+{% endmacro %}
