@@ -1,125 +1,136 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dylan Archer Portfolio</title>
+    <title>3D Modelling Project</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="Images/ProfilePicture.jpeg" type="image/icon type">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" href="/Images/ProfilePicture.jpeg" type="image/icon type">
+    <link rel="stylesheet" href="/stylesheet.css">
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
     </style>
+    
   </head>
 
   <body>
     <div>
-      <!-- Header -->
-      <header>
-        <div>
-          <h1>3D Modelling Project</h1>
-          <div>
-                    <button onclick="window.location.href='index.html'" class="medium">About Me</button>
-                    <div class="dropdown">
-                        <button onclick="window.location.href='index.html#projects'" class="dropbtn medium">Projects</button>
-                        <div class="dropdown-content">
-                            <div class="dropdown-sub">
-                                <a href="index.html#game-projects">Game Development</a>
-                                <div class="dropdown-sub-content">
-                                    <a href="DualWield.html">Dual Wield</a>
-                                    <a href="Caved-In.html">Caved In</a>
-                                    <a href="PacStudent.html">PacStudent</a>
-                                    <a href="Wormy.html">Wormy</a>
-                                </div>
-                            </div>
-                            <div class="dropdown-sub">
-                                <a href="index.html#web-projects">Web Development</a>
-                                <div class="dropdown-sub-content">
-                                    <a href="GroceryStore.html">Online Grocery Store</a>
-                                    <a href="CarRentalSystem.html">Online Car Rental</a>
-                                </div>
-                            </div>
-                            <div class="dropdown-sub">
-                                <a href="index.html#mobile-projects">Mobile Development</a>
-                                <div class="dropdown-sub-content">
-                                    <a href="Quiz-App.html">Quiz App</a>
-                                    <a href="OnTaskPro.html">Task Tracker App</a>
-                                </div>
-                            </div>
-                            <div class="dropdown-sub">
-                                <a href="index.html#3d-projects">Modelling & Animation</a>
-                                <div class="dropdown-sub-content">
-                                    <a href="Blender.html">3D Modelling Project</a>
-                                    <a href="3DAnim.html">Unity 3D Animation</a>
-                                </div>
-                            </div>
-                            <div class="dropdown-sub">
-                                <a href="index.html#other-projects">Other Projects</a>
-                                <div class="dropdown-sub-content">
-                                    <a href="ClashOfCommands.html">Clash of Commands</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
-                </div>
-        </div>
-      </header>
-
-      <div class="project-page-container">
-        <div class="left-column">
-          <h2 style="margin-top: 0px;">About the project</h2>
-          <p>
-            This personal project involved creating a detailed 3D model of a house using Blender to develop my modelling, UV unwrapping, texturing, lighting and rendering skills.
-            I focused on achieving realistic textures and materials by using my own photographs and free textures sourced online. 
-          </p>
-          <h2 style="margin-top: 0px;">What I learned</h2>
-          <p>
-            In the course of this project, I learned how to UV unwrap models, which allowed me to apply textures accurately and realistically across different surfaces.
-            Working on lighting setups and camera positioning taught me how to enhance the final render, bringing out the model's textures and structure.
-            This project helped me understand the end-to-end process of creating a 3D environment, from modelling and texturing to lighting and rendering.
-          </p>
-        </div>
-        
-        <div class="right-column">
-          <iframe
-            src="https://www.youtube.com/embed/C7IPKDiFcdE?si=O8jaeAHZp-WfHzxe&mute=1"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
-          <div class="carousel-container" id="carousel">
-            <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (1).png" alt="Image 1" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (2).png" alt="Image 2" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (3).png" alt="Image 3" onclick="FullView()">
-            <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (4).png" alt="Image 4" onclick="FullView()">
-            <div class="dot-container">
-            <!-- Dots will be dynamically generated -->
-            </div>
-            <!-- Navigation buttons -->
-            <div class="centred-horizontally">
-              <button class="small" onclick="moveSlide(-1)">&#10094;</button>
-              <button class="small" onclick="moveSlide(1)">&#10095;</button>
-              <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
-            </div>            
-          </div>          
-        </div>
-      </div>
       
-      <!-- Full Screen Image-->
-      <div id="FullImageView">
-        <img id="FullImage" onclick="CloseFullView()"/>
-        <!-- Navigation buttons -->
-        <div>
-          <button class="light" onclick="moveSlide(-1)">&#10094;</button>
-          <button class="light" onclick="moveSlide(1)">&#10095;</button>
-          <button class="red medium" onclick="CloseFullView()">&times</button>
+<!-- Header -->
+<header>
+  <div>
+    <h1>3D Modelling Project</h1>
+    <div>
+    <button onclick="window.location.href='index.html'" class="medium">About Me</button>
+    <div class="dropdown">
+        <button onclick="window.location.href='index.html#projects'" class="dropbtn medium">Projects</button>
+        <div class="dropdown-content">
+            <div class="dropdown-sub">
+                <a href="index.html#game-projects">Game Development</a>
+                <div class="dropdown-sub-content">
+                    <a href="DualWield.html">Dual Wield</a>
+                    <a href="Caved-In.html">Caved In</a>
+                    <a href="PacStudent.html">PacStudent</a>
+                    <a href="Wormy.html">Wormy</a>
+                </div>
+            </div>
+            <div class="dropdown-sub">
+                <a href="index.html#web-projects">Web Development</a>
+                <div class="dropdown-sub-content">
+                    <a href="GroceryStore.html">Online Grocery Store</a>
+                    <a href="CarRentalSystem.html">Online Car Rental</a>
+                </div>
+            </div>
+            <div class="dropdown-sub">
+                <a href="index.html#mobile-projects">Mobile Development</a>
+                <div class="dropdown-sub-content">
+                    <a href="Quiz-App.html">Quiz App</a>
+                    <a href="OnTaskPro.html">Task Tracker App</a>
+                </div>
+            </div>
+            <div class="dropdown-sub">
+                <a href="index.html#3d-projects">Modelling & Animation</a>
+                <div class="dropdown-sub-content">
+                    <a href="Blender.html">3D Modelling Project</a>
+                    <a href="3DAnim.html">Unity 3D Animation</a>
+                </div>
+            </div>
+            <div class="dropdown-sub">
+                <a href="index.html#other-projects">Other Projects</a>
+                <div class="dropdown-sub-content">
+                    <a href="ClashOfCommands.html">Clash of Commands</a>
+                </div>
+            </div>
         </div>
+    </div>
+    <button onclick="window.location.href='Contact.html'" class="medium">Contact</button>
+</div>
+
+  </div>
+</header>
+
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the project</h2>
+    <p>
+      This personal project involved creating a detailed 3D model of a house using Blender to develop my modelling, UV
+      unwrapping, texturing, lighting and rendering skills.
+      I focused on achieving realistic textures and materials by using my own photographs and free textures sourced
+      online.
+    </p>
+    <h2 style="margin-top: 0px;">What I learned</h2>
+    <p>
+      In the course of this project, I learned how to UV unwrap models, which allowed me to apply textures accurately
+      and realistically across different surfaces.
+      Working on lighting setups and camera positioning taught me how to enhance the final render, bringing out the
+      model's textures and structure.
+      This project helped me understand the end-to-end process of creating a 3D environment, from modelling and
+      texturing to lighting and rendering.
+    </p>
+  </div>
+
+  <div class="right-column">
+    <iframe src="https://www.youtube.com/embed/C7IPKDiFcdE?si=O8jaeAHZp-WfHzxe&mute=1" title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+    <div class="carousel-container" id="carousel">
+      <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (1).png" alt="Image 1"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (2).png" alt="Image 2"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (3).png" alt="Image 3"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Blender/Blender Shot (4).png" alt="Image 4"
+        onclick="FullView()">
+      <div class="dot-container">
+        <!-- Dots will be dynamically generated -->
+      </div>
+      <!-- Navigation buttons -->
+      <div class="centred-horizontally">
+        <button class="small" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="small" onclick="moveSlide(1)">&#10095;</button>
+        <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
       </div>
     </div>
+  </div>
+</div>
 
-    <script src="Scripts/ImageCarousel.js"></script>
+<!-- Full Screen Image-->
+<div id="FullImageView">
+  <img id="FullImage" onclick="CloseFullView()" />
+  <!-- Navigation buttons -->
+  <div>
+    <button class="light" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="light" onclick="moveSlide(1)">&#10095;</button>
+    <button class="red medium" onclick="CloseFullView()">&times</button>
+  </div>
+</div>
+
+
+<script src="Scripts/ImageCarousel.js"></script>
+
+    </div>
+    
   </body>
 </html>
