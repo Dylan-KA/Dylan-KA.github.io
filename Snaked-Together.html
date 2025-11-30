@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Snaked Together</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/Images/ProfilePicture.jpeg" type="image/icon type">
+    <link rel="stylesheet" href="/stylesheet.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
+    </style>
+    
+  </head>
+
+  <body>
+    <div>
+      
+<!-- Header -->
+<header>
+  <div>
+    <h1>Snaked Together</h1>
+    <div>
+    <button onclick="window.location.href='index.html'" class="medium">About Me</button>
+    <div class="dropdown">
+        <button onclick="window.location.href='index.html#projects'" class="dropbtn medium">Projects</button>
+        <div class="dropdown-content">
+            <div class="dropdown-sub">
+                <a href="index.html#game-projects">Game Development</a>
+                <div class="dropdown-sub-content">
+                    <a href="DualWield.html">Dual Wield</a>
+                    <a href="Caved-In.html">Caved In</a>
+                    <a href="PacStudent.html">PacStudent</a>
+                    <a href="Wormy.html">Wormy</a>
+                </div>
+            </div>
+            <div class="dropdown-sub">
+                <a href="index.html#web-projects">Web Development</a>
+                <div class="dropdown-sub-content">
+                    <a href="GroceryStore.html">Online Grocery Store</a>
+                    <a href="CarRentalSystem.html">Online Car Rental</a>
+                </div>
+            </div>
+            <div class="dropdown-sub">
+                <a href="index.html#mobile-projects">Mobile Development</a>
+                <div class="dropdown-sub-content">
+                    <a href="Quiz-App.html">Quiz App</a>
+                    <a href="OnTaskPro.html">Task Tracker App</a>
+                </div>
+            </div>
+            <div class="dropdown-sub">
+                <a href="index.html#3d-projects">Modelling & Animation</a>
+                <div class="dropdown-sub-content">
+                    <a href="Blender.html">3D Modelling Project</a>
+                    <a href="3DAnim.html">Unity 3D Animation</a>
+                </div>
+            </div>
+            <div class="dropdown-sub">
+                <a href="index.html#other-projects">Other Projects</a>
+                <div class="dropdown-sub-content">
+                    <a href="ClashOfCommands.html">Clash of Commands</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+</header>
+
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the project</h2>
+    <p>
+      Snaked Together is a 2D cooperative climbing game created by a small, focused team over the course of roughly two weeks. 
+      The game was developed for a <a href="https://itch.io/jam/snakejam">game jam hosted by SXSW Sydney</a>, challenging us to rapidly prototype, refine, and polish a unique gameplay concept within a tight timeframe.
+      The result is a light-hearted yet mechanically engaging experience centered around teamwork, coordination, and movement-based problem-solving.
+      Players control opposite ends of a two-headed snake, navigating hazards, color-based obstacles, and increasingly tricky platforming sections that demand precise communication and timing.
+    </p>
+    <h2 style="margin-top: 0px;">What I contributed</h2>
+    <p>
+      I played a key role in shaping the core direction of the game, collaborating closely with the team to brainstorm and refine its central mechanics.
+      I designed the level layout and progression, ensuring that each section supported cooperative play, introduced new challenges, and encouraged players to strategize together.
+      In addition to design work, I also contributed to some of the programming of the project using Unity and C#.
+      I also assisted with testing and refining the game's difficulty curve to make the experience both challenging and enjoyable for players.
+    </p>
+    <iframe frameborder="0" src="https://itch.io/embed/3857286?bg_color=5d0000&amp;fg_color=ffe7e7&amp;border_color=000000" 
+      width="552" height="167">
+      <a href="https://dylanka.itch.io/snaked-together">Snaked Together by DylanKA, dadysherwin1, speedy139</a></iframe>
+  </div>
+
+  <div class="right-column">
+    <div class="carousel-container" id="carousel">
+        <img class="carousel-slide" src="Images\Project Screenshots\Snaked\Snaked-Together-1.png" alt="Image 1"
+        onclick="FullView()">
+        <img class="carousel-slide" src="Images\Project Screenshots\Snaked\Snaked-Together-2.png" alt="Image 2"
+        onclick="FullView()">
+      <div class="dot-container">
+        <!-- Dots will be dynamically generated -->
+      </div>
+      <!-- Navigation buttons -->
+      <div class="centred-horizontally">
+        <button class="small" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="small" onclick="moveSlide(1)">&#10095;</button>
+        <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Full Screen Image-->
+<div id="FullImageView">
+  <img id="FullImage" onclick="CloseFullView()" />
+  <!-- Navigation buttons -->
+  <div>
+    <button class="light" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="light" onclick="moveSlide(1)">&#10095;</button>
+    <button class="red medium" onclick="CloseFullView()">&times</button>
+  </div>
+</div>
+
+
+<script src="Scripts/ImageCarousel.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+    </div>
+    
+  </body>
+</html>
