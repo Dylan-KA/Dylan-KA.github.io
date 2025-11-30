@@ -39,6 +39,16 @@
                 "Images/Logos/CSharp.png"
             ],
             "description": "Wormy is a 2D puzzle game developed in Unity as part of a group assessment task. It was our first opportunity to design a game based entirely on our own ideas. In Wormy, you play as a worm navigating a maze of underground tunnels to fertilize and grow a seed."
+        },
+        {
+            "link": "Snaked-Together.html",
+            "img": "Images/Project Screenshots/Snaked/Snaked-Together-16x9.png",
+            "title": "Snaked Together",
+            "logos": [
+                "Images/Logos/Unity-Logo.png",
+                "Images/Logos/CSharp.png"
+            ],
+            "description": "You and a friend control a two-headed snake, bound together on a desperate climb from the depths of hell to the gates of heaven. The Catch? Only one head can move at a time, try moving together, and you'll tumble straight back down."
         }
     ],
     "web": [
