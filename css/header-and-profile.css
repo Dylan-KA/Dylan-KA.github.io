@@ -1,51 +1,82 @@
 /* Home Page Header */
+.home-hero {
+  padding-top: 16px;
+}
+
 .header-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 24px;
   margin: 0 auto;
-  margin-top: 50px;
   align-items: flex-start;
-  background-color: #eff0f5;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background:
+    linear-gradient(135deg, rgba(29, 38, 51, 0.94), rgba(22, 29, 39, 0.84)),
+    radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.18), transparent 22rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
 }
 
 .profile, .about {
   flex: 1;
-  margin: auto;
-  padding: 50px;
+  min-width: 300px;
+  margin: 0;
+  padding: clamp(28px, 5vw, 56px);
 }
 
 @media (max-width: 459px) {
-  body { min-width: 410px; }
   .header-content {
-    background-color: transparent;
-    box-shadow: none;
+    display: block;
   }
-  .profile, .about { padding: 0px; }
+  .profile, .about { min-width: 0; padding: 26px; }
 }
 
 .profile { text-align: center; }
 
 .profile-picture {
-  width: 50%;
-  height: 50%;
+  width: min(210px, 62%);
+  aspect-ratio: 1;
   object-fit: cover;
+  border: 3px solid rgba(56, 189, 248, 0.55);
+  border-radius: 50%;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+.profile h1,
+.about h1 {
+  margin: 24px 0 14px;
+}
+
+.hero-role {
+  margin: 0 0 18px;
+  color: var(--color-accent);
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
 .social-links img {
-  padding: 10px;
   width: 45px;
   height: 45px;
+  padding: 10px;
+  object-fit: contain;
+  background: rgba(237, 242, 247, 0.08);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.social-links a {
+  display: inline-flex;
 }
 
 .social-links img:hover {
-  filter: invert(100%) grayscale(100%) brightness(30%);
-  transition: filter 0.3s ease, transform 0.3s ease;
-  transform: scale(1.2);
+  background: rgba(56, 189, 248, 0.16);
+  border-color: rgba(56, 189, 248, 0.55);
+  transform: translateY(-3px);
 }
 
-.about p { font-size: 1.2rem; }
+.about p { font-size: 1.08rem; }
 .about div { text-align: center; }

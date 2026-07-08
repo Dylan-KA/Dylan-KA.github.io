@@ -1,24 +1,30 @@
-{% macro projectCard(link, img, title, logo1, logo2, logo3, description) %}
-<div class="project-item-outer">
-    <a href="{{ link }}" style="display: inline-block;">
-        <img src="{{ img }}">
+{% macro projectCard(project) %}
+<article class="project-card">
+    <a class="project-card-media" href="{{ project.link }}" aria-label="View {{ project.title }}">
+        <img src="{{ project.img }}" alt="{{ project.title }} project screenshot" loading="lazy">
     </a>
-    <div class="project-item-inner">
-        <h3 class="project-title">
-        <a href="{{ link }}">{{ title }}</a>
-        {% if logo3 %}
-            <img src="{{ logo3 }}" style="width:30px; float:right; margin-left: 5px; margin-top: 2px; border-radius: 10px;">
-            <img src="{{ logo2 }}" style="width:30px; float:right; margin-left: 5px;">
-            <img src="{{ logo1 }}" style="width:30px; float:right;">
-        {% elseif logo2 %}
-            <img src="{{ logo2 }}" style="width:30px; float:right; margin-left: 5px;">
-            <img src="{{ logo1 }}" style="width:30px; float:right;">
-        {% elseif logo1 %}
-            <img src="{{ logo1 }}" style="width:30px; float:right;">
+    <div class="project-card-body">
+        <div class="project-card-heading">
+            <h3 class="project-title">
+                <a href="{{ project.link }}">{{ project.title }}</a>
+            </h3>
+            {% if project.logos %}
+            <div class="project-card-logos" aria-label="Project technologies">
+                {% for logo in project.logos %}
+                <img src="{{ logo }}" alt="" loading="lazy">
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <p class="project-summary">{{ project.summary | default(project.description) }}</p>
+        {% if project.tags %}
+        <div class="project-tags" aria-label="Project metadata">
+            {% for tag in project.tags %}
+            <span>{{ tag }}</span>
+            {% endfor %}
+        </div>
         {% endif %}
-        </h3>
-        <p>{{ description }}</p>
-        <a href="{{ link }}" class="project-learn-more">Learn More</a>
+        <a href="{{ project.link }}" class="project-learn-more">View Project</a>
     </div>
-</div>
+</article>
 {% endmacro %}

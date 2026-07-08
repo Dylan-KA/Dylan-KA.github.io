@@ -5,17 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/Images/ProfilePicture.jpeg" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheet.css">
-    <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
-    </style>
     {% block head %}{% endblock %}
   </head>
 
   <body>
-    <div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="site-mark" href="/index.html">Dylan Archer</a>
+      <div class="site-nav-links">
+        <a href="/index.html" aria-current="{% if page.url == '/index.html' or page.url == '/' %}page{% endif %}">About</a>
+        <a href="/index.html#projects">Projects</a>
+        <a href="/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </nav>
+    <main class="site-shell">
       {{ content | safe }}
-    </div>
+    </main>
     {% block scripts %}{% endblock %}
   </body>
 </html>

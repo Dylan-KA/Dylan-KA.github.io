@@ -1,7 +1,8 @@
 footer {
     margin-top: 60px;
     padding: 40px 0;
-    background-color: #eff0f5;
+    background-color: transparent;
+    border-top: 1px solid var(--color-border);
     text-align: center;
 }
 
@@ -13,7 +14,7 @@ footer {
 }
 
 .footer-content p {
-    color: #666;
+    color: var(--color-muted);
     margin-bottom: 15px;
     font-size: 0.9rem;
 }
@@ -31,7 +32,7 @@ footer {
     border: none;
     display: block;
     transition: transform 0.2s ease, opacity 0.2s ease;
-    opacity: 0.8;
+    opacity: 0.82;
 }
 
 .footer-icons a:hover {
@@ -43,4 +44,5 @@ footer {
     width: 30px;
     height: auto;
     display: block;
+    filter: invert(1);
 }

@@ -5,23 +5,25 @@ permalink: "index.html"
 ---
 {% from "components/project-card.njk" import projectCard %}
 
-<header>
+<header class="home-hero">
   <div class="header-content">
-    <!-- Left Side -->
     <div class="profile">
       <img src="Images/ProfilePicture.jpeg" class="profile-picture" alt="Dylan Archer">
-      <h1 style="margin-bottom: 20px;">Dylan Archer</h1>
-      <h2 style="font-size: 1.5rem; font-weight: 100; margin-top: 0px;">Software Developer (Games, Web, Mobile)</h2>
+      <h1>Dylan Archer</h1>
+      <p class="hero-role">Software Developer - Games, Web, Mobile</p>
       <div class="social-links">
-        <img src="Images/Logos/LinkedInLogo.webp"
-          onclick="window.open('https://www.linkedin.com/in/dylan-archer-44a783338', '_blank')">
-        <img src="Images/Logos/GitHubLogo.png"
-          onclick="window.open('https://www.github.com/Dylan-KA?tab=repositories', '_blank')">
-        <img src="Images/Logos/ItchLogo.webp" onclick="window.open('https://dylanka.itch.io/', '_blank')">
+        <a href="https://www.linkedin.com/in/dylan-archer-44a783338" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+          <img src="Images/Logos/LinkedInLogo.webp" alt="">
+        </a>
+        <a href="https://www.github.com/Dylan-KA?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub repositories">
+          <img src="Images/Logos/GitHubLogo.png" alt="">
+        </a>
+        <a href="https://dylanka.itch.io/" target="_blank" rel="noopener" aria-label="Itch.io profile">
+          <img src="Images/Logos/ItchLogo.webp" alt="">
+        </a>
       </div>
     </div>
 
-    <!-- Right Side -->
     <div class="about">
       <h1>About Me</h1>
       <p>
@@ -54,66 +56,65 @@ permalink: "index.html"
   </div>
 </header>
 
-<!-- Awards Section -->
-<h2>Awards</h2>
-<ul>
-  <li>2025 Dean's List (UTS Faculty of Engineering and Information Technology)</li>
-  <li>Nominated for UTS Tech Festival 2024 Student Games Showcase (Game Design Studio 1)</li>
-  <li>Nominated for UTS Tech Festival 2023 Student Games Showcase (Game Design Methodologies)</li>
-</ul>
+<section class="content-section awards-section" aria-labelledby="awards-heading">
+  <h2 id="awards-heading">Awards</h2>
+  <ul class="award-list">
+    <li>2025 Dean's List (UTS Faculty of Engineering and Information Technology)</li>
+    <li>Nominated for UTS Tech Festival 2024 Student Games Showcase (Game Design Studio 1)</li>
+    <li>Nominated for UTS Tech Festival 2023 Student Games Showcase (Game Design Methodologies)</li>
+  </ul>
+</section>
 
-<h1 id="projects">Projects</h1>
+<section class="content-section projects-section" id="projects" aria-labelledby="projects-heading">
+  <div class="section-heading">
+    <p class="section-kicker">Selected work</p>
+    <h1 id="projects-heading">Projects</h1>
+  </div>
 
-<h2 id="game-projects">Game Development</h2>
-<div class="project-container">
-  {% for project in projects.games %}
-  {{ projectCard(project.link, project.img, project.title, project.logos[0], project.logos[1], project.logos[2],
-  project.description) }}
-  {% endfor %}
-  <!-- Filler Section -->
-  <div class="project-filler"></div>
-  <div class="project-filler"></div>
-</div>
+  <section class="project-group" aria-labelledby="game-projects">
+    <h2 id="game-projects">Game Development</h2>
+    <div class="project-container">
+      {% for project in projects.games %}
+      {{ projectCard(project) }}
+      {% endfor %}
+    </div>
+  </section>
 
-<h2 id="web-projects">Web Development</h2>
-<div class="project-container">
-  {% for project in projects.web %}
-  {{ projectCard(project.link, project.img, project.title, project.logos[0], project.logos[1], project.logos[2],
-  project.description) }}
-  {% endfor %}
-  <!-- Filler Section -->
-  <div class="project-filler"></div>
-</div>
+  <section class="project-group" aria-labelledby="web-projects">
+    <h2 id="web-projects">Web Development</h2>
+    <div class="project-container">
+      {% for project in projects.web %}
+      {{ projectCard(project) }}
+      {% endfor %}
+    </div>
+  </section>
 
-<h2 id="mobile-projects">Mobile Development</h2>
-<div class="project-container">
-  {% for project in projects.mobile %}
-  {{ projectCard(project.link, project.img, project.title, project.logos[0], project.logos[1], project.logos[2],
-  project.description) }}
-  {% endfor %}
-  <!-- Filler Section -->
-  <div class="project-filler"></div>
-</div>
+  <section class="project-group" aria-labelledby="mobile-projects">
+    <h2 id="mobile-projects">Mobile Development</h2>
+    <div class="project-container">
+      {% for project in projects.mobile %}
+      {{ projectCard(project) }}
+      {% endfor %}
+    </div>
+  </section>
 
-<h2 id="3d-projects">3D Modelling & Animation</h2>
-<div class="project-container">
-  {% for project in projects.modelling %}
-  {{ projectCard(project.link, project.img, project.title, project.logos[0], project.logos[1], project.logos[2],
-  project.description) }}
-  {% endfor %}
-  <!-- Filler Section -->
-  <div class="project-filler"></div>
-</div>
+  <section class="project-group" aria-labelledby="3d-projects">
+    <h2 id="3d-projects">3D Modelling & Animation</h2>
+    <div class="project-container">
+      {% for project in projects.modelling %}
+      {{ projectCard(project) }}
+      {% endfor %}
+    </div>
+  </section>
 
-<h2 id="other-projects">Other Projects</h2>
-<div class="project-container">
-  {% for project in projects.other %}
-  {{ projectCard(project.link, project.img, project.title, project.logos[0], project.logos[1], project.logos[2],
-  project.description) }}
-  {% endfor %}
-  <!-- Filler Section -->
-  <div class="project-filler"></div>
-  <div class="project-filler"></div>
-</div>
+  <section class="project-group" aria-labelledby="other-projects">
+    <h2 id="other-projects">Other Projects</h2>
+    <div class="project-container">
+      {% for project in projects.other %}
+      {{ projectCard(project) }}
+      {% endfor %}
+    </div>
+  </section>
+</section>
 
 {% include "components/footer.njk" %}
