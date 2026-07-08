@@ -1,7 +1,7 @@
 /* Buttons */
 button {
   background-color: var(--color-accent);
-  color: #07111c;
+  color: var(--color-button-text);
   font-size: 1rem;
   font-weight: 700;
   border: 1px solid rgba(56, 189, 248, 0.45);
@@ -10,7 +10,7 @@ button {
   margin: 8px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  box-shadow: 0 12px 28px rgba(56, 189, 248, 0.16);
+  box-shadow: 0 8px 18px rgba(56, 189, 248, 0.08);
 }
 
 button:hover {
@@ -51,13 +51,16 @@ button:hover {
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
+  left: 8px;
   min-width: 220px;
   background-color: var(--color-surface-elevated);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   z-index: 20;
-  overflow: hidden;
+  overflow: visible;
+  text-align: left;
 }
 
 .dropdown-content a {
@@ -74,7 +77,8 @@ button:hover {
   background-color: rgba(56, 189, 248, 0.12);
 }
 
-.dropdown:hover .dropdown-content { display: block; }
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content { display: block; }
 
 .dropdown-sub { position: relative; }
 

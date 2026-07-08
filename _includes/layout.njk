@@ -9,6 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheet.css">
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "light" || savedTheme === "dark") {
+            document.documentElement.dataset.theme = savedTheme;
+          }
+        } catch (error) {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      })();
+    </script>
     {% block head %}{% endblock %}
   </head>
 
@@ -17,13 +29,95 @@
       <a class="site-mark" href="/index.html">Dylan Archer</a>
       <div class="site-nav-links">
         <a href="/index.html" aria-current="{% if page.url == '/index.html' or page.url == '/' %}page{% endif %}">About</a>
-        <a href="/index.html#projects">Projects</a>
+        <div class="nav-dropdown">
+          <a href="/index.html#projects" class="nav-dropdown-trigger">Projects</a>
+          <div class="nav-dropdown-menu">
+            <a href="/index.html#game-projects">Game Development</a>
+            <a href="/index.html#web-projects">Web Development</a>
+            <a href="/index.html#mobile-projects">Mobile Development</a>
+            <a href="/index.html#3d-projects">Modelling & Animation</a>
+            <a href="/index.html#other-projects">Other Projects</a>
+          </div>
+        </div>
         <a href="/Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-thumb"></span>
+        </span>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
     </nav>
     <main class="site-shell">
       {{ content | safe }}
     </main>
+    <button class="back-to-top" type="button" aria-label="Return to top">
+      <span aria-hidden="true">&#8593;</span>
+    </button>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector(".theme-toggle");
+        var label = document.querySelector(".theme-toggle-label");
+        var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+        function currentTheme() {
+          return root.dataset.theme || (media.matches ? "dark" : "light");
+        }
+
+        function updateToggle() {
+          var isDark = currentTheme() === "dark";
+          if (button) {
+            button.setAttribute("aria-pressed", String(isDark));
+          }
+          if (label) {
+            label.textContent = isDark ? "Dark" : "Light";
+          }
+        }
+
+        if (button) {
+          button.addEventListener("click", function () {
+            var nextTheme = currentTheme() === "dark" ? "light" : "dark";
+            root.dataset.theme = nextTheme;
+            try {
+              localStorage.setItem("theme", nextTheme);
+            } catch (error) {}
+            updateToggle();
+          });
+        }
+
+        media.addEventListener("change", function () {
+          if (!root.dataset.theme) {
+            updateToggle();
+          }
+        });
+
+        updateToggle();
+      })();
+
+      (function () {
+        var button = document.querySelector(".back-to-top");
+
+        if (button) {
+          var updateVisibility = function () {
+            var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            var threshold = Math.max(scrollable * 0.3, 240);
+            button.classList.toggle("is-visible", window.scrollY >= threshold);
+          };
+
+          button.addEventListener("click", function () {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          });
+
+          window.addEventListener("scroll", updateVisibility, { passive: true });
+          window.addEventListener("resize", updateVisibility);
+          updateVisibility();
+        }
+      })();
+    </script>
     {% block scripts %}{% endblock %}
   </body>
 </html>

@@ -44,5 +44,5 @@ footer {
     width: 30px;
     height: auto;
     display: block;
-    filter: invert(1);
+    filter: var(--icon-filter);
 }

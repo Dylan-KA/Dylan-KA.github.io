@@ -22,18 +22,18 @@
   flex-direction: column;
   min-height: 100%;
   overflow: hidden;
-  background: rgba(22, 29, 39, 0.92);
+  background: var(--color-card-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .project-card:hover,
 .project-card:focus-within {
-  border-color: rgba(56, 189, 248, 0.48);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-5px) scale(1.02);
+  border-color: color-mix(in srgb, var(--color-accent) 34%, var(--color-border));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  transform: translateY(-3px) scale(1.01);
 }
 
 .project-card-media {
@@ -125,11 +125,11 @@
   align-items: center;
   min-height: 28px;
   padding: 5px 10px;
-  color: #c7eaff;
+  color: var(--color-chip-text);
   font-size: 0.78rem;
   font-weight: 800;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.28);
+  background: var(--color-chip-bg);
+  border: 1px solid var(--color-chip-border);
   border-radius: 999px;
 }
 
