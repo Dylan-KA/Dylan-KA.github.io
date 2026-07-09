@@ -39,8 +39,8 @@ permalink: "{{ page.fileSlug }}.html"
       This experience has sharpened my ability to build purpose-driven interactive experiences that solve real-world
       learning challenges.
     </p>
-    <button onclick="window.open('https://dadysherwin1.itch.io/clash-of-commands', '_blank')" class="small">Play the
-      game on itch.io 🔗</button>
+    <button onclick="window.open('https://dadysherwin1.itch.io/clash-of-commands', '_blank')" class="small project-link-button">Play the
+      game on itch.io <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button>
   </div>
 
   <div class="right-column">
@@ -55,10 +55,10 @@ permalink: "{{ page.fileSlug }}.html"
         <!-- Dots will be dynamically generated -->
       </div>
       <!-- Navigation buttons -->
-      <div class="centred-horizontally">
-        <button class="small" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="small" onclick="moveSlide(1)">&#10095;</button>
-        <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
+      <div class="carousel-nav">
+        <button class="carousel-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="carousel-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="carousel-button" id="FullScreenButton" onclick="FullView()" aria-label="Open full screen"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
       </div>
     </div>
   </div>
@@ -67,11 +67,11 @@ permalink: "{{ page.fileSlug }}.html"
   <div id="FullImageView">
     <img id="FullImage" onclick="CloseFullView()" />
     <!-- Navigation buttons -->
-    <div>
-      <button class="light" onclick="moveSlide(-1)">&#10094;</button>
-      <button class="light" onclick="moveSlide(1)">&#10095;</button>
-      <button class="red medium" onclick="CloseFullView()">&times</button>
-    </div>
+    <div class="fullscreen-controls">
+    <button class="overlay-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="overlay-button close-button" onclick="CloseFullView()" aria-label="Close full screen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="overlay-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
   </div>
 
   {% block scripts %}

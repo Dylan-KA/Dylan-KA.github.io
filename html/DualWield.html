@@ -38,7 +38,7 @@ permalink: "{{ page.fileSlug }}.html"
     <!-- Buttons -->
     <button
       onclick="window.open('https://showcase.gamesstudio.org/autumn-2024/#portfolioModalgds1:~:text=own%20game%20mechanics-,Dual%20Wield,-by%20Dylan%20Archer', '_blank')"
-      class="small">Nominated for UTS Student Games Showcase 2024 🔗</button>
+      class="small project-link-button">Nominated for UTS Student Games Showcase 2024 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button>
     <iframe frameborder="0"
       src="https://itch.io/embed/2619058?bg_color=2e2e2e&amp;fg_color=eeeeee&amp;link_color=1e5c84&amp;border_color=000000"
       width="552" height="167" style="margin-top:30px">
@@ -67,10 +67,10 @@ permalink: "{{ page.fileSlug }}.html"
         <!-- Dots will be dynamically generated -->
       </div>
       <!-- Navigation buttons -->
-      <div class="centred-horizontally">
-        <button class="small" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="small" onclick="moveSlide(1)">&#10095;</button>
-        <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
+      <div class="carousel-nav">
+        <button class="carousel-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="carousel-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="carousel-button" id="FullScreenButton" onclick="FullView()" aria-label="Open full screen"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
       </div>
     </div>
   </div>
@@ -80,10 +80,10 @@ permalink: "{{ page.fileSlug }}.html"
 <div id="FullImageView">
   <img id="FullImage" onclick="CloseFullView()" />
   <!-- Navigation buttons -->
-  <div>
-    <button class="light" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="light" onclick="moveSlide(1)">&#10095;</button>
-    <button class="red medium" onclick="CloseFullView()">&times</button>
+  <div class="fullscreen-controls">
+    <button class="overlay-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="overlay-button close-button" onclick="CloseFullView()" aria-label="Close full screen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="overlay-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
   </div>
 </div>
 
