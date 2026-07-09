@@ -1,51 +1,90 @@
 /* Home Page Header */
+.home-hero {
+  position: relative;
+  z-index: 10;
+  padding-top: 16px;
+}
+
 .header-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 24px;
   margin: 0 auto;
-  margin-top: 50px;
+  padding: clamp(8px, 1.4vw, 18px);
   align-items: flex-start;
-  background-color: #eff0f5;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, var(--color-hero-start), var(--color-hero-end));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow: visible;
 }
 
 .profile, .about {
   flex: 1;
-  margin: auto;
-  padding: 50px;
+  min-width: 300px;
+  margin: 0;
+  padding: clamp(28px, 5vw, 56px);
 }
 
 @media (max-width: 459px) {
-  body { min-width: 410px; }
   .header-content {
-    background-color: transparent;
-    box-shadow: none;
+    display: block;
   }
-  .profile, .about { padding: 0px; }
+  .profile, .about { min-width: 0; padding: 26px; }
 }
 
 .profile { text-align: center; }
 
 .profile-picture {
-  width: 50%;
-  height: 50%;
+  width: min(210px, 62%);
+  aspect-ratio: 1;
   object-fit: cover;
+  border: 3px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+.profile h1,
+.about h1 {
+  margin: 24px 0 14px;
+}
+
+.hero-role {
+  margin: 0 0 18px;
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.social-links {
+  gap: 6px !important;
+  display: flex;
+  justify-self: center;
 }
 
 .social-links img {
-  padding: 10px;
   width: 45px;
   height: 45px;
+  padding: 10px;
+  object-fit: contain;
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.social-links a {
+  display: inline-flex;
 }
 
 .social-links img:hover {
-  filter: invert(100%) grayscale(100%) brightness(30%);
-  transition: filter 0.3s ease, transform 0.3s ease;
-  transform: scale(1.2);
+  background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  transform: translateY(-3px);
 }
 
-.about p { font-size: 1.2rem; }
+.about p { font-size: 1.08rem; }
 .about div { text-align: center; }
+.about .dropdown-content { text-align: left; }

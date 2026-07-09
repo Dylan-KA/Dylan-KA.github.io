@@ -5,65 +5,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/Images/ProfilePicture.jpeg" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/stylesheet.css">
-    <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
-    </style>
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "light" || savedTheme === "dark") {
+            document.documentElement.dataset.theme = savedTheme;
+          }
+        } catch (error) {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      })();
+    </script>
     
   </head>
 
   <body>
-    <div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="site-mark" href="/index.html">Dylan Archer</a>
+      <div class="site-nav-links">
+        <a href="/index.html" aria-current="">About</a>
+        <div class="nav-dropdown">
+          <a href="/index.html#projects" class="nav-dropdown-trigger">Projects</a>
+          <div class="nav-dropdown-menu">
+            <div class="dropdown-sub">
+              <a href="/index.html#game-projects">Game Development</a>
+              <div class="dropdown-sub-content">
+                
+                <a href="/DualWield.html">Dual Wield</a>
+                
+                <a href="/Caved-In.html">Caved In</a>
+                
+                <a href="/PacStudent.html">PacStudent</a>
+                
+                <a href="/Wormy.html">Wormy</a>
+                
+                <a href="/Snaked-Together.html">Snaked Together</a>
+                
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#web-projects">Web Development</a>
+              <div class="dropdown-sub-content">
+                
+                <a href="/GroceryStore.html">Online Grocery Store</a>
+                
+                <a href="/CarRentalSystem.html">Online Car Rental</a>
+                
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#mobile-projects">Mobile Development</a>
+              <div class="dropdown-sub-content">
+                
+                <a href="/Quiz-App.html">Quiz App</a>
+                
+                <a href="/OnTaskPro.html">Task Tracker App</a>
+                
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#3d-projects">Modelling & Animation</a>
+              <div class="dropdown-sub-content">
+                
+                <a href="/Blender.html">3D Modelling Project</a>
+                
+                <a href="/3DAnim.html">Unity 3D Animation</a>
+                
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#other-projects">Other Projects</a>
+              <div class="dropdown-sub-content">
+                
+                <a href="/ClashOfCommands.html">Clash of Commands</a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-thumb"></span>
+        </span>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+    </nav>
+    <main class="site-shell">
       
 <!-- Header -->
 <header>
   <div>
     <h1>Caved In</h1>
-    <div>
-    <button onclick="window.location.href='index.html'" class="medium">About Me</button>
-    <div class="dropdown">
-        <button onclick="window.location.href='index.html#projects'" class="dropbtn medium">Projects</button>
-        <div class="dropdown-content">
-            <div class="dropdown-sub">
-                <a href="index.html#game-projects">Game Development</a>
-                <div class="dropdown-sub-content">
-                    <a href="DualWield.html">Dual Wield</a>
-                    <a href="Caved-In.html">Caved In</a>
-                    <a href="PacStudent.html">PacStudent</a>
-                    <a href="Wormy.html">Wormy</a>
-                </div>
-            </div>
-            <div class="dropdown-sub">
-                <a href="index.html#web-projects">Web Development</a>
-                <div class="dropdown-sub-content">
-                    <a href="GroceryStore.html">Online Grocery Store</a>
-                    <a href="CarRentalSystem.html">Online Car Rental</a>
-                </div>
-            </div>
-            <div class="dropdown-sub">
-                <a href="index.html#mobile-projects">Mobile Development</a>
-                <div class="dropdown-sub-content">
-                    <a href="Quiz-App.html">Quiz App</a>
-                    <a href="OnTaskPro.html">Task Tracker App</a>
-                </div>
-            </div>
-            <div class="dropdown-sub">
-                <a href="index.html#3d-projects">Modelling & Animation</a>
-                <div class="dropdown-sub-content">
-                    <a href="Blender.html">3D Modelling Project</a>
-                    <a href="3DAnim.html">Unity 3D Animation</a>
-                </div>
-            </div>
-            <div class="dropdown-sub">
-                <a href="index.html#other-projects">Other Projects</a>
-                <div class="dropdown-sub-content">
-                    <a href="ClashOfCommands.html">Clash of Commands</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
   </div>
 </header>
 
@@ -128,10 +168,10 @@
         <!-- Dots will be dynamically generated -->
       </div>
       <!-- Navigation buttons -->
-      <div class="centred-horizontally">
-        <button class="small" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="small" onclick="moveSlide(1)">&#10095;</button>
-        <button class="small" id="FullScreenButton" onclick="FullView()">⛶</button>
+      <div class="carousel-nav">
+        <button class="carousel-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="carousel-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="carousel-button" id="FullScreenButton" onclick="FullView()" aria-label="Open full screen"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
       </div>
     </div>
   </div>
@@ -141,17 +181,103 @@
 <div id="FullImageView">
   <img id="FullImage" onclick="CloseFullView()" />
   <!-- Navigation buttons -->
-  <div>
-    <button class="light" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="light" onclick="moveSlide(1)">&#10095;</button>
-    <button class="red medium" onclick="CloseFullView()">&times</button>
+  <div class="fullscreen-controls">
+    <button class="overlay-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="overlay-button close-button" onclick="CloseFullView()" aria-label="Close full screen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="overlay-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
   </div>
 </div>
 
 
 <script src="Scripts/ImageCarousel.js"></script>
 
+    </main>
+    <footer class="container">
+    <div class="footer-content">
+        <p>
+            &copy; 2026 Dylan Archer.
+        </p>
+        <div class="footer-icons">
+            <a href="https://github.com/dylan-ka" target="_blank" rel="noopener" class="social-icon-white">
+                <img width="30" class="footer-href" src="Images/Logos/GitHubLogo.png" alt="GitHub">
+            </a>
+            <a href="https://dylanka.itch.io/" target="_blank" rel="noopener" class="social-icon-white">
+                <img width="30" class="footer-href" src="Images/Logos/ItchLogo.webp" alt="Itch.io">
+            </a>
+            <a href="https://www.linkedin.com/in/dylan-archer-44a783338/" target="_blank" rel="noopener" class="social-icon-white">
+                <img width="30" class="footer-href" src="Images/Logos/LinkedInLogo.webp" alt="LinkedIn">
+            </a>
+        </div>
     </div>
+</footer>
+
+    <button class="back-to-top" type="button" aria-label="Return to top">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector(".theme-toggle");
+        var label = document.querySelector(".theme-toggle-label");
+        var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+        function currentTheme() {
+          return root.dataset.theme || (media.matches ? "dark" : "light");
+        }
+
+        function updateToggle() {
+          var isDark = currentTheme() === "dark";
+          if (button) {
+            button.setAttribute("aria-pressed", String(isDark));
+          }
+          if (label) {
+            label.textContent = isDark ? "Dark" : "Light";
+          }
+        }
+
+        if (button) {
+          button.addEventListener("click", function () {
+            var nextTheme = currentTheme() === "dark" ? "light" : "dark";
+            root.dataset.theme = nextTheme;
+            try {
+              localStorage.setItem("theme", nextTheme);
+            } catch (error) {}
+            updateToggle();
+          });
+        }
+
+        media.addEventListener("change", function () {
+          if (!root.dataset.theme) {
+            updateToggle();
+          }
+        });
+
+        updateToggle();
+      })();
+
+      (function () {
+        var button = document.querySelector(".back-to-top");
+
+        if (button) {
+          var updateVisibility = function () {
+            var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            var threshold = Math.max(scrollable * 0.3, 240);
+            button.classList.toggle("is-visible", window.scrollY >= threshold);
+          };
+
+          button.addEventListener("click", function () {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          });
+
+          window.addEventListener("scroll", updateVisibility, { passive: true });
+          window.addEventListener("resize", updateVisibility);
+          updateVisibility();
+        }
+      })();
+    </script>
     
   </body>
 </html>
