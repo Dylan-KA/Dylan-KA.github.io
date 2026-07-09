@@ -43,11 +43,46 @@ permalink: "index.html"
         <div class="dropdown">
           <button onclick="window.location.href='index.html#projects'" class="dropbtn">Projects</button>
           <div class="dropdown-content">
-            <a href="index.html#game-projects">Game Development</a>
-            <a href="index.html#web-projects">Web Development</a>
-            <a href="index.html#mobile-projects">Mobile Development</a>
-            <a href="index.html#3d-projects">Modelling & Animation</a>
-            <a href="index.html#other-projects">Other Projects</a>
+            <div class="dropdown-sub">
+              <a href="index.html#game-projects">Game Development</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.games %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="index.html#web-projects">Web Development</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.web %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="index.html#mobile-projects">Mobile Development</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.mobile %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="index.html#3d-projects">Modelling & Animation</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.modelling %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="index.html#other-projects">Other Projects</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.other %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </div>
         <button onclick="window.open('Resume.pdf', '_blank')" class="project-link-button">Resume <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button>

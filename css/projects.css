@@ -141,14 +141,14 @@
   text-decoration: none;
 }
 
-.project-learn-more::after {
-  content: "→";
-  transition: padding-left 0.2s ease;
+.project-learn-more i {
+  margin-left: 6px;
+  transition: transform 0.2s ease;
 }
 
-.project-learn-more:hover::after,
-.project-learn-more:focus-visible::after {
-  padding-left: 4px;
+.project-learn-more:hover i,
+.project-learn-more:focus-visible i {
+  transform: translateX(2px);
 }
 
 @media (max-width: 980px) {
