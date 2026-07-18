@@ -424,6 +424,7 @@ hr {
   .site-shell,
   .site-nav {
     width: min(100% - 28px, var(--container));
+    padding: 0px;
   }
 
   .site-nav {

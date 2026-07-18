@@ -7,7 +7,6 @@ button {
   border: 1px solid rgba(56, 189, 248, 0.45);
   border-radius: var(--radius);
   padding: 13px 28px;
-  margin: 8px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   box-shadow: 0 8px 18px rgba(56, 189, 248, 0.08);
