@@ -32,7 +32,15 @@
     display: block;
   }
   .profile, .about { min-width: 0; padding: 26px; }
+  .about > div { grid-template-columns: 1fr; }
 }
+
+/* Nav buttons: two equal columns on desktop, one column on mobile */
+.about > div { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; gap: 12px; }
+.about > div > .dropdown { display: block; min-width: 0; }
+.about > div > .project-link-button { min-width: 0; }
+.about .dropbtn,
+.about .project-link-button { width: 100%; box-sizing: border-box; }
 
 .profile { text-align: center; }
 
@@ -60,7 +68,7 @@
 .social-links {
   gap: 6px !important;
   display: flex;
-  justify-self: center;
+  justify-content: center;
 }
 
 .social-links img {
