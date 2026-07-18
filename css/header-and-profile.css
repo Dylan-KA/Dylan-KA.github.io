@@ -32,7 +32,7 @@
     display: block;
   }
   .profile, .about { min-width: 0; padding: 26px; }
-  .about > div { grid-template-columns: 1fr; }
+  .about > div { grid-template-columns: 1fr !important; }
 }
 
 /* Nav buttons: two equal columns on desktop, one column on mobile */
