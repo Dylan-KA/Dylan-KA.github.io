@@ -385,6 +385,12 @@ button:focus-visible {
   margin-bottom: 32px;
 }
 
+.section-heading h2 {
+  font-size: clamp(2.4rem, 5vw, 4.25rem);
+  font-weight: 800;
+  margin: 0;
+}
+
 .section-kicker {
   margin: 0 0 10px;
   color: var(--color-accent);

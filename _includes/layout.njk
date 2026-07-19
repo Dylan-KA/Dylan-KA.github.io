@@ -1,9 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>{{ title | default("Dylan Archer Portfolio") }}</title>
+    {% set pageTitle = seo_title | default(title) | default(site.name + " — Software Developer") %}
+    {% set pageDescription = seo_description | default("Portfolio of Dylan Archer, a software developer specialising in games, web and mobile development.") %}
+    {% set pageImage = image | default(site.defaultImage) %}
+    {% set canonicalUrl = site.url + page.url %}
+    <title>{{ pageTitle }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ pageDescription }}">
+    <link rel="canonical" href="{{ canonicalUrl }}">
+
+    <meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ pageTitle }}">
+    <meta property="og:description" content="{{ pageDescription }}">
+    <meta property="og:url" content="{{ canonicalUrl }}">
+    <meta property="og:image" content="{{ site.url }}/{{ pageImage | encodeUri }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ pageTitle }}">
+    <meta name="twitter:description" content="{{ pageDescription }}">
+    <meta name="twitter:image" content="{{ site.url }}/{{ pageImage | encodeUri }}">
+
     <link rel="icon" href="/Images/ProfilePicture.jpeg" type="image/icon type">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

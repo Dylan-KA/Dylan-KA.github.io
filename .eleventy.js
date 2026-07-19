@@ -4,6 +4,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("stylesheet.css");
     eleventyConfig.addPassthroughCopy("Resume.pdf");
     eleventyConfig.addPassthroughCopy("css");
+    eleventyConfig.addPassthroughCopy("robots.txt");
+
+    eleventyConfig.addFilter("encodeUri", (value) => encodeURI(value));
 
     return {
         dir: {
