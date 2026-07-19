@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("stylesheet.css");
     eleventyConfig.addPassthroughCopy("Resume.pdf");
     eleventyConfig.addPassthroughCopy("robots.txt");
+    eleventyConfig.addPassthroughCopy("llms.txt");
     eleventyConfig.addWatchTarget("css");
     eleventyConfig.on("eleventy.before", bundleCss);
 

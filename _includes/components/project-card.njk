@@ -9,7 +9,7 @@
                 <a href="{{ project.link }}">{{ project.title }}</a>
             </h3>
             {% if project.logos %}
-            <div class="project-card-logos" aria-label="Project technologies">
+            <div class="project-card-logos" role="group" aria-label="Project technologies">
                 {% for logo in project.logos %}
                 <img src="{{ logo }}" alt="" loading="lazy">
                 {% endfor %}
@@ -18,7 +18,7 @@
         </div>
         <p class="project-summary">{{ project.summary | default(project.description) }}</p>
         {% if project.tags %}
-        <div class="project-tags" aria-label="Project metadata">
+        <div class="project-tags" role="group" aria-label="Project metadata">
             {% for tag in project.tags %}
             <span>{{ tag }}</span>
             {% endfor %}
