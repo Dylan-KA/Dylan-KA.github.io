@@ -110,7 +110,7 @@
 #FullImage {
   position: relative;
   z-index: 2;
-  max-width: min(100%, 1000px);
+  max-width: min(100%, 1440px);
   max-height: 82vh;
   width: auto;
   height: auto;

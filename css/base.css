@@ -97,7 +97,6 @@ body {
 .site-shell {
   width: min(var(--container), calc(100% - 40px));
   margin: 0 auto;
-  padding: 48px 0 56px;
 }
 
 .site-nav {
