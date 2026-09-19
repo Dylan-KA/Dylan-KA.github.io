@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dylan Archer - Resume</title>
+<style>
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Regular.ttf"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Medium.ttf"); font-weight: 500; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-SemiBold.ttf"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Bold.ttf"); font-weight: 700; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-ExtraBold.ttf"); font-weight: 800; }
+
+/* Tokens copied from the portfolio's css/base.css */
+:root {
+  --color-bg: #0f141b;
+  --color-surface: #161d27;
+  --color-border: rgba(148, 163, 184, 0.22);
+  --color-text: #edf2f7;
+  --color-muted: #a8b3c2;
+  --color-accent: #38bdf8;
+  --color-hero-start: rgba(29, 38, 51, 0.94);
+  --color-hero-end: rgba(22, 29, 39, 0.84);
+  --color-card-bg: rgba(22, 29, 39, 0.92);
+  --color-chip-text: #c7eaff;
+  --color-chip-bg: rgba(56, 189, 248, 0.1);
+  --color-chip-border: rgba(56, 189, 248, 0.28);
+  --icon-filter: invert(1);
+  --logo-bg: rgba(237, 242, 247, 0.08);
+  --radius: 8px;
+}
+:root[data-theme="light"] {
+  --color-bg: #f7f9fc;
+  --color-surface: #ffffff;
+  --color-border: rgba(15, 23, 42, 0.14);
+  --color-text: #111827;
+  --color-muted: #4b5563;
+  --color-accent: #0284c7;
+  --color-hero-start: rgba(255, 255, 255, 0.98);
+  --color-hero-end: rgba(232, 240, 248, 0.92);
+  --color-card-bg: rgba(255, 255, 255, 0.94);
+  --color-chip-text: #075985;
+  --color-chip-bg: rgba(2, 132, 199, 0.12);
+  --color-chip-border: rgba(2, 132, 199, 0.36);
+  --icon-filter: none;
+  --logo-bg: rgba(15, 23, 42, 0.04);
+}
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  width: 210mm; height: 297mm; overflow: hidden;
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--color-text);
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 120mm);
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  font-size: 8.9pt; line-height: 1.5;
+}
+.page { padding: 10mm 11mm 9mm; height: 100%; display: flex; flex-direction: column; gap: 6mm; }
+a { color: var(--color-accent); text-decoration: none; }
+p { margin: 0; color: var(--color-muted); }
+
+/* Hero card, after .header-content / .profile */
+.hero {
+  display: flex; align-items: center; gap: 6mm;
+  padding: 6mm 6mm 6mm 7mm;
+  background: linear-gradient(135deg, var(--color-hero-start), var(--color-hero-end));
+  border: 1px solid var(--color-border); border-radius: var(--radius);
+}
+.hero img.avatar {
+  width: 31mm; height: 31mm; border-radius: 50%; object-fit: cover; flex: none;
+  border: 2.5px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+}
+.hero-main { flex: 1; min-width: 0; }
+.hero h1 { margin: 0; font-size: 27pt; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; }
+.hero-role { margin: 2mm 0 3.5mm; color: var(--color-accent); font-size: 11.5pt; font-weight: 700; }
+.contact { display: grid; grid-template-columns: auto auto; gap: 1.6mm 6mm; justify-content: start; }
+.contact span, .contact a { display: inline-flex; align-items: center; gap: 2mm; color: var(--color-muted); font-weight: 500; }
+.contact svg { width: 3.6mm; height: 3.6mm; stroke: var(--color-accent); fill: none; stroke-width: 2; flex: none; }
+
+/* Body grid */
+.cols { display: grid; grid-template-columns: 62mm 1fr; gap: 6mm; flex: 1; min-height: 0; }
+.col { display: flex; flex-direction: column; gap: 5mm; }
+
+.kicker {
+  margin: 0 0 2.2mm; color: var(--color-accent);
+  font-size: 7.4pt; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 2.5mm;
+}
+.kicker::after { content: ""; flex: 1; height: 1px; background: var(--color-border); }
+
+.card {
+  background: var(--color-card-bg); border: 1px solid var(--color-border);
+  border-radius: var(--radius); padding: 3.4mm 3.8mm;
+}
+.stack > * + * { margin-top: 2.6mm; }
+
+h3 { margin: 0; font-size: 10pt; font-weight: 700; line-height: 1.25; }
+.sub { color: var(--color-accent); font-weight: 700; font-size: 8.4pt; }
+.meta { color: var(--color-muted); font-size: 7.8pt; font-weight: 600; white-space: nowrap; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 1.4mm; }
+.chip {
+  display: inline-block; padding: 0.7mm 2.3mm; border-radius: 999px;
+  color: var(--color-chip-text); background: var(--color-chip-bg);
+  border: 1px solid var(--color-chip-border); font-size: 7.3pt; font-weight: 800;
+}
+.skill-group + .skill-group { margin-top: 3mm; }
+.skill-label { font-size: 7.6pt; font-weight: 700; color: var(--color-text); margin-bottom: 1.4mm; }
+
+ul { margin: 1.4mm 0 0; padding-left: 3.8mm; color: var(--color-muted); }
+li { margin: 0.6mm 0; }
+li::marker { color: var(--color-accent); }
+
+.stats { display: flex; gap: 2mm; margin-top: 2.2mm; }
+.stat { flex: 1; text-align: center; padding: 1.6mm 0; border: 1px solid var(--color-chip-border); background: var(--color-chip-bg); border-radius: 6px; }
+.stat b { display: block; font-size: 11pt; font-weight: 800; color: var(--color-text); }
+.stat small { font-size: 6.6pt; font-weight: 700; color: var(--color-chip-text); text-transform: uppercase; letter-spacing: 0.08em; }
+
+.award { padding-left: 2.6mm; border-left: 2px solid var(--color-accent); }
+.award b { display: block; font-weight: 700; font-size: 8.4pt; }
+.award span { color: var(--color-muted); font-size: 7.8pt; }
+
+.projects { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+.projects .card { display: flex; flex-direction: column; gap: 1.6mm; }
+.projects p { font-size: 8.1pt; line-height: 1.45; }
+.logos { display: flex; gap: 1.2mm; flex: none; }
+.logos img {
+  width: 5.4mm; height: 5.4mm; object-fit: contain; padding: 0.8mm;
+  background: var(--logo-bg); border: 1px solid var(--color-border); border-radius: 5px;
+}
+.logos img.mono { filter: var(--icon-filter); }
+
+.links a { display: block; font-weight: 600; }
+.links a + a { margin-top: 1.4mm; }
+.links small { display: block; color: var(--color-muted); font-weight: 500; font-size: 7.4pt; }
+
+.contact { grid-template-columns: repeat(4, max-content); gap: 1.8mm 3mm; font-size: 7.9pt; }
+.contact a, .contact span, .chip { white-space: nowrap; }
+.edu-meta { flex-wrap: nowrap !important; }
+.logos img.inv { filter: none; }
+:root[data-theme="light"] .logos img.inv { filter: invert(1); }
+.edu-meta { display:flex; gap:1.4mm; flex-wrap:wrap; margin-top:1.8mm; }
+.job-head { display:flex; justify-content:space-between; align-items:baseline; gap:3mm; }
+.job-head h3 span { color: var(--color-accent); font-weight:700; font-size:8.4pt; }
+.job-head h3 span::before { content:"/"; color: var(--color-muted); opacity:.5; margin: 0 1.6mm; font-weight:400; }
+/* v3: open layout, no boxes */
+.hero { background: none; border: 0; border-radius: 0; padding: 0 0 5mm; border-bottom: 1px solid var(--color-border); }
+.card { background: none; border: 0; border-radius: 0; padding: 0; }
+.col > section + section { }
+.stack > * + * { margin-top: 3.4mm; }
+.projects { gap: 4mm 6mm; }
+.logos img { border: 0; background: none; padding: 0.3mm; }
+.more { display:flex; flex-direction:column; gap:2.7mm; }
+aside.col { gap: 7.4mm; }
+.more a { color: var(--color-text); font-weight:700; font-size:8.4pt; line-height:1.3; }
+.more small { display:block; color: var(--color-muted); font-weight:500; font-size:7.6pt; }
+.proj .job-head h3 span { font-size:7.9pt; }
+.proj ul { margin-top:1mm; }
+.cols { zoom: 1.1; grid-template-columns: 52mm minmax(0,1fr); gap: 5.5mm; }
+main.col { gap: 8.5mm; }
+aside.col { gap: 7.5mm; }
+
+.job-head h3 { font-size: 9.5pt; white-space: nowrap; }
+.job-head .meta { font-size: 7.5pt; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <img class="avatar" src="img/profile.jpg" alt="Dylan Archer">
+    <div class="hero-main">
+      <h1>Dylan Archer</h1>
+      <div class="hero-role">Software Developer (Games, Web, Mobile)</div>
+      <div class="contact">
+        <a href="tel:+61468432861"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>+61 468 432 861</a>
+        <a href="mailto:dylanka3@gmail.com"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>dylanka3@gmail.com</a>
+        <a href="https://dylan-archer-dev.com/"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>dylan-archer-dev.com</a>
+        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Sydney, NSW</span>
+        <a href="https://github.com/dylan-ka"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1S18.7.7 16 2.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.7c0 5.5 3.3 6.7 6.4 7a3.4 3.4 0 0 0-.9 2.6V22"/></svg>github.com/dylan-ka</a>
+        <a href="https://www.linkedin.com/in/dylan-archer-44a783338/"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+        <a href="https://dylanka.itch.io/"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>dylanka.itch.io</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="cols">
+    <aside class="col">
+      <section>
+        <div class="kicker">Education</div>
+        <div class="card">
+          <h3>Bachelor of Science in Games Development</h3>
+          <div class="row" style="margin-top:0.8mm"><span class="sub">With Distinction</span><span class="meta">2022 - 2024</span></div>
+          <div class="row" style="margin-top:0.8mm"><p>University of Technology Sydney</p></div>
+          <div class="row" style="margin-top:1.6mm; align-items:center"><div class="edu-meta" style="margin:0"><span class="chip">GPA 6.50</span><span class="chip">WAM 85.43</span></div></div>
+          <a href="https://www.myequals.net/sharelink/464f788a-cd80-4d80-b760-68cc984dcc6a/4c58fe64-3427-4798-9106-7a3dd2180882" style="display:block; margin-top:1.8mm; font-weight:700; font-size:7.8pt">View academic transcript &rarr;</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="kicker">Skills</div>
+        <div class="card">
+          <div class="skill-group">
+            <div class="skill-label">Languages</div>
+            <div class="chips">
+              <span class="chip">C++</span><span class="chip">C#</span><span class="chip">Java</span><span class="chip">Python</span><span class="chip">Swift</span><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-label">Web, CMS &amp; IT</div>
+            <div class="chips">
+              <span class="chip">WordPress</span><span class="chip">Shopify</span><span class="chip">Google Workspace</span><span class="chip">Microsoft 365</span><span class="chip">Domains &amp; hosting</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-label">Engines &amp; Tools</div>
+            <div class="chips">
+              <span class="chip">Unity</span><span class="chip">Unreal Engine</span><span class="chip">Blender</span><span class="chip">Git / GitHub</span><span class="chip">Visual Studio</span><span class="chip">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="kicker">Awards</div>
+        <div class="card stack">
+          <div class="award"><b>2025 Dean's List</b><span>UTS Faculty of Engineering &amp; IT</span></div>
+          <div class="award"><b>UTS Tech Festival 2023 &amp; 2024</b><span>Student Games Showcase nominee</span></div>
+        </div>
+      </section>
+      <section>
+        <div class="kicker">References</div>
+        <div class="card">
+          <div class="row"><h3>Joel Campbell</h3><a href="tel:0424290156" class="meta" style="color:var(--color-accent)">0424 290 156</a></div>
+          <p>Mission Leader, Shire Salvos</p>
+        </div>
+        <div class="card" style="margin-top:3mm">
+          <div class="row"><h3>Daniel Pazin</h3><a href="tel:0419440396" class="meta" style="color:var(--color-accent)">0419 440 396</a></div>
+          <p>Full Stack Dev &amp; Technical Lead</p>
+        </div>
+      </section>
+    </aside>
+
+    <main class="col">
+      <section>
+        <div class="kicker">Profile</div>
+        <p style="font-size:8.6pt; line-height:1.55">
+          Junior Full Stack Developer at a Sydney marketing agency, building and maintaining <b style="color:var(--color-text)">WordPress and Shopify</b> websites alongside design and SEO teams. Games Development graduate (Distinction) from UTS, with a background across web, mobile and game development. I build sites that clients can update themselves, and use AI tools deliberately to work faster without cutting corners. Projects and case studies at <a href="https://dylan-archer-dev.com/" style="white-space:nowrap">dylan-archer-dev.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <div class="kicker">Work Experience</div>
+        <div class="stack">
+          <div class="card">
+            <div class="job-head"><h3>Junior Full Stack Developer<span>COG Marketing</span></h3><span class="meta">Aug 2025 - Present</span></div>
+            <ul>
+              <li>Build new WordPress websites and maintain and update existing client sites, working alongside the design and SEO teams.</li>
+              <li>Build and update Shopify stores for e-commerce clients.</li>
+              <li>Structure builds so non-technical clients and staff can update content themselves through the CMS, rather than relying on hard-coded changes that need a developer.</li>
+              <li>Provide managed IT support for clients, including email, domains and website hosting.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="job-head"><h3>Community Tech Support Assistant<span>Youngster.co</span></h3><span class="meta">Mar 2025 - Aug 2025</span></div>
+            <ul>
+              <li>Provided personalised technology assistance to seniors, helping them navigate smartphones, tablets and computers.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="job-head"><h3>Crew Member (Casual)<span>McDonald's Menai</span></h3><span class="meta">May 2020 - Aug 2025</span></div>
+            <ul>
+              <li>Prepared food orders efficiently in a fast-paced kitchen, consistently meeting quality and hygiene standards.</li>
+              <li>Supported team operations by maintaining cleanliness, restocking supplies and following food safety protocols.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="kicker">AI-Assisted Development</div>
+        <ul style="margin-top:0">
+          <li>Use AI tools daily to speed up development, debugging and maintenance work across WordPress and Shopify projects.</li>
+          <li>Decide task by task when AI is the right tool, and when a job is faster or safer done by hand.</li>
+          <li>Manage context deliberately: breaking work into focused tasks and giving the model the right code, constraints and requirements to get reliable results.</li>
+          <li>Review and test AI-generated code before it ships, and stay responsible for the result.</li>
+        </ul>
+      </section>
+
+
+    </main>
+  </div>
+</div>
+</body>
+</html>
