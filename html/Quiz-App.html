@@ -1,0 +1,52 @@
+---
+layout: layout.njk
+title: Quiz App
+seo_title: "Quiz App — SwiftUI iOS Quiz Application"
+seo_description: "SwiftUI iOS app that fetches quizzes via API, offering difficulty and category selection. Demonstrates API integration, JSON parsing and dynamic UI."
+image: "Images/Project Screenshots/Quiz App/Quiz App.webp"
+permalink: "{{ page.fileSlug }}.html"
+---
+
+<!-- Header -->
+<header>
+  <div>
+    <h1>Quiz App</h1>
+  </div>
+</header>
+
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the project</h2>
+    <p>
+      Quiz App is an iOS application developed over a few weeks as part of a group project using the SwiftUI framework.
+      The app fetches quizzes on various topics via an API, providing users with a range of quiz options.
+    </p>
+    <h2 style="margin-top: 0px;">What I contributed</h2>
+    <p>
+      I integrated the API to retrieve new questions and answers each time a user begins a quiz.
+      This involved using JSON parsing to display the data effectively within the app.
+      Additionally, I developed the UI that allows users to select the quiz difficulty, number of questions, and
+      category.
+    </p>
+    <h2 style="margin-top: 0px;">What I learned</h2>
+    <p>
+      This was one of my early projects while I was learning iOS development for the first time.
+      As a result, the UI design wasn't fully refined, and some interface issues emerged, particularly with dynamic
+      content, which occasionally caused the layout to appear inconsistent.
+      Despite these challenges, the project helped me build a solid foundation in SwiftUI and working with APIs.
+    </p>
+    <button onclick="window.open('https://github.com/Dylan-KA/QuizApp', '_blank')" class="small project-link-button">GitHub Repository
+      <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button>
+  </div>
+
+  <div class="right-column">
+    <video autoplay muted loop>
+      <source src="Images/Project Screenshots/Quiz App/QuizAppWalkthrough.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </div>
+</div>
+
+{% block scripts %}
+<script src="Scripts/ImageCarousel.js"></script>
+{% endblock %}

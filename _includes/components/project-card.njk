@@ -1,0 +1,30 @@
+{% macro projectCard(project) %}
+<article class="project-card">
+    <a class="project-card-media" href="{{ project.link }}" aria-label="View {{ project.title }}">
+        <img src="{{ project.img }}" alt="{{ project.title }} project screenshot" loading="lazy">
+    </a>
+    <div class="project-card-body">
+        <div class="project-card-heading">
+            <h3 class="project-title">
+                <a href="{{ project.link }}">{{ project.title }}</a>
+            </h3>
+            {% if project.logos %}
+            <div class="project-card-logos" role="group" aria-label="Project technologies">
+                {% for logo in project.logos %}
+                <img src="{{ logo }}" alt="" loading="lazy">
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <p class="project-summary">{{ project.summary | default(project.description) }}</p>
+        {% if project.tags %}
+        <div class="project-tags" role="group" aria-label="Project metadata">
+            {% for tag in project.tags %}
+            <span>{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <a href="{{ project.link }}" class="project-learn-more">View Project <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+    </div>
+</article>
+{% endmacro %}

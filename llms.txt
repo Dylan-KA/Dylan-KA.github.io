@@ -1,0 +1,42 @@
+# Dylan Archer
+
+> Full-stack software developer with a Bachelor of Science in Games Development (Distinction) from UTS. Builds games, web apps, and mobile apps, with one year of professional full-stack experience.
+
+Dylan's background in games development gives him a strong foundation in problem-solving, performance, and user experience, which carries over into web, mobile, and software projects. This site is a portfolio: an About section, awards, and a catalogue of projects grouped by discipline (games, web, mobile, 3D modelling/animation, other).
+
+## Pages
+
+- [About](https://dylan-archer-dev.com/index.html): Bio, awards, and the full project catalogue.
+
+## Game Development Projects
+
+- [Dual Wield](https://dylan-archer-dev.com/DualWield.html): Unity FPS built around dual-weapon combat and 10 weapon combinations. Unity, C#.
+- [Caved In](https://dylan-archer-dev.com/Caved-In.html): Cooperative Unreal Engine extraction game about sampling, survival, and escape. Unreal, C++.
+- [PacStudent](https://dylan-archer-dev.com/PacStudent.html): Unity recreation of Pac-Man built while learning core game systems. Unity, C#.
+- [Wormy](https://dylan-archer-dev.com/Wormy.html): 2D Unity puzzle game about navigating tunnels to grow a seed. Unity, C#.
+- [Snaked Together](https://dylan-archer-dev.com/Snaked-Together.html): Cooperative climbing game where two players share one snake body. Unity, C#.
+
+## Web Development Projects
+
+- [Online Grocery Store](https://dylan-archer-dev.com/GroceryStore.html): Full-stack grocery storefront with browsing, cart, and checkout. HTML/CSS, PHP, SQL.
+- [Online Car Rental](https://dylan-archer-dev.com/CarRentalSystem.html): Car rental platform with filtering, availability checks, and bookings. HTML/CSS, PHP, AJAX.
+
+## Mobile Development Projects
+
+- [Quiz App](https://dylan-archer-dev.com/Quiz-App.html): SwiftUI iOS quiz app that fetches topic-based quizzes from an API. SwiftUI, iOS.
+- [Task Tracker App (OnTaskPro)](https://dylan-archer-dev.com/OnTaskPro.html): iOS productivity app designed around a real user problem. SwiftUI, iOS.
+
+## 3D Modelling & Animation
+
+- [3D Modelling Project](https://dylan-archer-dev.com/Blender.html): Blender environment study focused on modelling, UVs, materials, and lighting.
+- [Unity 3D Animation](https://dylan-archer-dev.com/3DAnim.html): Unity HDRP animation project inspired by FPS machinima comedy.
+
+## Other Projects
+
+- [Clash of Commands](https://dylan-archer-dev.com/ClashOfCommands.html): Serious game that teaches UNIX terminal commands through gamification. Unity.
+
+## Optional
+
+- [GitHub](https://www.github.com/Dylan-KA?tab=repositories): Source repositories.
+- [Itch.io](https://dylanka.itch.io/): Playable game builds.
+- [LinkedIn](https://www.linkedin.com/in/dylan-archer-44a783338): Professional profile.

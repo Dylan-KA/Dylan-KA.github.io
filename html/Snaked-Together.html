@@ -1,0 +1,71 @@
+---
+layout: layout.njk
+title: Snaked Together
+seo_title: "Snaked Together — Cooperative 2D Game (SXSW Snake Jam)"
+seo_description: "Cooperative 2D climbing game created for the SXSW Snake Jam. Players control opposite ends of a two-headed snake in rapid-prototype, team-driven gameplay."
+image: "Images/Project Screenshots/Snaked/Snaked-Together-16x9.webp"
+permalink: "{{ page.fileSlug }}.html"
+---
+
+<!-- Header -->
+<header>
+  <div>
+    <h1>Snaked Together</h1>
+  </div>
+</header>
+
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the project</h2>
+    <p>
+      Snaked Together is a 2D cooperative climbing game created by a small, focused team over the course of roughly two weeks. 
+      The game was developed for a <a href="https://itch.io/jam/snakejam" target="_blank">game jam hosted by SXSW Sydney</a>, challenging us to rapidly prototype, refine, and polish a unique gameplay concept within a tight timeframe.
+      The result is a light-hearted yet mechanically engaging experience centered around teamwork, coordination, and movement-based problem-solving.
+      Players control opposite ends of a two-headed snake, navigating hazards, color-based obstacles, and increasingly tricky platforming sections that demand precise communication and timing.
+    </p>
+    <h2 style="margin-top: 0px;">What I contributed</h2>
+    <p>
+      I played a key role in shaping the core direction of the game, collaborating closely with the team to brainstorm and refine its central mechanics.
+      I designed the level layout and progression, ensuring that each section supported cooperative play, introduced new challenges, and encouraged players to strategize together.
+      In addition to design work, I also contributed to some of the programming of the project using Unity and C#.
+      I also assisted with testing and refining the game's difficulty curve to make the experience both challenging and enjoyable for players.
+    </p>
+    <iframe frameborder="0" src="https://itch.io/embed/3857286?bg_color=5d0000&amp;fg_color=ffe7e7&amp;border_color=000000" 
+      width="552" height="167">
+      <a href="https://dylanka.itch.io/snaked-together">Snaked Together by DylanKA, dadysherwin1, speedy139</a></iframe>
+  </div>
+
+  <div class="right-column">
+    <div class="carousel-container" id="carousel">
+        <img class="carousel-slide" src="Images/Project Screenshots/Snaked/Snaked-Together-1.webp" alt="Image 1"
+        onclick="FullView()">
+        <img class="carousel-slide" src="Images/Project Screenshots/Snaked/Snaked-Together-2.webp" alt="Image 2"
+        onclick="FullView()">
+      <div class="dot-container">
+        <!-- Dots will be dynamically generated -->
+      </div>
+      <!-- Navigation buttons -->
+      <div class="carousel-nav">
+        <button class="carousel-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="carousel-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="carousel-button" id="FullScreenButton" onclick="FullView()" aria-label="Open full screen"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Full Screen Image-->
+<div id="FullImageView">
+  <img id="FullImage" onclick="CloseFullView()" />
+  <!-- Navigation buttons -->
+  <div class="fullscreen-controls">
+    <button class="overlay-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="overlay-button close-button" onclick="CloseFullView()" aria-label="Close full screen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="overlay-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+</div>
+
+{% block scripts %}
+<script src="Scripts/ImageCarousel.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+{% endblock %}

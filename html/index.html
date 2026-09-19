@@ -1,0 +1,151 @@
+---
+layout: layout.njk
+title: Dylan Archer — Software Developer
+seo_title: "Dylan Archer — Software Developer (Games, Web, Mobile)"
+seo_description: "Full-stack web developer with a Games Development degree, building web, mobile and game projects. Checkout my work and links to GitHub and Itch.io."
+permalink: "index.html"
+---
+{% from "components/project-card.njk" import projectCard %}
+
+<header class="home-hero">
+  <div class="header-content">
+    <div class="profile">
+      <img src="Images/ProfilePicture.webp" class="profile-picture" alt="Dylan Archer">
+      <h1>Dylan Archer</h1>
+      <p class="hero-role">Software Developer - Games, Web, Mobile</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/dylan-archer-44a783338" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="Check out my LinkedIn profile">
+          <img src="Images/Logos/LinkedInLogo.webp" alt="">
+        </a>
+        <a href="https://www.github.com/Dylan-KA?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub repositories" title="View my GitHub repositories">
+          <img src="Images/Logos/GitHubLogo.webp" alt="">
+        </a>
+        <a href="https://dylanka.itch.io/" target="_blank" rel="noopener" aria-label="Itch.io profile" title="Check out my Itch.io profile">
+          <img src="Images/Logos/ItchLogo.webp" alt="">
+        </a>
+      </div>
+    </div>
+
+    <div class="about">
+      <h2>About Me</h2>
+      <p>
+        Hi, I'm Dylan Archer, a <b>full-stack web developer</b> with a year of professional experience, backed by a
+        <b>Bachelor of Science in Games Development with Distinction</b> from UTS.
+      </p>
+      <p>
+        My background in games gave me a strong foundation in problem-solving, performance, and user experience,
+        which I now bring to <b>web, mobile, and software development,</b> allowing me to build polished, reliable
+        products across a range of platforms.
+      </p>
+      <div>
+        <div class="dropdown">
+          <button onclick="window.location.href='index.html#projects'" class="dropbtn">Projects</button>
+          <div class="dropdown-content">
+            <div class="dropdown-sub">
+              <a href="index.html#game-projects">Game Development</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.games %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="index.html#web-projects">Web Development</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.web %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="index.html#mobile-projects">Mobile Development</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.mobile %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="index.html#3d-projects">Modelling & Animation</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.modelling %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="index.html#other-projects">Other Projects</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.other %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <button onclick="window.open('Resume.pdf', '_blank')" class="project-link-button">Resume <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="content-section awards-section" aria-labelledby="awards-heading">
+  <h2 id="awards-heading">Awards</h2>
+  <ul class="award-list">
+    <li>2025 Dean's List (UTS Faculty of Engineering and Information Technology)</li>
+    <li>Nominated for UTS Tech Festival 2024 Student Games Showcase (Game Design Studio 1)</li>
+    <li>Nominated for UTS Tech Festival 2023 Student Games Showcase (Game Design Methodologies)</li>
+  </ul>
+</section>
+
+<section class="content-section projects-section" id="projects" aria-labelledby="projects-heading">
+  <div class="section-heading">
+    <h2 id="projects-heading">Projects</h2>
+  </div>
+
+  <section class="project-group" aria-labelledby="game-projects">
+    <h2 id="game-projects">Game Development</h2>
+    <div class="project-container">
+      {% for project in projects.games %}
+      {{ projectCard(project) }}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="project-group" aria-labelledby="web-projects">
+    <h2 id="web-projects">Web Development</h2>
+    <div class="project-container">
+      {% for project in projects.web %}
+      {{ projectCard(project) }}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="project-group" aria-labelledby="mobile-projects">
+    <h2 id="mobile-projects">Mobile Development</h2>
+    <div class="project-container">
+      {% for project in projects.mobile %}
+      {{ projectCard(project) }}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="project-group" aria-labelledby="3d-projects">
+    <h2 id="3d-projects">3D Modelling & Animation</h2>
+    <div class="project-container">
+      {% for project in projects.modelling %}
+      {{ projectCard(project) }}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="project-group" aria-labelledby="other-projects">
+    <h2 id="other-projects">Other Projects</h2>
+    <div class="project-container">
+      {% for project in projects.other %}
+      {{ projectCard(project) }}
+      {% endfor %}
+    </div>
+  </section>
+</section>
+

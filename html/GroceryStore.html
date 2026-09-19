@@ -1,0 +1,70 @@
+---
+layout: layout.njk
+title: Online Grocery Store
+seo_title: "Online Grocery Store — Full-Stack Web Project"
+seo_description: "Full-featured online grocery store built with HTML, CSS, JavaScript, PHP and SQL. Supports product browsing, filtering, cart and cloud deployment on AWS."
+image: "Images/Project Screenshots/Grocery Store/Grocery Store (1).webp"
+permalink: "{{ page.fileSlug }}.html"
+---
+
+<!-- Header -->
+<header>
+  <div>
+    <h1>Online Grocery Store</h1>
+  </div>
+</header>
+
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the project</h2>
+    <p>
+      I developed a fully functional Online Grocery Store as a solo project, utilising a stack that included HTML, CSS,
+      JavaScript, PHP, and SQL.
+      The website features a user-friendly interface that allows customers to browse products, add items to their cart,
+      and complete purchases seamlessly.
+      I implemented dynamic functionalities such as product filtering and search options using JavaScript, while PHP and
+      SQL were used for backend processes, including database management for inventory and orders.
+      As part of the assessment I deployed the website on AWS, allowing users to access it from anywhere.
+      This project not only enhanced my technical skills but also provided valuable experience in full-stack development
+      and cloud deployment.
+    </p>
+    <button onclick="window.open('https://github.com/Dylan-KA/GroceryStore', '_blank')" class="small project-link-button">GitHub Repository
+      <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button>
+  </div>
+
+  <div class="right-column">
+    <div class="carousel-container" id="carousel">
+      <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (1).webp" alt="Image 1"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (2).webp" alt="Image 2"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (3).webp" alt="Image 3"
+        onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Grocery Store/Grocery Store (4).webp" alt="Image 4"
+        onclick="FullView()">
+      <div class="dot-container">
+        <!-- Dots will be dynamically generated -->
+      </div>
+      <!-- Navigation buttons -->
+      <div class="carousel-nav">
+        <button class="carousel-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="carousel-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="carousel-button" id="FullScreenButton" onclick="FullView()" aria-label="Open full screen"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full Screen Image-->
+  <div id="FullImageView">
+    <img id="FullImage" onclick="CloseFullView()" />
+    <!-- Navigation buttons -->
+    <div class="fullscreen-controls">
+    <button class="overlay-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="overlay-button close-button" onclick="CloseFullView()" aria-label="Close full screen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="overlay-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+  </div>
+
+  {% block scripts %}
+  <script src="Scripts/ImageCarousel.js"></script>
+  {% endblock %}

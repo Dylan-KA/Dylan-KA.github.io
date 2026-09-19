@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% set pageTitle = seo_title | default(title) | default(site.name + " — Software Developer") %}
+    {% set pageDescription = seo_description | default("Portfolio of Dylan Archer, a software developer specialising in games, web and mobile development.") %}
+    {% set pageImage = image | default(site.defaultImage) %}
+    {% set canonicalUrl = site.url + page.url %}
+    <title>{{ pageTitle }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ pageDescription }}">
+    <link rel="canonical" href="{{ canonicalUrl }}">
+
+    <meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ pageTitle }}">
+    <meta property="og:description" content="{{ pageDescription }}">
+    <meta property="og:url" content="{{ canonicalUrl }}">
+    <meta property="og:image" content="{{ site.url }}/{{ pageImage | encodeUri }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ pageTitle }}">
+    <meta name="twitter:description" content="{{ pageDescription }}">
+    <meta name="twitter:image" content="{{ site.url }}/{{ pageImage | encodeUri }}">
+
+    <link rel="icon" href="/Images/Favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/Favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/Favicon/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/Favicon/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheet.css">
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "light" || savedTheme === "dark") {
+            document.documentElement.dataset.theme = savedTheme;
+          }
+        } catch (error) {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      })();
+    </script>
+    {% block head %}{% endblock %}
+  </head>
+
+  <body>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="site-mark" href="/index.html">Dylan Archer</a>
+      <div class="site-nav-links">
+        <a href="/index.html" aria-current="{% if page.url == '/index.html' or page.url == '/' %}page{% endif %}">About</a>
+        <div class="nav-dropdown">
+          <a href="/index.html#projects" class="nav-dropdown-trigger">Projects</a>
+          <div class="nav-dropdown-menu">
+            <div class="dropdown-sub">
+              <a href="/index.html#game-projects">Game Development</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.games %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#web-projects">Web Development</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.web %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#mobile-projects">Mobile Development</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.mobile %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#3d-projects">Modelling & Animation</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.modelling %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#other-projects">Other Projects</a>
+              <div class="dropdown-sub-content">
+                {% for project in projects.other %}
+                <a href="/{{ project.link }}">{{ project.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-thumb"></span>
+        </span>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+    </nav>
+    <main class="site-shell">
+      {{ content | safe }}
+    </main>
+    {% include "components/footer.njk" %}
+    <button class="back-to-top" type="button" aria-label="Return to top">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector(".theme-toggle");
+        var label = document.querySelector(".theme-toggle-label");
+        var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+        function currentTheme() {
+          return root.dataset.theme || (media.matches ? "dark" : "light");
+        }
+
+        function updateToggle() {
+          var isDark = currentTheme() === "dark";
+          if (button) {
+            button.setAttribute("aria-pressed", String(isDark));
+          }
+          if (label) {
+            label.textContent = isDark ? "Dark" : "Light";
+          }
+        }
+
+        if (button) {
+          button.addEventListener("click", function () {
+            var nextTheme = currentTheme() === "dark" ? "light" : "dark";
+            root.dataset.theme = nextTheme;
+            try {
+              localStorage.setItem("theme", nextTheme);
+            } catch (error) {}
+            updateToggle();
+          });
+        }
+
+        media.addEventListener("change", function () {
+          if (!root.dataset.theme) {
+            updateToggle();
+          }
+        });
+
+        updateToggle();
+      })();
+
+      (function () {
+        var button = document.querySelector(".back-to-top");
+
+        if (button) {
+          var updateVisibility = function () {
+            var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            var threshold = Math.max(scrollable * 0.3, 240);
+            button.classList.toggle("is-visible", window.scrollY >= threshold);
+          };
+
+          button.addEventListener("click", function () {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          });
+
+          window.addEventListener("scroll", updateVisibility, { passive: true });
+          window.addEventListener("resize", updateVisibility);
+          updateVisibility();
+        }
+      })();
+    </script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
