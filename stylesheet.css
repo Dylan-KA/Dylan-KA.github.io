@@ -531,7 +531,7 @@ hr {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Profile photo, swapped for the wireframe bust (Scripts/BustViewer.js) once it loads */
+/* Profile photo, swapped for the wireframe avatar (Scripts/AvatarViewer.js) once it loads */
 .profile-visual {
   position: relative;
   display: grid;
@@ -542,15 +542,15 @@ hr {
 }
 
 .profile-visual > .profile-picture,
-.profile-visual > .bust-canvas {
+.profile-visual > .avatar-canvas {
   grid-area: 1 / 1;
 }
 
 .profile-visual > .profile-picture {
-  width: 62%;
+  width: 80%;
 }
 
-.bust-canvas {
+.avatar-canvas {
   display: block;
   width: 100%;
   height: 100%;
@@ -559,7 +559,7 @@ hr {
   transition: opacity 0.6s ease;
 }
 
-.profile-visual.is-3d .bust-canvas {
+.profile-visual.is-3d .avatar-canvas {
   opacity: 1;
 }
 
@@ -568,7 +568,7 @@ hr {
   transform: scale(0.9);
 }
 
-.bust-toggle {
+.avatar-toggle {
   position: absolute;
   right: 4px;
   bottom: 4px;
@@ -589,11 +589,11 @@ hr {
   transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.bust-toggle[hidden] {
+.avatar-toggle[hidden] {
   display: none;
 }
 
-.bust-toggle:hover {
+.avatar-toggle:hover {
   color: var(--color-accent);
   background: color-mix(in srgb, var(--color-accent) 16%, transparent);
   border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
@@ -603,7 +603,7 @@ hr {
 
 @media (prefers-reduced-motion: reduce) {
   .profile-picture,
-  .bust-canvas {
+  .avatar-canvas {
     transition: none;
   }
 }

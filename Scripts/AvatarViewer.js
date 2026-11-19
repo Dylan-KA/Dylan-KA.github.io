@@ -1,22 +1,22 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
-// Wireframe bust in the home page hero. The model is built by blender/build_bust.py.
+// Wireframe avatar in the home page hero. The model is built by blender/build_avatar.py.
 // Each part ships twice: faces (drawn depth-only, to hide back lines) and "<Part>_lines".
-const MODEL_URL = "/Images/Model/dylan-bust.glb";
+const MODEL_URL = "/Images/Model/dylan-avatar.glb";
 const HEAD_PARTS = ["Head", "Ears", "Hair", "Brows", "Moustache", "Teeth", "Eyes"];
 const LINE_OPACITY = {
   Head: 0.55, Ears: 0.55, Hair: 0.5, Eyes: 0.95, Teeth: 0.9, Brows: 0.9, Moustache: 0.85,
   Hoodie: 0.32, Drawstrings: 0.6
 };
 const NECK_PIVOT = new THREE.Vector3(0, -0.13, -0.015);
-const BUST_BOTTOM = -0.36;
+const MODEL_BOTTOM = -0.36;
 const REVEAL_END = 0.2; // a little above the hair, so the scan line has left the model
 const REVEAL_SECONDS = 1.8;
 
-const container = document.querySelector("[data-bust-viewer]");
-const canvas = container && container.querySelector(".bust-canvas");
-const toggle = container && container.querySelector(".bust-toggle");
+const container = document.querySelector("[data-avatar-viewer]");
+const canvas = container && container.querySelector(".avatar-canvas");
+const toggle = container && container.querySelector(".avatar-toggle");
 
 function hasWebGL() {
   try {
@@ -42,7 +42,7 @@ function init() {
 
   const uniforms = {
     color: { value: new THREE.Color() },
-    reveal: { value: reduceMotion.matches ? REVEAL_END : BUST_BOTTOM }
+    reveal: { value: reduceMotion.matches ? REVEAL_END : MODEL_BOTTOM }
   };
 
   const occluder = new THREE.MeshBasicMaterial({
@@ -69,7 +69,7 @@ function init() {
         uniform float reveal;
         varying float vY;
         void main() {
-          float base = smoothstep(${BUST_BOTTOM.toFixed(3)}, ${(BUST_BOTTOM + 0.12).toFixed(3)}, vY);
+          float base = smoothstep(${MODEL_BOTTOM.toFixed(3)}, ${(MODEL_BOTTOM + 0.12).toFixed(3)}, vY);
           float shown = 1.0 - smoothstep(reveal - 0.015, reveal, vY);
           float scan = 1.0 - smoothstep(0.0, 0.03, abs(vY - reveal));
           gl_FragColor = vec4(color, min(1.0, opacity * base * shown + scan * 0.8 * base));
@@ -86,14 +86,14 @@ function init() {
     requestRender();
   }
 
-  const bust = new THREE.Group();
+  const avatar = new THREE.Group();
   const headPivot = new THREE.Group();
   const headParts = new THREE.Group();
   headPivot.position.copy(NECK_PIVOT);
   headParts.position.copy(NECK_PIVOT).negate();
   headPivot.add(headParts);
-  bust.add(headPivot);
-  scene.add(bust);
+  avatar.add(headPivot);
+  scene.add(avatar);
 
   new GLTFLoader().load(MODEL_URL, (gltf) => {
     const parts = [];
@@ -113,7 +113,7 @@ function init() {
       node.updateWorldMatrix(true, false);
       node.matrix.copy(node.matrixWorld);
       node.matrix.decompose(node.position, node.quaternion, node.scale);
-      (HEAD_PARTS.includes(part) ? headParts : bust).add(node);
+      (HEAD_PARTS.includes(part) ? headParts : avatar).add(node);
     }
     readAccent();
     container.classList.add("is-ready", "is-3d");
@@ -127,8 +127,8 @@ function init() {
   });
 
   // --- interaction -----------------------------------------------------------
-  const pose = { headYaw: 0, headPitch: 0, bustYaw: 0 };
-  const target = { headYaw: 0, headPitch: 0, bustYaw: 0 };
+  const pose = { headYaw: 0, headPitch: 0, bodyYaw: 0 };
+  const target = { headYaw: 0, headPitch: 0, bodyYaw: 0 };
   let lastPointer = -Infinity;
   let revealStart = 0;
 
@@ -141,7 +141,7 @@ function init() {
     const ny = THREE.MathUtils.clamp((event.clientY - (rect.top + rect.height * 0.35)) / (window.innerHeight / 2), -1, 1);
     target.headYaw = nx * 0.55;
     target.headPitch = ny * 0.22;
-    target.bustYaw = nx * 0.2;
+    target.bodyYaw = nx * 0.2;
     lastPointer = performance.now();
     requestRender();
   }, { passive: true });
@@ -152,12 +152,12 @@ function init() {
     }
     if (reduceMotion.matches) {
       target.headYaw = 0.12;
-      target.bustYaw = 0.25;
+      target.bodyYaw = 0.25;
       target.headPitch = 0;
       return;
     }
     const t = now / 1000;
-    target.bustYaw = Math.sin(t * 0.35) * 0.32;
+    target.bodyYaw = Math.sin(t * 0.35) * 0.32;
     target.headYaw = Math.sin(t * 0.35 - 0.6) * 0.18;
     target.headPitch = Math.sin(t * 0.5) * 0.04;
   }
@@ -185,12 +185,12 @@ function init() {
       pose[key] += (target[key] - pose[key]) * ease;
       moving = moving || Math.abs(target[key] - pose[key]) > 1e-4;
     }
-    bust.rotation.y = pose.bustYaw;
+    avatar.rotation.y = pose.bodyYaw;
     headPivot.rotation.set(pose.headPitch, pose.headYaw, 0, "YXZ");
 
     if (revealStart && uniforms.reveal.value < REVEAL_END) {
       const k = Math.min((now - revealStart) / (REVEAL_SECONDS * 1000), 1);
-      uniforms.reveal.value = BUST_BOTTOM + (REVEAL_END - BUST_BOTTOM) * (1 - Math.pow(1 - k, 3));
+      uniforms.reveal.value = MODEL_BOTTOM + (REVEAL_END - MODEL_BOTTOM) * (1 - Math.pow(1 - k, 3));
       moving = true;
     }
 
@@ -235,7 +235,7 @@ function init() {
     toggle.addEventListener("click", () => {
       const showPhoto = container.classList.toggle("is-3d") === false;
       toggle.setAttribute("aria-pressed", String(showPhoto));
-      toggle.querySelector(".bust-toggle-label").textContent = showPhoto ? "3D" : "Photo";
+      toggle.querySelector(".avatar-toggle-label").textContent = showPhoto ? "3D" : "Photo";
       toggle.querySelector("i").className = showPhoto ? "fa-solid fa-cube" : "fa-solid fa-camera";
       toggle.setAttribute("aria-label", showPhoto ? "Show 3D wireframe model" : "Show photo");
       if (!showPhoto) {

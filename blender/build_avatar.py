@@ -1,12 +1,12 @@
-"""Procedurally builds a stylised bust of Dylan from the profile photo's proportions.
+"""Procedurally builds a stylised head-and-shoulders avatar of Dylan from the profile photo's proportions.
 
 Run headless from the repo root:
-    blender -b --factory-startup --python blender/build_bust.py -- [--preview DIR] [--no-export]
+    blender -b --factory-startup --python blender/build_avatar.py -- [--preview DIR] [--no-export]
 
 Units are metres, Z up, the face looks down -Y and eye level sits at Z = 0.
 Each part is sculpted on a dense voxel mesh, retopologised to even quads with QuadriFlow, then
 exported twice: as faces (used to hide back lines) and as loose edges (the visible wireframe).
-Writes Images/Model/dylan-bust.glb and blender/dylan-bust.blend.
+Writes Images/Model/dylan-avatar.glb and blender/dylan-avatar.blend.
 """
 import math
 import os
@@ -19,8 +19,8 @@ from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-GLB_PATH = os.path.join(ROOT, "Images", "Model", "dylan-bust.glb")
-BLEND_PATH = os.path.join(ROOT, "blender", "dylan-bust.blend")
+GLB_PATH = os.path.join(ROOT, "Images", "Model", "dylan-avatar.glb")
+BLEND_PATH = os.path.join(ROOT, "blender", "dylan-avatar.blend")
 MIRROR = np.array([-1.0, 1.0, 1.0])
 HEAD_DROP = 0.02  # the head sits this far down into the hoodie, for a shorter neck
 UP = np.array([0.0, 0.0, 1.0])
@@ -593,11 +593,11 @@ def teeth(tree):
 # Hoodie
 # ---------------------------------------------------------------------------
 
-BUST_BOTTOM = -0.36
+MODEL_BOTTOM = -0.36
 
 
 def hoodie():
-    low = BUST_BOTTOM - 0.02
+    low = MODEL_BOTTOM - 0.02
     body = hull_obj("body", with_mirror([
         (0.07, 0.0, -0.185), (0.05, -0.058, -0.2), (0.0, -0.072, -0.215), (0.05, 0.06, -0.178), (0.0, 0.08, -0.175),
         (0.12, 0.03, -0.2), (0.165, 0.025, -0.216), (0.2, 0.015, -0.238), (0.222, 0.005, -0.266),
@@ -643,7 +643,7 @@ def drawstrings(tree):
     obs = []
     for sx, drift in ((-1, 0.009), (1, 0.006)):
         ctrl = [(sx * 0.03, -0.12, -0.2), (sx * 0.032 + drift * 0.3, -0.13, -0.245),
-                (sx * 0.034 + drift * 0.6, -0.14, -0.3), (sx * 0.034 + drift, -0.14, BUST_BOTTOM + 0.03)]
+                (sx * 0.034 + drift * 0.6, -0.14, -0.3), (sx * 0.034 + drift, -0.14, MODEL_BOTTOM + 0.03)]
         C, _ = project(tree, catmull(ctrl, 5), 0.0045)
         C[0] += np.array([0, 0.003, 0.003])
         n = len(C)
@@ -690,7 +690,7 @@ def build(retopo=True):
 
     for name, faces in QUADS.items() if retopo else ():
         quadriflow(parts[name], faces, symmetric=name != "Hair")
-    bisect_below(parts["Hoodie"], BUST_BOTTOM)
+    bisect_below(parts["Hoodie"], MODEL_BOTTOM)
     bisect_below(parts["Head"], -0.24)
     for name in ("Head", "Ears", "Hair", "Brows", "Moustache", "Teeth", "Eyes"):
         set_co(parts[name].data, get_co(parts[name].data) - np.array([0.0, 0.0, HEAD_DROP]))
