@@ -9,7 +9,7 @@ const LINE_OPACITY = {
   Head: 0.55, Ears: 0.55, Hair: 0.5, Eyes: 0.95, Teeth: 0.9, Brows: 0.9, Moustache: 0.85,
   Hoodie: 0.32, Drawstrings: 0.6
 };
-const NECK_PIVOT = new THREE.Vector3(0, -0.11, -0.015);
+const NECK_PIVOT = new THREE.Vector3(0, -0.13, -0.015);
 const BUST_BOTTOM = -0.36;
 const REVEAL_END = 0.2; // a little above the hair, so the scan line has left the model
 const REVEAL_SECONDS = 1.8;

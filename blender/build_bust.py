@@ -22,6 +22,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GLB_PATH = os.path.join(ROOT, "Images", "Model", "dylan-bust.glb")
 BLEND_PATH = os.path.join(ROOT, "blender", "dylan-bust.blend")
 MIRROR = np.array([-1.0, 1.0, 1.0])
+HEAD_DROP = 0.02  # the head sits this far down into the hoodie, for a shorter neck
 UP = np.array([0.0, 0.0, 1.0])
 
 
@@ -691,6 +692,8 @@ def build(retopo=True):
         quadriflow(parts[name], faces, symmetric=name != "Hair")
     bisect_below(parts["Hoodie"], BUST_BOTTOM)
     bisect_below(parts["Head"], -0.24)
+    for name in ("Head", "Ears", "Hair", "Brows", "Moustache", "Teeth", "Eyes"):
+        set_co(parts[name].data, get_co(parts[name].data) - np.array([0.0, 0.0, HEAD_DROP]))
     for name, ob in parts.items():
         ob.data.name = name
     return parts
