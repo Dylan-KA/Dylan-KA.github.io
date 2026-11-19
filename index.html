@@ -127,7 +127,14 @@
 <header class="home-hero">
   <div class="header-content">
     <div class="profile">
-      <img src="Images/ProfilePicture.webp" class="profile-picture" alt="Dylan Archer">
+      <div class="profile-visual" data-avatar-viewer>
+        <img src="Images/ProfilePicture.webp" class="profile-picture" alt="Dylan Archer">
+        <canvas class="avatar-canvas" aria-hidden="true"></canvas>
+        <button class="avatar-toggle" type="button" aria-pressed="false" aria-label="Show photo" hidden>
+          <i class="fa-solid fa-camera" aria-hidden="true"></i>
+          <span class="avatar-toggle-label">Photo</span>
+        </button>
+      </div>
       <h1>Dylan Archer</h1>
       <p class="hero-role">Software Developer - Games, Web, Mobile</p>
       <div class="social-links">
@@ -731,6 +738,18 @@
     </div>
   </section>
 </section>
+
+
+
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+</script>
+<script type="module" src="Scripts/AvatarViewer.js"></script>
 
 
     </main>
