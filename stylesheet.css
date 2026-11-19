@@ -528,6 +528,84 @@ hr {
   border: 3px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
   border-radius: 50%;
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Profile photo, swapped for the wireframe bust (Scripts/BustViewer.js) once it loads */
+.profile-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(340px, 100%);
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+.profile-visual > .profile-picture,
+.profile-visual > .bust-canvas {
+  grid-area: 1 / 1;
+}
+
+.profile-visual > .profile-picture {
+  width: 62%;
+}
+
+.bust-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.profile-visual.is-3d .bust-canvas {
+  opacity: 1;
+}
+
+.profile-visual.is-3d .profile-picture {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.bust-toggle {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 6px 12px;
+  color: var(--color-muted);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  box-shadow: none;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.bust-toggle[hidden] {
+  display: none;
+}
+
+.bust-toggle:hover {
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  box-shadow: none;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-picture,
+  .bust-canvas {
+    transition: none;
+  }
 }
 
 .profile h1,

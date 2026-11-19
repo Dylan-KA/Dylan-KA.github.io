@@ -26,3 +26,7 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.swp
+
+# Blender backups and Python cache
+*.blend1
+__pycache__/

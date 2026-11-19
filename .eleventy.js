@@ -14,7 +14,11 @@ function bundleCss() {
     const bundled = CSS_BUNDLE_FILES
         .map((file) => fs.readFileSync(path.join(__dirname, file), "utf8"))
         .join("\n");
-    fs.writeFileSync(path.join(__dirname, "stylesheet.css"), bundled);
+    const target = path.join(__dirname, "stylesheet.css");
+    // Only write on change; rewriting the watched file would retrigger --serve forever.
+    if (!fs.existsSync(target) || fs.readFileSync(target, "utf8") !== bundled) {
+        fs.writeFileSync(target, bundled);
+    }
 }
 
 module.exports = function (eleventyConfig) {

@@ -10,7 +10,14 @@ permalink: "index.html"
 <header class="home-hero">
   <div class="header-content">
     <div class="profile">
-      <img src="Images/ProfilePicture.webp" class="profile-picture" alt="Dylan Archer">
+      <div class="profile-visual" data-bust-viewer>
+        <img src="Images/ProfilePicture.webp" class="profile-picture" alt="Dylan Archer">
+        <canvas class="bust-canvas" aria-hidden="true"></canvas>
+        <button class="bust-toggle" type="button" aria-pressed="false" aria-label="Show photo" hidden>
+          <i class="fa-solid fa-camera" aria-hidden="true"></i>
+          <span class="bust-toggle-label">Photo</span>
+        </button>
+      </div>
       <h1>Dylan Archer</h1>
       <p class="hero-role">Software Developer - Games, Web, Mobile</p>
       <div class="social-links">
@@ -149,3 +156,15 @@ permalink: "index.html"
   </section>
 </section>
 
+
+{% block scripts %}
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+</script>
+<script type="module" src="Scripts/BustViewer.js"></script>
+{% endblock %}
