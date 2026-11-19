@@ -1,0 +1,85 @@
+---
+layout: layout.njk
+title: Untitled Boomer Shooter
+seo_title: "Untitled Boomer Shooter — Work-in-Progress Unity FPS (Personal Project)"
+seo_description: "A work-in-progress, single-player boomer shooter built in Unity. A personal project revisiting the dual-wield design of Dual Wield, with independent per-hand firing, per-weapon ammo and 21 weapon combinations."
+image: "Images/Project Screenshots/Boomer Shooter/Boomer Shooter Server Room.webp"
+permalink: "{{ page.fileSlug }}.html"
+---
+
+<!-- Header -->
+<header>
+  <div>
+    <h1>Untitled Boomer Shooter</h1>
+  </div>
+</header>
+
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the project</h2>
+    <p>
+      Untitled Boomer Shooter is a single-player, retro-inspired first-person shooter that I am developing in Unity as
+      a personal project.
+      It is my attempt to better execute the idea behind <a href="DualWield.html">Dual Wield</a>, my university group
+      project: a shooter where you hold a weapon in each hand, and the pairing you choose matters more than either gun
+      on its own.
+      The game is in early development, so everything shown here is a work-in-progress prototype rather than a
+      finished product.
+    </p>
+    <h2 style="margin-top: 0px;">Revisiting the idea</h2>
+    <p>
+      Unlike my other projects, this one isn't a university assignment, which gives me the freedom to return to Dual
+      Wield and fix what our playtesters told us didn't work.
+      Each hand now fires on its own button while sharing a single aim point, and every weapon tracks its own ammo
+      instead of drawing from a shared pool, which was the most criticised system in the original.
+      Every pair of weapons, including two of the same, has its own combo effect, such as firing a shotgun through
+      your own flamethrower to set every pellet alight.
+    </p>
+    <h2 style="margin-top: 0px;">Progress so far</h2>
+    <p>
+      So far I have built a playable prototype mission with six combat arenas, six weapons, 21 weapon combinations
+      and four enemy types.
+      As a solo developer I am also responsible for the planning, so I have written design and technical documents,
+      broken the work into small tasks, and play the game regularly to keep its scope realistic.
+    </p>
+  </div>
+
+  <div class="right-column">
+    <div class="carousel-container" id="carousel">
+      <img class="carousel-slide" src="Images/Project Screenshots/Boomer Shooter/Boomer Shooter Server Room.webp"
+        alt="Image 1" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Boomer Shooter/Boomer Shooter Dragons Breath.webp"
+        alt="Image 2" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Boomer Shooter/Boomer Shooter Alien.webp"
+        alt="Image 3" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Boomer Shooter/Boomer Shooter Office.webp"
+        alt="Image 4" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Boomer Shooter/Boomer Shooter Car Park.webp"
+        alt="Image 5" onclick="FullView()">
+      <div class="dot-container">
+        <!-- Dots will be dynamically generated -->
+      </div>
+      <!-- Navigation buttons -->
+      <div class="carousel-nav">
+        <button class="carousel-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="carousel-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="carousel-button" id="FullScreenButton" onclick="FullView()" aria-label="Open full screen"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Full Screen Image-->
+<div id="FullImageView">
+  <img id="FullImage" onclick="CloseFullView()" />
+  <!-- Navigation buttons -->
+  <div class="fullscreen-controls">
+    <button class="overlay-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="overlay-button close-button" onclick="CloseFullView()" aria-label="Close full screen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="overlay-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+</div>
+
+{% block scripts %}
+<script src="Scripts/ImageCarousel.js"></script>
+{% endblock %}
