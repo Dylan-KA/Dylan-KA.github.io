@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    
+    
+    
+    <title>Untitled Shooter Project — Work-in-Progress Unity FPS (Personal Project)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A work-in-progress, single-player retro FPS built in Unity. A personal project revisiting the dual-wield design of Dual Wield, with independent per-hand firing, per-weapon ammo and 21 weapon combinations.">
+    <link rel="canonical" href="https://dylan-archer-dev.com/UntitledShooter.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Dylan Archer">
+    <meta property="og:title" content="Untitled Shooter Project — Work-in-Progress Unity FPS (Personal Project)">
+    <meta property="og:description" content="A work-in-progress, single-player retro FPS built in Unity. A personal project revisiting the dual-wield design of Dual Wield, with independent per-hand firing, per-weapon ammo and 21 weapon combinations.">
+    <meta property="og:url" content="https://dylan-archer-dev.com/UntitledShooter.html">
+    <meta property="og:image" content="https://dylan-archer-dev.com/Images/Project%20Screenshots/Untitled%20Shooter/Untitled%20Shooter%20Ice%20Bomb.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Untitled Shooter Project — Work-in-Progress Unity FPS (Personal Project)">
+    <meta name="twitter:description" content="A work-in-progress, single-player retro FPS built in Unity. A personal project revisiting the dual-wield design of Dual Wield, with independent per-hand firing, per-weapon ammo and 21 weapon combinations.">
+    <meta name="twitter:image" content="https://dylan-archer-dev.com/Images/Project%20Screenshots/Untitled%20Shooter/Untitled%20Shooter%20Ice%20Bomb.webp">
+
+    <link rel="icon" href="/Images/Favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/Favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/Favicon/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/Favicon/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheet.css">
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "light" || savedTheme === "dark") {
+            document.documentElement.dataset.theme = savedTheme;
+          }
+        } catch (error) {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      })();
+    </script>
+    
+  </head>
+
+  <body>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="site-mark" href="/index.html">Dylan Archer</a>
+      <div class="site-nav-links">
+        <a href="/index.html" aria-current="">About</a>
+        <div class="nav-dropdown">
+          <a href="/index.html#projects" class="nav-dropdown-trigger">Projects</a>
+          <div class="nav-dropdown-menu">
+            <div class="dropdown-sub">
+              <a href="/index.html#game-projects">Game Development</a>
+              <div class="dropdown-sub-content">
+                
+                <a href="/UntitledShooter.html">Untitled Shooter Project</a>
+                
+                <a href="/DualWield.html">Dual Wield</a>
+                
+                <a href="/Caved-In.html">Caved In</a>
+                
+                <a href="/PacStudent.html">PacStudent</a>
+                
+                <a href="/Wormy.html">Wormy</a>
+                
+                <a href="/Snaked-Together.html">Snaked Together</a>
+                
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#web-projects">Web Development</a>
+              <div class="dropdown-sub-content">
+                
+                <a href="/GroceryStore.html">Online Grocery Store</a>
+                
+                <a href="/CarRentalSystem.html">Online Car Rental</a>
+                
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#mobile-projects">Mobile Development</a>
+              <div class="dropdown-sub-content">
+                
+                <a href="/Quiz-App.html">Quiz App</a>
+                
+                <a href="/OnTaskPro.html">Task Tracker App</a>
+                
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#3d-projects">Modelling & Animation</a>
+              <div class="dropdown-sub-content">
+                
+                <a href="/Blender.html">3D Modelling Project</a>
+                
+                <a href="/3DAnim.html">Unity 3D Animation</a>
+                
+              </div>
+            </div>
+            <div class="dropdown-sub">
+              <a href="/index.html#other-projects">Other Projects</a>
+              <div class="dropdown-sub-content">
+                
+                <a href="/ClashOfCommands.html">Clash of Commands</a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-thumb"></span>
+        </span>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+    </nav>
+    <main class="site-shell">
+      
+<!-- Header -->
+<header>
+  <div>
+    <h1>Untitled Shooter Project</h1>
+  </div>
+</header>
+
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the project</h2>
+    <p>
+      Untitled Shooter Project is a single-player, retro-inspired first-person shooter that I am developing in Unity
+      as a personal project.
+      It is my attempt to better execute the idea behind <a href="DualWield.html">Dual Wield</a>, my university group
+      project: a shooter where you hold a weapon in each hand, and the pairing you choose matters more than either gun
+      on its own.
+      The game is in early development, so everything shown here is a work-in-progress prototype rather than a
+      finished product.
+    </p>
+    <h2 style="margin-top: 0px;">Revisiting the idea</h2>
+    <p>
+      Unlike my other projects, this one isn't a university assignment, which gives me the freedom to return to Dual
+      Wield and fix what our playtesters told us didn't work.
+      In Dual Wield both guns fired on one button and drew from a shared ammo pool, which was the most criticised
+      system in the game.
+      Now each hand fires on its own button while sharing a single aim point, and every weapon tracks its own ammo.
+      There is no reloading: when a weapon runs dry, the answer is to swap it for another and change the pairing, and
+      because enemies drop ammo when they die, you resupply by fighting rather than backtracking.
+    </p>
+    <h2 style="margin-top: 0px;">Designing the pairings</h2>
+    <p>
+      Every pair of weapons, including two of the same, has its own hand-designed combo that changes how the two
+      weapons behave together rather than just adding damage.
+      A leaf blower can curve your own rocket onto your crosshair, an energy beam can detonate that rocket in mid-air,
+      and an enemy frozen by the cryo caster shatters into a storm of shards when you hit it with the beam.
+      The enemies are designed to test your pairing too: fast melee enemies ask whether you have a way to knock them
+      back, and armoured heavies shrug off shotgun pellets but crack under explosives.
+      Movement is fast but grounded, so skill comes from what you shoot with rather than how fast you move.
+    </p>
+    <h2 style="margin-top: 0px;">Progress so far</h2>
+    <p>
+      So far I have built a playable prototype mission with six combat arenas, six weapons, 21 weapon combinations
+      and four enemy types.
+      Each new weapon is handed to you in both hands, so your first impression of it is a pairing rather than a single
+      gun, and the name of your current combo stays on the HUD so you always know what your two hands will do.
+    </p>
+  </div>
+
+  <div class="right-column">
+    <div class="carousel-container" id="carousel">
+      <img class="carousel-slide" src="Images/Project Screenshots/Untitled Shooter/Untitled Shooter Ice Bomb.webp"
+        alt="A rocket and a cryo bolt fired together explode into an ice bomb that freezes a group of aliens in a car park" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Untitled Shooter/Untitled Shooter Shard Storm.webp"
+        alt="An energy beam shatters a frozen alien into a storm of ice shards in an office lobby" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Untitled Shooter/Untitled Shooter Barrel Explosion.webp"
+        alt="A burning napalm rocket sets off two explosive barrels beside a lava pool in a server room" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Untitled Shooter/Untitled Shooter Scorched Earth.webp"
+        alt="Two flamethrowers leave a pool of burning ground under a group of burning aliens in an office" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Untitled Shooter/Untitled Shooter Airburst.webp"
+        alt="An energy beam detonates a rocket in mid-air above a group of aliens in a long hall" onclick="FullView()">
+      <div class="dot-container">
+        <!-- Dots will be dynamically generated -->
+      </div>
+      <!-- Navigation buttons -->
+      <div class="carousel-nav">
+        <button class="carousel-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="carousel-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="carousel-button" id="FullScreenButton" onclick="FullView()" aria-label="Open full screen"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Full Screen Image-->
+<div id="FullImageView">
+  <img id="FullImage" onclick="CloseFullView()" />
+  <!-- Navigation buttons -->
+  <div class="fullscreen-controls">
+    <button class="overlay-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="overlay-button close-button" onclick="CloseFullView()" aria-label="Close full screen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="overlay-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+</div>
+
+
+<script src="Scripts/ImageCarousel.js"></script>
+
+
+    </main>
+    <footer class="container">
+    <div class="footer-content">
+        <p>
+            &copy; 2026 Dylan Archer.
+        </p>
+        <div class="footer-icons">
+            <a href="https://github.com/dylan-ka" target="_blank" rel="noopener" class="social-icon-white" title="View my GitHub repositories">
+                <img width="30" height="30" class="footer-href" src="Images/Logos/GitHubLogo.webp" alt="GitHub" >
+            </a>
+            <a href="https://dylanka.itch.io/" target="_blank" rel="noopener" class="social-icon-white" title="Check out my Itch.io profile">
+                <img width="30" height="30" class="footer-href" src="Images/Logos/ItchLogo.webp" alt="Itch.io">
+            </a>
+            <a href="https://www.linkedin.com/in/dylan-archer-44a783338/" target="_blank" rel="noopener" class="social-icon-white" title="Check out my LinkedIn profile">
+                <img width="30" height="30" class="footer-href" src="Images/Logos/LinkedInLogo.webp" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+</footer>
+
+    <button class="back-to-top" type="button" aria-label="Return to top">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector(".theme-toggle");
+        var label = document.querySelector(".theme-toggle-label");
+        var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+        function currentTheme() {
+          return root.dataset.theme || (media.matches ? "dark" : "light");
+        }
+
+        function updateToggle() {
+          var isDark = currentTheme() === "dark";
+          if (button) {
+            button.setAttribute("aria-pressed", String(isDark));
+          }
+          if (label) {
+            label.textContent = isDark ? "Dark" : "Light";
+          }
+        }
+
+        if (button) {
+          button.addEventListener("click", function () {
+            var nextTheme = currentTheme() === "dark" ? "light" : "dark";
+            root.dataset.theme = nextTheme;
+            try {
+              localStorage.setItem("theme", nextTheme);
+            } catch (error) {}
+            updateToggle();
+          });
+        }
+
+        media.addEventListener("change", function () {
+          if (!root.dataset.theme) {
+            updateToggle();
+          }
+        });
+
+        updateToggle();
+      })();
+
+      (function () {
+        var button = document.querySelector(".back-to-top");
+
+        if (button) {
+          var updateVisibility = function () {
+            var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            var threshold = Math.max(scrollable * 0.3, 240);
+            button.classList.toggle("is-visible", window.scrollY >= threshold);
+          };
+
+          button.addEventListener("click", function () {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          });
+
+          window.addEventListener("scroll", updateVisibility, { passive: true });
+          window.addEventListener("resize", updateVisibility);
+          updateVisibility();
+        }
+      })();
+    </script>
+    
+  </body>
+</html>
