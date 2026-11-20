@@ -10,6 +10,7 @@ Dylan's background in games development gives him a strong foundation in problem
 
 ## Game Development Projects
 
+- [Untitled Shooter Project](https://dylan-archer-dev.com/UntitledShooter.html): Work-in-progress personal Unity FPS revisiting the Dual Wield design. Unity, C#.
 - [Dual Wield](https://dylan-archer-dev.com/DualWield.html): Unity FPS built around dual-weapon combat and 10 weapon combinations. Unity, C#.
 - [Caved In](https://dylan-archer-dev.com/Caved-In.html): Cooperative Unreal Engine extraction game about sampling, survival, and escape. Unreal, C++.
 - [PacStudent](https://dylan-archer-dev.com/PacStudent.html): Unity recreation of Pac-Man built while learning core game systems. Unity, C#.
