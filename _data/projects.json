@@ -1,14 +1,14 @@
 {
     "games": [
         {
-            "link": "BoomerShooter.html",
-            "img": "Images/Project Screenshots/Boomer Shooter/Boomer Shooter Server Room.webp",
-            "title": "Untitled Boomer Shooter",
+            "link": "UntitledShooter.html",
+            "img": "Images/Project Screenshots/Untitled Shooter/Untitled Shooter Ice Bomb.webp",
+            "title": "Untitled Shooter Project",
             "logos": [
                 "Images/Logos/Unity-Logo.webp",
                 "Images/Logos/CSharp.webp"
             ],
-            "description": "Untitled Boomer Shooter is a work-in-progress, single-player FPS I am developing in Unity as a personal project. It is my attempt to better execute the dual-wield idea behind Dual Wield, where the pairing of the weapons in your two hands matters more than either gun on its own.",
+            "description": "Untitled Shooter Project is a work-in-progress, single-player FPS I am developing in Unity as a personal project. It is my attempt to better execute the dual-wield idea behind Dual Wield, where the pairing of the weapons in your two hands matters more than either gun on its own.",
             "summary": "A work-in-progress personal Unity FPS revisiting my Dual Wield design.",
             "tags": ["Unity", "C#", "Solo", "In progress"]
         },

@@ -1,0 +1,96 @@
+---
+layout: layout.njk
+title: Untitled Shooter Project
+seo_title: "Untitled Shooter Project — Work-in-Progress Unity FPS (Personal Project)"
+seo_description: "A work-in-progress, single-player retro FPS built in Unity. A personal project revisiting the dual-wield design of Dual Wield, with independent per-hand firing, per-weapon ammo and 21 weapon combinations."
+image: "Images/Project Screenshots/Untitled Shooter/Untitled Shooter Ice Bomb.webp"
+permalink: "{{ page.fileSlug }}.html"
+---
+
+<!-- Header -->
+<header>
+  <div>
+    <h1>Untitled Shooter Project</h1>
+  </div>
+</header>
+
+<div class="project-page-container">
+  <div class="left-column">
+    <h2 style="margin-top: 0px;">About the project</h2>
+    <p>
+      Untitled Shooter Project is a single-player, retro-inspired first-person shooter that I am developing in Unity
+      as a personal project.
+      It is my attempt to better execute the idea behind <a href="DualWield.html">Dual Wield</a>, my university group
+      project: a shooter where you hold a weapon in each hand, and the pairing you choose matters more than either gun
+      on its own.
+      The game is in early development, so everything shown here is a work-in-progress prototype rather than a
+      finished product.
+    </p>
+    <h2 style="margin-top: 0px;">Revisiting the idea</h2>
+    <p>
+      Unlike my other projects, this one isn't a university assignment, which gives me the freedom to return to Dual
+      Wield and fix what our playtesters told us didn't work.
+      In Dual Wield both guns fired on one button and drew from a shared ammo pool, which was the most criticised
+      system in the game.
+      Now each hand fires on its own button while sharing a single aim point, and every weapon tracks its own ammo.
+      There is no reloading: when a weapon runs dry, the answer is to swap it for another and change the pairing, and
+      because enemies drop ammo when they die, you resupply by fighting rather than backtracking.
+    </p>
+    <h2 style="margin-top: 0px;">Designing the pairings</h2>
+    <p>
+      Every pair of weapons, including two of the same, has its own hand-designed combo that changes how the two
+      weapons behave together rather than just adding damage.
+      A leaf blower can curve your own rocket onto your crosshair, an energy beam can detonate that rocket in mid-air,
+      and an enemy frozen by the cryo caster shatters into a storm of shards when you hit it with the beam.
+      The enemies are designed to test your pairing too: fast melee enemies ask whether you have a way to knock them
+      back, and armoured heavies shrug off shotgun pellets but crack under explosives.
+      Movement is fast but grounded, so skill comes from what you shoot with rather than how fast you move.
+    </p>
+    <h2 style="margin-top: 0px;">Progress so far</h2>
+    <p>
+      So far I have built a playable prototype mission with six combat arenas, six weapons, 21 weapon combinations
+      and four enemy types.
+      Each new weapon is handed to you in both hands, so your first impression of it is a pairing rather than a single
+      gun, and the name of your current combo stays on the HUD so you always know what your two hands will do.
+    </p>
+  </div>
+
+  <div class="right-column">
+    <div class="carousel-container" id="carousel">
+      <img class="carousel-slide" src="Images/Project Screenshots/Untitled Shooter/Untitled Shooter Ice Bomb.webp"
+        alt="A rocket and a cryo bolt fired together explode into an ice bomb that freezes a group of aliens in a car park" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Untitled Shooter/Untitled Shooter Shard Storm.webp"
+        alt="An energy beam shatters a frozen alien into a storm of ice shards in an office lobby" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Untitled Shooter/Untitled Shooter Barrel Explosion.webp"
+        alt="A burning napalm rocket sets off two explosive barrels beside a lava pool in a server room" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Untitled Shooter/Untitled Shooter Scorched Earth.webp"
+        alt="Two flamethrowers leave a pool of burning ground under a group of burning aliens in an office" onclick="FullView()">
+      <img class="carousel-slide" src="Images/Project Screenshots/Untitled Shooter/Untitled Shooter Airburst.webp"
+        alt="An energy beam detonates a rocket in mid-air above a group of aliens in a long hall" onclick="FullView()">
+      <div class="dot-container">
+        <!-- Dots will be dynamically generated -->
+      </div>
+      <!-- Navigation buttons -->
+      <div class="carousel-nav">
+        <button class="carousel-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="carousel-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="carousel-button" id="FullScreenButton" onclick="FullView()" aria-label="Open full screen"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Full Screen Image-->
+<div id="FullImageView">
+  <img id="FullImage" onclick="CloseFullView()" />
+  <!-- Navigation buttons -->
+  <div class="fullscreen-controls">
+    <button class="overlay-button" onclick="moveSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="overlay-button close-button" onclick="CloseFullView()" aria-label="Close full screen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="overlay-button" onclick="moveSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+</div>
+
+{% block scripts %}
+<script src="Scripts/ImageCarousel.js"></script>
+{% endblock %}
